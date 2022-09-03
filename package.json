@@ -1,0 +1,14 @@
+{
+  "name": "tips",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "rm -rf docs && mkdir docs && node index.mjs && cp src/app.css docs/app.css"
+  },
+  "dependencies": {
+    "dompurify": "^2.4.0",
+    "glob": "^8.0.3",
+    "jsdom": "^20.0.0",
+    "marked": "^4.0.19"
+  }
+}
