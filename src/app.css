@@ -22,7 +22,8 @@ body {
   font-size: 16px;
 }
 
-footer a {
+footer {
+  display: block;
   text-align: center;
 }
 
