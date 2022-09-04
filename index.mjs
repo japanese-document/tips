@@ -1,16 +1,27 @@
 import fs from 'fs'
 import path from 'node:path'
+import { parseArgs } from 'node:util'
 import glob from 'glob'
 import createDOMPurify from 'dompurify';
 import { JSDOM } from 'jsdom';
 import { marked } from 'marked';
+
+const { values: { dev } } = parseArgs({
+  options: {
+    dev: {
+      type: 'boolean'
+    }
+  }
+})
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
 
 const TITLE = /__TITLE__/g
 const BODY = '__BODY__'
-const BASE_URL = 'https://japanese-document.github.io/tips'
+const CSS = '__CSS__'
+const CSS_PATH = dev ? '/app.css?v=001' : '/tips/app.css?v=001'
+const BASE_URL = dev ? 'http://127.0.0.1:8000' : 'https://japanese-document.github.io/tips'
 const URL = '__URL__'
 const DESCRIPTION = /__DESCRIPTION__/g
 const layout = fs.readFileSync('src/layout.html', 'utf8')
@@ -41,10 +52,11 @@ function createURL(dir, name) {
   return `${BASE_URL}/${dir.slice(6)}/${name}.html`
 }
 
-function createHTML(title, body, description, url) {
+function createHTML(title, body, description, url, cssPath) {
   const html = layout
     .replaceAll(TITLE, title).replace(BODY, body)
     .replaceAll(DESCRIPTION, description).replace(URL, url)
+    .replace(CSS, cssPath)
   return html
 }
 
@@ -52,7 +64,7 @@ function createIndexPage(pages) {
   const title = 'Tips'
   const body = DOMPurify.sanitize(marked.parse(pages.map(p => `* [${p.title}](${p.url})`).join('\n')))
   const description = createDescription(body)
-  const html = createHTML(title, body, description, BASE_URL)
+  const html = createHTML(title, body, description, BASE_URL, CSS_PATH)
   return html
 }
 
@@ -70,7 +82,7 @@ for (let markDownfileName of markDownFileNames) {
   }
   const htmlFileName = `${dirPath}/${name}.html`
   const url = createURL(dir, name)
-  const html = createHTML(title, body, description, url)
+  const html = createHTML(title, body, description, url, CSS_PATH)
   await fs.promises.writeFile(htmlFileName, html)
   pages.push({
     title,
