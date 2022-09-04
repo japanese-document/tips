@@ -60,6 +60,21 @@ function createHTML(title, body, description, url, cssPath) {
   return html
 }
 
+async function createPage(markDownfileName) {
+  const md = await fs.promises.readFile(markDownfileName, 'utf8')
+  const title = createTitle(md)
+  const body = DOMPurify.sanitize(marked.parse(md))
+  const description = createDescription(body)
+  const { name, dir } = path.parse(markDownfileName)
+  const url = createURL(dir, name)
+  const page = createHTML(title, body, description, url, CSS_PATH)
+  return {
+    page,
+    title,
+    url
+  }
+}
+
 function createIndexPage(pages) {
   const title = 'Tips'
   const body = DOMPurify.sanitize(marked.parse(pages.map(p => `* [${p.title}](${p.url})`).join('\n')))
@@ -71,19 +86,18 @@ function createIndexPage(pages) {
 const markDownFileNames = await getMarkDownFileNames()
 const pages = []
 for (let markDownfileName of markDownFileNames) {
-  const md = await fs.promises.readFile(markDownfileName, 'utf8')
-  const title = createTitle(md)
-  const body = DOMPurify.sanitize(marked.parse(md))
-  const description = createDescription(body)
+  const { 
+    page,
+    title,
+    url
+  } = await createPage(markDownfileName)
   const { name, dir } = path.parse(markDownfileName)
   const dirPath = `./docs/${dir.slice(6)}`
   if (!fs.existsSync(dirPath)) {
     await fs.promises.mkdir(dirPath)
   }
   const htmlFileName = `${dirPath}/${name}.html`
-  const url = createURL(dir, name)
-  const html = createHTML(title, body, description, url, CSS_PATH)
-  await fs.promises.writeFile(htmlFileName, html)
+  await fs.promises.writeFile(htmlFileName, page)
   pages.push({
     title,
     url
