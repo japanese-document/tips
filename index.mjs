@@ -54,16 +54,16 @@ function createURL(dir, name) {
 
 function createHTML(title, body, description, url, cssPath) {
   const html = layout
-    .replaceAll(TITLE, title).replace(BODY, body)
-    .replaceAll(DESCRIPTION, description).replace(URL, url)
-    .replace(CSS, cssPath)
+    .replaceAll(TITLE, DOMPurify.sanitize(title)).replace(BODY, DOMPurify.sanitize(body))
+    .replaceAll(DESCRIPTION, DOMPurify.sanitize(description)).replace(URL, DOMPurify.sanitize(url))
+    .replace(CSS, DOMPurify.sanitize(cssPath))
   return html
 }
 
 async function createPage(markDownfileName) {
   const md = await fs.promises.readFile(markDownfileName, 'utf8')
   const title = createTitle(md)
-  const body = DOMPurify.sanitize(marked.parse(md))
+  const body = marked.parse(md)
   const description = createDescription(body)
   const { name, dir } = path.parse(markDownfileName)
   const url = createURL(dir, name)
@@ -77,7 +77,7 @@ async function createPage(markDownfileName) {
 
 function createIndexPage(pages) {
   const title = 'Tips'
-  const body = DOMPurify.sanitize(marked.parse(pages.map(p => `* [${p.title}](${p.url})`).join('\n')))
+  const body = marked.parse(pages.map(p => `* [${p.title}](${p.url})`).join('\n'))
   const description = createDescription(body)
   const html = createHTML(title, body, description, BASE_URL, CSS_PATH)
   return html
