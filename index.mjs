@@ -60,19 +60,11 @@ function createHTML(title, body, description, url, cssPath) {
   return html
 }
 
-async function createPage(markDownfileName) {
-  const md = await fs.promises.readFile(markDownfileName, 'utf8')
-  const title = createTitle(md)
+async function createPage(md, title, url) {
   const body = marked.parse(md)
   const description = createDescription(body)
-  const { name, dir } = path.parse(markDownfileName)
-  const url = createURL(dir, name)
-  const page = createHTML(title, body, description, url, CSS_PATH)
-  return {
-    page,
-    title,
-    url
-  }
+  const html = createHTML(title, body, description, url, CSS_PATH)
+  return html
 }
 
 function createIndexPage(pages) {
@@ -86,12 +78,11 @@ function createIndexPage(pages) {
 const markDownFileNames = await getMarkDownFileNames()
 const pages = []
 for (let markDownfileName of markDownFileNames) {
-  const { 
-    page,
-    title,
-    url
-  } = await createPage(markDownfileName)
+  const md = await fs.promises.readFile(markDownfileName, 'utf8')
+  const title = createTitle(md)
   const { name, dir } = path.parse(markDownfileName)
+  const url = createURL(dir, name)
+  const page = await createPage(md, title, url)
   const dirPath = `./docs/${dir.slice(6)}`
   if (!fs.existsSync(dirPath)) {
     await fs.promises.mkdir(dirPath)
