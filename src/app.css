@@ -29,18 +29,21 @@ footer {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5 {
-  margin-top: 24px;
-  margin-bottom: 16px;
-  font-weight: 600;
-  line-height: 1.25;
+a {
+  text-decoration: none;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 24px;
-}
 
-code {
-  font-family: 'Fira Code',SFMono-Regular,Menlo,'Roboto Mono',monospace
+/* MIT © GitHub */
+
+* {
+  --color-danger-fg: #cf222e;
+  --color-border-default: #d0d7de;
+  --color-border-muted: hsla(210,18%,87%,1);
+  --color-canvas-subtle: #f6f8fa;
+  --color-fg-default: #24292f;
+  --color-fg-muted: #57606a;
+  --color-neutral-muted: rgba(175,184,193,0.2);
+  --color-accent-emphasis: #0969da;
+  --color-accent-fg: #0969da;
 }

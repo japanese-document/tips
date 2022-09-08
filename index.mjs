@@ -2,9 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { parseArgs } from 'node:util'
 import glob from 'glob'
-import createDOMPurify from 'dompurify';
-import { JSDOM } from 'jsdom';
-import { marked } from 'marked';
+import createDOMPurify from 'dompurify'
+import { JSDOM } from 'jsdom'
+import { marked } from 'marked'
+import { renderer } from './renderer.mjs'
 
 const { values: { dev } } = parseArgs({
   options: {
@@ -14,8 +15,8 @@ const { values: { dev } } = parseArgs({
   }
 })
 
-const window = new JSDOM('').window;
-const DOMPurify = createDOMPurify(window);
+const window = new JSDOM('').window
+const DOMPurify = createDOMPurify(window)
 
 const TITLE = /__TITLE__/g
 const BODY = '__BODY__'
@@ -25,6 +26,8 @@ const BASE_URL = dev ? 'http://127.0.0.1:8000' : 'https://japanese-document.gith
 const URL = '__URL__'
 const DESCRIPTION = /__DESCRIPTION__/g
 const layout = fs.readFileSync('src/layout.html', 'utf8')
+
+marked.use({ renderer })
 
 function getMarkDownFileNames() {
   return new Promise((resolve) => {
