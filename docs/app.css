@@ -13,7 +13,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1200px 1fr;
+  grid-template-columns: 1fr 1000px 1fr;
   grid-template-rows: 1fr auto;
 }
 

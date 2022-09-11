@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2022/javascript-marked.html" />
     <meta property="og:title" content="Marked" />
-    <meta property="og:description" content="NodeJSでsanitizeする方法DOMPurifyを使う。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))" />
+    <meta property="og:description" content="NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))置き換えるHTML要素を変更するrendererを設定します。import" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="NodeJSでsanitizeする方法DOMPurifyを使う。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))" />
+    <meta name="description" content="NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))置き換えるHTML要素を変更するrendererを設定します。import" />
     <title>Marked</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
@@ -25,7 +25,7 @@
     <main class="main markdown-body">
       <h1 id="marked">Marked</h1>
 <h2 id="nodejsでsanitizeする方法">NodeJSでsanitizeする方法</h2>
-<p><a class="Link" href="https://github.com/cure53/DOMPurify">DOMPurify</a>を使う。</p>
+<p><a class="Link" href="https://github.com/cure53/DOMPurify">DOMPurify</a>を使います。</p>
 <pre><code>import { marked } from 'marked'
 import { JSDOM } from 'jsdom'
 import createDOMPurify from 'dompurify'
@@ -33,6 +33,17 @@ import createDOMPurify from 'dompurify'
 const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window)
 const html = DOMPurify.sanitize(marked.parse('# Foo'))
+</code></pre>
+<h2 id="置き換えるhtml要素を変更する">置き換えるHTML要素を変更する</h2>
+<p>rendererを設定します。</p>
+<pre><code>import { marked } from 'marked'
+
+const renderer = {
+  link(href, _title, text) {
+    return `&lt;a href="${href}" class="Link"&gt;${text}&lt;/a&gt;`
+  }
+}
+marked.use({ renderer })
 </code></pre>
 
     </main>
