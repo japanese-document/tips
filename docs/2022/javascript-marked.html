@@ -23,8 +23,8 @@
   <body class="container">
     <div class="side"></div>
     <main class="main markdown-body">
-      <h1 id="marked">Marked</h1>
-<h2 id="nodejsでsanitizeする方法">NodeJSでsanitizeする方法</h2>
+      <h1><a href="#Marked">Marked</a></h1>
+<h2><a href="#NodeJSでsanitizeする方法">NodeJSでsanitizeする方法</a></h2>
 <p><a class="Link" href="https://github.com/cure53/DOMPurify">DOMPurify</a>を使います。</p>
 <pre><code>import { marked } from 'marked'
 import { JSDOM } from 'jsdom'
@@ -34,7 +34,7 @@ const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window)
 const html = DOMPurify.sanitize(marked.parse('# Foo'))
 </code></pre>
-<h2 id="置き換えるhtml要素を変更する">置き換えるHTML要素を変更する</h2>
+<h2><a href="#置き換えるHTML要素を変更する">置き換えるHTML要素を変更する</a></h2>
 <p>rendererを設定します。</p>
 <pre><code>import { marked } from 'marked'
 
