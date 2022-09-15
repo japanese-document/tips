@@ -5,7 +5,6 @@ import glob from 'glob'
 import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
-import { renderer } from './renderer.mjs'
 
 const { values: { dev } } = parseArgs({
   options: {
@@ -26,6 +25,16 @@ const BASE_URL = dev ? 'http://127.0.0.1:8000' : 'https://japanese-document.gith
 const URL = '__URL__'
 const DESCRIPTION = /__DESCRIPTION__/g
 const layout = fs.readFileSync('src/layout.html', 'utf8')
+const renderer = {
+  link(href, _title, text) {
+    return `<a href="${href}" class="Link">${text}</a>`
+  },
+  heading(text, level) {
+    const document = new window.DOMParser().parseFromString(text, 'text/html')
+    const href = document.body.textContent
+    return `<h${level}><a href="#${href}">${text}</a></h${level}>\n`
+  }
+}
 
 marked.use({ renderer })
 
