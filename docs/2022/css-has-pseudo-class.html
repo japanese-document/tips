@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2022/css-has-pseudo-class.html" />
+    <meta property="og:title" content="特定の子要素を持つ要素を指定するCSSセレクタ" />
+    <meta property="og:description" content=":has() CSS pseudo-classを使います。div:has(p) {  background-color: red}<div>  <p>foo</p></div>" />
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
+    <meta name="theme-color" content="#f1f7fe" />
+    <meta name="description" content=":has() CSS pseudo-classを使います。div:has(p) {  background-color: red}<div>  <p>foo</p></div>" />
+    <title>特定の子要素を持つ要素を指定するCSSセレクタ</title>
+    <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9VVC74WWF');
+    </script>
+  </head>
+  <body class="container">
+    <div class="side"></div>
+    <main class="main markdown-body">
+      <h1><a href="#特定の子要素を持つ要素を指定するCSSセレクタ">特定の子要素を持つ要素を指定するCSSセレクタ</a></h1>
+<p><a class="Link" href="https://developer.mozilla.org/en-US/docs/Web/CSS/:has">:has() CSS pseudo-class</a>を使います。</p>
+<pre><code>div:has(p) {
+  background-color: red
+}
+</code></pre>
+<pre><code>&lt;div&gt;
+  &lt;p&gt;foo&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+    </main>
+    <div class="side"></div>
+    <div class="side"></div>
+    <footer class="footer markdown-body">
+      <a href="/tips">Top</a>
+    </footer>
+    <div class="side"></div>
+  </body>
+</html>
