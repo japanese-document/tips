@@ -81,7 +81,8 @@ async function createPage(md, title, url) {
 
 function createIndexPage(pages) {
   const title = 'Tips'
-  const body = marked.parse(pages.map(p => `* [${p.title}](${p.url})`).join('\n'))
+  const md = `# もくじ\n${pages.map(p => `* [${p.title}](${p.url})`).join('\n')}`
+  const body = marked.parse(md)
   const description = 'もくじ'
   const html = createHTML(title, body, description, BASE_URL, CSS_PATH)
   return html
