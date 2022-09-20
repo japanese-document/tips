@@ -31,7 +31,7 @@ const renderer = {
   },
   heading(text, level) {
     const document = new window.DOMParser().parseFromString(text, 'text/html')
-    const href = document.body.textContent
+    const href = document.body.textContent.replaceAll(/\s/g, '_')
     return `<h${level}><a href="#${href}">${text}</a></h${level}>\n`
   }
 }
