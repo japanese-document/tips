@@ -1,3 +1,5 @@
+{ "header": {"name": "JavaScript", "order": 2}, "order": 2 }
+---
 # JavaScriptで配列の最後の値を取得する
 
 [Array.at()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at)を使います。

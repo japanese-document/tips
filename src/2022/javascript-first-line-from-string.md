@@ -1,3 +1,5 @@
+{ "header": {"name": "JavaScript", "order": 2}, "order": 0 }
+---
 # JavaScriptで文字列から最初の1行を取得する
 
 [Array.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)と[String.indexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)を使う。

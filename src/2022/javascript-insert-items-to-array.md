@@ -1,3 +1,5 @@
+{ "header": {"name": "JavaScript", "order": 2}, "order": 1 }
+---
 # JavaScriptで配列に値を挿入する
 
 [Array.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)を使う。
