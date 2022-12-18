@@ -2,7 +2,7 @@
 ---
 # Gitでaliasを設定する
 
-`.gitconfig`で`[alias]`の下に記述すします。
+`.gitconfig`で`[alias]`の下に記述します。
 
 ```
 [alias]
