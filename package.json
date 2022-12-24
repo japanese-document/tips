@@ -11,9 +11,9 @@
     "css": "npm run css:links && npm run css:md && npm run css:cat",
     "docs": "rm -rf docs && mkdir docs",
     "predev": "npm run docs",
-    "dev": "ts-node --esm scripts/index.ts --dev && npm run css",
+    "dev": "ts-node scripts/index.ts --dev && npm run css",
     "prebuild": "npm run docs",
-    "build": "ts-node --esm scripts/index.ts && npm run css"
+    "build": "ts-node scripts/index.ts && npm run css"
   },
   "engines": {
     "node": ">=18.3.0"
