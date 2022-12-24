@@ -11,10 +11,10 @@
 * `tsconfig.json`の`ts-node`を次のようにします。
 ```
 {
-    "ts-node": {
-      "esm": true,
-      "require": ["tsconfig-paths/register"]
-    }
+  "ts-node": {
+    "esm": true,
+    "require": ["tsconfig-paths/register"]
+  }
 }
 ```
 
