@@ -55,7 +55,7 @@ a {
 code {
   font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
 }.markdown-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -129,7 +129,7 @@ code {
 .markdown-body h6 {
   margin-top: 24px;
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: var(--base-text-weight-semibold, 600);
   line-height: 1.25;
 }
 .markdown-body h1 .octicon-link,
@@ -227,14 +227,20 @@ code {
   padding: 0;
   list-style-type: none;
 }
-.markdown-body ol[type="1"] {
-  list-style-type: decimal;
-}
 .markdown-body ol[type=a] {
   list-style-type: lower-alpha;
 }
+.markdown-body ol[type=A] {
+  list-style-type: upper-alpha;
+}
 .markdown-body ol[type=i] {
   list-style-type: lower-roman;
+}
+.markdown-body ol[type=I] {
+  list-style-type: upper-roman;
+}
+.markdown-body ol[type="1"] {
+  list-style-type: decimal;
 }
 .markdown-body div > ol:not([type]) {
   list-style-type: decimal;
@@ -260,7 +266,7 @@ code {
   margin-top: 16px;
   font-size: 1em;
   font-style: italic;
-  font-weight: 600;
+  font-weight: var(--base-text-weight-semibold, 600);
 }
 .markdown-body dl dd {
   padding: 0 16px;
@@ -275,7 +281,7 @@ code {
   overflow: auto;
 }
 .markdown-body table th {
-  font-weight: 600;
+  font-weight: var(--base-text-weight-semibold, 600);
 }
 .markdown-body table th,
 .markdown-body table td {
@@ -389,6 +395,7 @@ code {
   padding: 0.2em 0.4em;
   margin: 0;
   font-size: 85%;
+  white-space: break-spaces;
   background-color: var(--color-neutral-muted);
   border-radius: 6px;
 }
@@ -464,7 +471,7 @@ code {
   border-top: 0;
 }
 .markdown-body .csv-data th {
-  font-weight: 600;
+  font-weight: var(--base-text-weight-semibold, 600);
   background: var(--color-canvas-subtle);
   border-top: 0;
 }
@@ -482,6 +489,11 @@ code {
 }
 .markdown-body .footnotes ol {
   padding-left: 16px;
+}
+.markdown-body .footnotes ol ul {
+  display: inline-block;
+  padding-left: 16px;
+  margin-top: 16px;
 }
 .markdown-body .footnotes li {
   position: relative;

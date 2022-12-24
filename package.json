@@ -10,9 +10,9 @@
     "css": "npm run css:links && npm run css:md && npm run css:cat",
     "docs": "rm -rf docs && mkdir docs",
     "predev": "npm run docs",
-    "dev": "node index.mjs --dev && npm run css",
+    "dev": "node scripts/index.mjs --dev && npm run css",
     "prebuild": "npm run docs",
-    "build": "node index.mjs && npm run css"
+    "build": "node scripts/index.mjs && npm run css"
   },
   "engines": {
     "node": ">=18.3.0"
