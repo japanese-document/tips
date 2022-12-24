@@ -11,7 +11,11 @@
       "typeRoots": ["node_modules/@types"],
       "sourceMap": false
     },
+    "ts-node": {
+      "swc": true,
+      "require": ["tsconfig-paths/register"]
+    },
     "include": [
-        "./scripts"
+      "./scripts/**/*"
     ]
 }

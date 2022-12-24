@@ -11,9 +11,9 @@
     "css": "npm run css:links && npm run css:md && npm run css:cat",
     "docs": "rm -rf docs && mkdir docs",
     "predev": "npm run docs",
-    "dev": "ts-node --esm --swc scripts/index.ts --dev && npm run css",
+    "dev": "ts-node --esm scripts/index.ts --dev && npm run css",
     "prebuild": "npm run docs",
-    "build": "ts-node --esm --swc scripts/index.ts && npm run css"
+    "build": "ts-node --esm scripts/index.ts && npm run css"
   },
   "engines": {
     "node": ">=18.3.0"
@@ -36,6 +36,7 @@
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.57.1",
     "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.1",
     "typescript": "^4.9.4"
   }
 }

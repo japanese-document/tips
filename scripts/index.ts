@@ -1,30 +1,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { parseArgs } from 'node:util'
 import glob from 'glob'
 import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
-
-const { values: { dev } } = parseArgs({
-  options: {
-    dev: {
-      type: 'boolean'
-    }
-  }
-})
+import { BASE_URL, BODY, CSS_PATH, DESCRIPTION, SEPARATOR, TITLE, CSS, URL } from './config.js'
 
 const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window as unknown as Window)
 
-const TITLE = /__TITLE__/g
-const BODY = '__BODY__'
-const CSS = '__CSS__'
-const CSS_PATH = dev ? '/app.css?v=001' : '/tips/app.css?v=001'
-const BASE_URL = dev ? 'http://127.0.0.1:8000' : 'https://japanese-document.github.io/tips'
-const URL = '__URL__'
-const DESCRIPTION = /__DESCRIPTION__/g
-const SEPARATOR = /---(.*)/s
 const layout = fs.readFileSync('src/layout.html', 'utf8')
 const renderer = {
   link(href: string, _title: string, text: string) {
