@@ -4,7 +4,10 @@ import glob from 'glob'
 import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
-import { BASE_URL, BODY, CSS_PATH, DESCRIPTION, SEPARATOR, TITLE, CSS, URL } from './config.js'
+import {
+  BASE_URL, BODY, CSS_PATH, DESCRIPTION, SEPARATOR, TITLE, CSS, URL,
+  INDEX_PAGE_DESCRIPTION, INDEX_PAGE_HEADER, INDEX_PAGE_TITLE
+} from './config.js'
 
 const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window as unknown as Window)
@@ -105,13 +108,11 @@ function createIndexPage(_pages: Page[]) {
     }
     return p
   }, [] as IndexItem[])
-  const title = 'Tips'
   const md = pages.reduce((md: string, p) => {
     return `${md}\n## ${p.name}\n${p.pages.map(p => `* [${p.title}](${p.url})`).join('\n')}`
-  }, '# もくじ\n')
+  }, `# ${INDEX_PAGE_HEADER}\n`)
   const body = marked.parse(md)
-  const description = 'もくじ'
-  const html = createHTML(title, body, description, BASE_URL, CSS_PATH)
+  const html = createHTML(INDEX_PAGE_TITLE, body, INDEX_PAGE_DESCRIPTION, BASE_URL, CSS_PATH)
   return html
 }
 
