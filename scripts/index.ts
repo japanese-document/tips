@@ -69,7 +69,7 @@ function createTitle(md: string) {
 function createDescription(html: string) {
   const _html = html.slice(html.indexOf('\n'))
   const document = new window.DOMParser().parseFromString(_html, 'text/html')
-  return document.body.textContent!.replaceAll(/\n/g, '').slice(0, 300)
+  return document.body.textContent!.replaceAll(/\n/g, '').replaceAll(/"/g, '&quot;').slice(0, 300)
 }
 
 function createURL(dir: string, name: string) {
@@ -136,6 +136,5 @@ for (let markDownfileName of markDownFileNames) {
     url
   })
 }
-
 const indexPage = createIndexPage(pages)
 await fs.promises.writeFile('docs/index.html', indexPage)
