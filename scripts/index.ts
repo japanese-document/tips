@@ -15,7 +15,7 @@ const { values: { dev } } = parseArgs({
 })
 
 const window = new JSDOM('').window
-const DOMPurify = createDOMPurify(window)
+const DOMPurify = createDOMPurify(window as unknown as Window)
 
 const TITLE = /__TITLE__/g
 const BODY = '__BODY__'
@@ -27,19 +27,41 @@ const DESCRIPTION = /__DESCRIPTION__/g
 const SEPARATOR = /---(.*)/s
 const layout = fs.readFileSync('src/layout.html', 'utf8')
 const renderer = {
-  link(href, _title, text) {
+  link(href: string, _title: string, text: string) {
     return `<a href="${href}" class="Link">${text}</a>`
   },
-  heading(text, level) {
+  heading(text: string, level: number) {
     const document = new window.DOMParser().parseFromString(text, 'text/html')
-    const href = document.body.textContent.replaceAll(/(\s|\?|\:)/g, '_')
+    const href = document.body.textContent!.replaceAll(/(\s|\?|\:)/g, '_')
     return `<h${level} id="${href}"><a href="#${href}">${text}</a></h${level}>\n`
   }
 }
 
 marked.use({ renderer })
 
-function getMarkDownFileNames() {
+interface Meta {
+  header: {
+    name: string
+    order: number
+  }
+  order: number
+}
+
+interface Page {
+  meta: Meta
+  title: string
+  url: string
+}
+
+interface IndexItem {
+  name: string
+  pages: {
+    title: string
+    url: string
+  }[]
+}
+
+function getMarkDownFileNames(): Promise<string[]> {
   return new Promise((resolve) => {
     glob('./src/**/*.md', (err, files) => {
       if (err !== null) {
@@ -51,26 +73,26 @@ function getMarkDownFileNames() {
   })
 }
 
-function getMetaAndMd(content) {
+function getMetaAndMd(content: string): [Meta, string] {
   const [meta, md] = content.split(SEPARATOR)
   return [JSON.parse(meta), md.trim()]
 }
 
-function createTitle(md) {
+function createTitle(md: string) {
   return md.slice(2, md.indexOf('\n'))
 }
 
-function createDescription(html) {
+function createDescription(html: string) {
   const _html = html.slice(html.indexOf('\n'))
   const document = new window.DOMParser().parseFromString(_html, 'text/html')
-  return document.body.textContent.replaceAll(/\n/g, '').slice(0, 300)
+  return document.body.textContent!.replaceAll(/\n/g, '').slice(0, 300)
 }
 
-function createURL(dir, name) {
+function createURL(dir: string, name: string) {
   return `${BASE_URL}/${dir.slice(6)}/${name}.html`
 }
 
-function createHTML(title, body, description, url, cssPath) {
+function createHTML(title: string, body: string, description: string, url: string, cssPath: string) {
   const html = layout
     .replaceAll(TITLE, DOMPurify.sanitize(title)).replace(BODY, DOMPurify.sanitize(body))
     .replaceAll(DESCRIPTION, DOMPurify.sanitize(description)).replace(URL, DOMPurify.sanitize(url))
@@ -78,14 +100,14 @@ function createHTML(title, body, description, url, cssPath) {
   return html
 }
 
-async function createPage(md, title, url) {
+async function createPage(md: string, title: string, url: string) {
   const body = marked.parse(md)
   const description = createDescription(body)
   const html = createHTML(title, body, description, url, CSS_PATH)
   return html
 }
 
-function createIndexPage(_pages) {
+function createIndexPage(_pages: Page[]) {
   const pages = _pages.reduce((p, _p) => {
     const { order, name } = _p.meta.header
     const { title, url } = _p
@@ -98,9 +120,9 @@ function createIndexPage(_pages) {
       url
     }
     return p
-  }, [])
+  }, [] as IndexItem[])
   const title = 'Tips'
-  const md = pages.reduce((md, p) => {
+  const md = pages.reduce((md: string, p) => {
     return `${md}\n## ${p.name}\n${p.pages.map(p => `* [${p.title}](${p.url})`).join('\n')}`
   }, '# もくじ\n')
   const body = marked.parse(md)
@@ -110,7 +132,7 @@ function createIndexPage(_pages) {
 }
 
 const markDownFileNames = await getMarkDownFileNames()
-const pages = []
+const pages: Page[] = []
 for (let markDownfileName of markDownFileNames) {
   const content = await fs.promises.readFile(markDownfileName, 'utf8')
   const [meta, md] = getMetaAndMd(content)
