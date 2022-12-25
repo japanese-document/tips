@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2022/typescript-dompurify-and-jsdom.html" />
+    <meta property="og:title" content="TypeScriptでDOMPurifyとjsdomを使う方法" />
+    <meta property="og:description" content="JSDOM.windowの型はDOMWindowです。createDOMPurify()の引数の型はWindowです。だから、JSDOM.windowをcreateDOMPurify()に渡すと型が合わないのでエラーになります。それは下記のように解決します。import createDOMPurify from 'dompurify'import { JSDOM } from 'jsdom'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window as unknown as Window)" />
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
+    <meta name="theme-color" content="#f1f7fe" />
+    <meta name="description" content="JSDOM.windowの型はDOMWindowです。createDOMPurify()の引数の型はWindowです。だから、JSDOM.windowをcreateDOMPurify()に渡すと型が合わないのでエラーになります。それは下記のように解決します。import createDOMPurify from 'dompurify'import { JSDOM } from 'jsdom'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window as unknown as Window)" />
+    <title>TypeScriptでDOMPurifyとjsdomを使う方法</title>
+    <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9VVC74WWF');
+    </script>
+  </head>
+  <body class="container">
+    <div class="side"></div>
+    <main class="main markdown-body">
+      <h1 id="TypeScriptでDOMPurifyとjsdomを使う方法"><a href="#TypeScriptでDOMPurifyとjsdomを使う方法">TypeScriptでDOMPurifyとjsdomを使う方法</a></h1>
+<p><code>JSDOM.window</code>の型は<code>DOMWindow</code>です。<code>createDOMPurify()</code>の引数の型は<code>Window</code>です。だから、<code>JSDOM.window</code>を<code>createDOMPurify()</code>に渡すと型が合わないのでエラーになります。それは下記のように解決します。</p>
+<pre><code class="language-ts">import createDOMPurify from 'dompurify'
+import { JSDOM } from 'jsdom'
+
+const window = new JSDOM('').window
+const DOMPurify = createDOMPurify(window as unknown as Window)
+</code></pre>
+
+    </main>
+    <div class="side"></div>
+    <div class="side"></div>
+    <footer class="footer markdown-body">
+      <a href="/tips">Top</a>
+    </footer>
+    <div class="side"></div>
+  </body>
+</html>
