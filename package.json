@@ -13,7 +13,9 @@
     "predev": "npm run docs",
     "dev": "ts-node scripts/index.ts --dev && npm run css",
     "prebuild": "npm run docs",
-    "build": "ts-node scripts/index.ts && npm run css"
+    "build": "ts-node scripts/index.ts && npm run css",
+    "fix": "eslint 'scripts/**/*.ts' --fix",
+    "lint": "eslint 'scripts/**/*.ts'"
   },
   "engines": {
     "node": ">=18.3.0"
@@ -33,6 +35,11 @@
     "@types/jsdom": "^20.0.1",
     "@types/marked": "^4.0.8",
     "@types/node": "^18.11.17",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.31.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.57.1",
     "ts-node": "^10.9.1",

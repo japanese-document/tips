@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import glob from 'glob'
+import { glob } from 'glob'
 import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
@@ -19,7 +19,7 @@ const renderer = {
   },
   heading(text: string, level: number) {
     const document = new window.DOMParser().parseFromString(text, 'text/html')
-    const href = document.body.textContent!.replaceAll(/(\s|\?|\:)/g, '_')
+    const href = document.body.textContent!.replaceAll(/(\s|\?|:)/g, '_')
     return `<h${level} id="${href}"><a href="#${href}">${text}</a></h${level}>\n`
   }
 }
@@ -100,7 +100,7 @@ function createIndexPage(_pages: Page[]) {
     const { title, url } = _p
     p[order] ??= {
       name,
-      pages: [] 
+      pages: []
     }
     p[order].pages[_p.meta.order] = {
       title,
@@ -118,7 +118,7 @@ function createIndexPage(_pages: Page[]) {
 
 const markDownFileNames = await getMarkDownFileNames()
 const pages: Page[] = []
-for (let markDownfileName of markDownFileNames) {
+for (const markDownfileName of markDownFileNames) {
   const content = await fs.promises.readFile(markDownfileName, 'utf8')
   const [meta, md] = getMetaAndMd(content)
   const title = createTitle(md)
