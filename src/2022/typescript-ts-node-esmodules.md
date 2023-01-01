@@ -2,6 +2,8 @@
 ---
 # ts-nodeでESModulesを使う方法
 
+## 設定
+
 下記の設定をします。
 
 * `package.json`に`"type": "module"`を加えます。
@@ -23,5 +25,20 @@
 
 * importする際にpathに`.js`を付けます。
 
+* `package.json`に下記のような処理を実行する設定を追加します。
+
+```json
+{
+  "scripts": {
+    "execute": "ts-node scripts/index.ts"
+  }
+}
+```
+
 [Native ECMAScript modules](https://typestrong.org/ts-node/docs/imports#native-ecmascript-modules)  
 [paths and baseUrl](https://typestrong.org/ts-node/docs/paths/)
+
+## ESLint
+
+ESLint(typescript-eslint)を使用する場合は設定ファイルの拡張子を`.cjs`にします。(例: `eslintrc.cjs`)
+これをしない場合、`Error [ERR_REQUIRE_ESM]`が発生します。

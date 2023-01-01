@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { glob } from 'glob'
+// eslint-disable-next-line import/no-named-as-default
+import glob from 'glob'
 import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
