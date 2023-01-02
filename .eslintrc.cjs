@@ -5,15 +5,19 @@ module.exports = {
   },
   env: {
     node: true,
+    'jest/globals': true,
     es2022: true
   },
   plugins: [
     'import',
+    'jest',
     '@typescript-eslint',
   ],
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
     'plugin:@typescript-eslint/eslint-recommended',
   ],
   parserOptions: {
