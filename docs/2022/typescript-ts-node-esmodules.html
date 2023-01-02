@@ -58,8 +58,11 @@
 </code></pre>
 <p><a class="Link" href="https://typestrong.org/ts-node/docs/imports#native-ecmascript-modules">Native ECMAScript modules</a><br><a class="Link" href="https://typestrong.org/ts-node/docs/paths/">paths and baseUrl</a></p>
 <h2 id="ESLint"><a href="#ESLint">ESLint</a></h2>
-<p>ESLint(typescript-eslint)を使用する場合は設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>eslintrc.cjs</code>)
+<p>ESLint(typescript-eslint)を使用する場合は設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>.eslintrc.cjs</code>)
 これをしない場合、<code>Error [ERR_REQUIRE_ESM]</code>が発生します。</p>
+<h2 id="Jest"><a href="#Jest">Jest</a></h2>
+<p><a class="Link" href="https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration">ts-jest</a>を使います。
+設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
 
     </main>
     <div class="side"></div>

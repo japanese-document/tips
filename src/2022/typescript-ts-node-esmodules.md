@@ -40,5 +40,10 @@
 
 ## ESLint
 
-ESLint(typescript-eslint)を使用する場合は設定ファイルの拡張子を`.cjs`にします。(例: `eslintrc.cjs`)
+ESLint(typescript-eslint)を使用する場合は設定ファイルの拡張子を`.cjs`にします。(例: `.eslintrc.cjs`)
 これをしない場合、`Error [ERR_REQUIRE_ESM]`が発生します。
+
+## Jest
+
+[ts-jest](https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration)を使います。
+設定ファイルの拡張子を`.cjs`にします。(例: `jest.config.cjs`)
