@@ -13,10 +13,12 @@
 * `tsconfig.json`の`ts-node`を次のようにします。
 ```
 {
+  ...
   "ts-node": {
     "esm": true,
     "require": ["tsconfig-paths/register"]
   }
+  ...
 }
 ```
 
@@ -40,7 +42,7 @@
 
 ## ESLint
 
-ESLint(typescript-eslint)を使用する場合は設定ファイルの拡張子を`.cjs`にします。(例: `.eslintrc.cjs`)
+[typescript-eslint](https://typescript-eslint.io/)を使います。設定ファイルの拡張子を`.cjs`にします。(例: `.eslintrc.cjs`)
 これをしない場合、`Error [ERR_REQUIRE_ESM]`が発生します。
 
 ## Jest
