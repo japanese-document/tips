@@ -24,6 +24,7 @@
 (しない場合、`CustomError: Cannot find module`のエラーが発生します。)
 
 * importする際にpathに`.js`を付けます。
+(例: `import { createTitle } from './utils.js'`)
 
 * `package.json`に下記のような処理を実行する設定を追加します。
 
