@@ -101,6 +101,11 @@ export function createIndexPage(layout: string, _pages: Page[]) {
       name,
       pages: []
     }
+    const page = p[order].pages[_p.meta.order]
+    if (page) {
+      console.error(page, _p)
+      throw Error('page already exists.')
+    }
     p[order].pages[_p.meta.order] = {
       title,
       url
