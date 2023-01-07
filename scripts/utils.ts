@@ -5,7 +5,7 @@ import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
 import {
   BASE_URL, BODY, CSS_PATH, DESCRIPTION, SEPARATOR, TITLE, CSS, URL,
-  INDEX_PAGE_DESCRIPTION, INDEX_PAGE_HEADER, INDEX_PAGE_TITLE
+  INDEX_PAGE_DESCRIPTION, INDEX_PAGE_HEADER, INDEX_PAGE_TITLE, SOURCE_DIR
 } from './config.js'
 
 const window = new JSDOM('').window
@@ -52,7 +52,7 @@ export function createTitle(md: string) {
 
 export function getMarkDownFileNames(): Promise<string[]> {
   return new Promise((resolve) => {
-    glob('./src/**/*.md', (err, files) => {
+    glob(`${SOURCE_DIR}/**/*.md`, (err, files) => {
       if (err !== null) {
         console.error(err)
         process.exit(1)
