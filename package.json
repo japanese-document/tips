@@ -10,8 +10,6 @@
     "postcss:cat": "rm docs/markdown.css docs/links.css",
     "css": "npm run css:links && npm run css:md && npm run css:cat",
     "docs": "rm -rf docs && mkdir docs",
-    "predev": "npm run docs",
-    "dev": "ts-node scripts/index.ts --dev && npm run css",
     "prebuild": "npm run docs",
     "build": "ts-node scripts/index.ts && npm run css",
     "fix": "eslint 'scripts/**/*.ts' --fix",
