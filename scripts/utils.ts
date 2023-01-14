@@ -1,3 +1,4 @@
+import { promisify } from 'node:util'
 // eslint-disable-next-line import/no-named-as-default
 import glob from 'glob'
 import createDOMPurify from 'dompurify'
@@ -47,18 +48,13 @@ interface IndexItem {
 }
 
 export function createTitle(md: string) {
-  return md.slice(2, md.indexOf('\n'))
+  return md.slice('# '.length, md.indexOf('\n'))
 }
 
 export function getMarkDownFileNames(): Promise<string[]> {
-  return new Promise((resolve) => {
-    glob(`${SOURCE_DIR}/**/*.md`, (err, files) => {
-      if (err !== null) {
-        console.error(err)
-        process.exit(1)
-      }
-      return resolve(files)
-    })
+  return promisify(glob)(`${SOURCE_DIR}/**/*.md`).catch((err) => {
+    console.error(err)
+    process.exit(1)
   })
 }
 
