@@ -1,14 +1,28 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { INDEX_PAGE_LAYOUT, OUTPUT_DIR, PAGE_LAYOUT, SOURCE_DIR } from './config.js'
-import { createTitle, getMarkDownFileNames, getMetaAndMd, createURL, createPage, createIndexPage, Page } from './utils.js'
+import { createTitle, getMarkDownFileNames, getMetaAndMd, createURL, createPage, createIndexPage, Page, createIndexItems } from './utils.js'
 
-const pageLayout = fs.readFileSync(PAGE_LAYOUT, 'utf8')
 const markDownFileNames = await getMarkDownFileNames()
+
 const pages: Page[] = []
 for (const markDownfileName of markDownFileNames) {
   const content = await fs.promises.readFile(markDownfileName, 'utf8')
   const [meta, md] = getMetaAndMd(content)
+  const title = createTitle(md)
+  const { name, dir } = path.parse(markDownfileName)
+  const url = createURL(dir, name)
+  pages.push({
+    meta,
+    title,
+    url
+  })
+}
+
+const pageLayout = fs.readFileSync(PAGE_LAYOUT, 'utf8')
+for (const markDownfileName of markDownFileNames) {
+  const content = await fs.promises.readFile(markDownfileName, 'utf8')
+  const [, md] = getMetaAndMd(content)
   const title = createTitle(md)
   const { name, dir } = path.parse(markDownfileName)
   const url = createURL(dir, name)
@@ -20,13 +34,9 @@ for (const markDownfileName of markDownFileNames) {
   }
   const htmlFileName = `${dirPath}/${name}.html`
   await fs.promises.writeFile(htmlFileName, page)
-  pages.push({
-    meta,
-    title,
-    url
-  })
 }
 
 const indexPageLayout = fs.readFileSync(INDEX_PAGE_LAYOUT, 'utf8')
-const indexPage = createIndexPage(indexPageLayout, pages)
+const indexItems = createIndexItems(pages)
+const indexPage = createIndexPage(indexPageLayout, indexItems)
 await fs.promises.writeFile(`${OUTPUT_DIR}/index.html`, indexPage)
