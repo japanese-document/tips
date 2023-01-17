@@ -86,12 +86,11 @@ export function createHTML(
 export async function createPage(layout: string, md: string, title: string, url: string) {
   const body = marked.parse(md)
   const description = createDescription(body)
-  const html = createHTML(layout, title, body, description, url, CSS_PATH)
-  return html
+  return createHTML(layout, title, body, description, url, CSS_PATH)
 }
 
-export function createIndexPage(layout: string, _pages: Page[]) {
-  const pages = _pages.reduce((p, _p) => {
+export function createIndexItems(pages: Page[]) {
+  return pages.reduce((p, _p) => {
     const { order, name } = _p.meta.header
     const { title, url } = _p
     p[order] ??= {
@@ -109,7 +108,10 @@ export function createIndexPage(layout: string, _pages: Page[]) {
     }
     return p
   }, [] as IndexItem[])
-  const md = pages.reduce((md: string, p) => {
+}
+
+export function createIndexPage(layout: string, indexItems: IndexItem[]) {
+  const md = indexItems.reduce((md: string, p) => {
     return `${md}\n## ${p.name}\n${p.pages.map(p => `* [${p.title}](${p.url})`).join('\n')}`
   }, `# ${INDEX_PAGE_HEADER}\n`)
   const body = marked.parse(md)
