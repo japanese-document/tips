@@ -5,7 +5,7 @@ import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
 import {
-  BASE_URL, BODY, CSS_PATH, DESCRIPTION, SEPARATOR, TITLE, CSS, URL,
+  BASE_URL, BODY, CSS_PATH, DESCRIPTION, SEPARATOR, TITLE, CSS, URL, INDEX,
   INDEX_PAGE_DESCRIPTION, INDEX_PAGE_HEADER, INDEX_PAGE_TITLE, SOURCE_DIR
 } from './config.js'
 
@@ -75,18 +75,21 @@ export function createURL(dir: string, name: string) {
 }
 
 export function createHTML(
-  layout: string, title: string, body: string, description: string, url: string, cssPath: string) {
+  layout: string, title: string, body: string, description: string, url: string, cssPath: string, index: string) {
   const html = layout
-    .replaceAll(TITLE, DOMPurify.sanitize(title)).replace(BODY, DOMPurify.sanitize(body))
-    .replaceAll(DESCRIPTION, DOMPurify.sanitize(description)).replace(URL, DOMPurify.sanitize(url))
+    .replaceAll(TITLE, DOMPurify.sanitize(title))
+    .replace(BODY, DOMPurify.sanitize(body))
+    .replaceAll(DESCRIPTION, DOMPurify.sanitize(description))
+    .replace(URL, DOMPurify.sanitize(url))
     .replace(CSS, DOMPurify.sanitize(cssPath))
+    .replace(INDEX, DOMPurify.sanitize(index))
   return html
 }
 
 export async function createPage(layout: string, md: string, title: string, url: string) {
   const body = marked.parse(md)
   const description = createDescription(body)
-  return createHTML(layout, title, body, description, url, CSS_PATH)
+  return createHTML(layout, title, body, description, url, CSS_PATH, '')
 }
 
 export function createIndexItems(pages: Page[]) {
@@ -115,6 +118,5 @@ export function createIndexPage(layout: string, indexItems: IndexItem[]) {
     return `${md}\n## ${p.name}\n${p.pages.map(p => `* [${p.title}](${p.url})`).join('\n')}`
   }, `# ${INDEX_PAGE_HEADER}\n`)
   const body = marked.parse(md)
-  const html = createHTML(layout, INDEX_PAGE_TITLE, body, INDEX_PAGE_DESCRIPTION, BASE_URL, CSS_PATH)
-  return html
+  return createHTML(layout, INDEX_PAGE_TITLE, body, INDEX_PAGE_DESCRIPTION, BASE_URL, CSS_PATH, '')
 }

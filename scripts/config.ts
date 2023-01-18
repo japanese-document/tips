@@ -1,5 +1,6 @@
 export const TITLE = /__TITLE__/g
 export const BODY = '__BODY__'
+export const INDEX = '__INDEX__'
 export const CSS = '__CSS__'
 export const CSS_PATH = '/tips/app.css?v=001'
 export const BASE_URL = 'https://japanese-document.github.io/tips'
