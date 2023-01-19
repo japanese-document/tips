@@ -118,7 +118,7 @@ export function createIndexMenu(items: IndexItem[]) {
     <div class="index-menu">${items.reduce((p, item) => `${p}
       <details open>
         <summary>${item.name}</summary>${item.pages.reduce((p, page) => `${p}
-        <p><a href="${page.url}">${page.title}</a></p>`, '')}
+        <p><a href="${page.url}" class="Link">${page.title}</a></p>`, '')}
       </details>`, '')}
     </div>`
 }
