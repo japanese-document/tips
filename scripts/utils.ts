@@ -75,21 +75,21 @@ export function createURL(dir: string, name: string) {
 }
 
 export function createHTML(
-  layout: string, title: string, body: string, description: string, url: string, cssPath: string, index: string) {
+  layout: string, title: string, body: string, description: string, url: string, cssPath: string, indexMenu: string) {
   const html = layout
     .replaceAll(TITLE, DOMPurify.sanitize(title))
     .replace(BODY, DOMPurify.sanitize(body))
     .replaceAll(DESCRIPTION, DOMPurify.sanitize(description))
     .replace(URL, DOMPurify.sanitize(url))
     .replace(CSS, DOMPurify.sanitize(cssPath))
-    .replace(INDEX, DOMPurify.sanitize(index))
+    .replace(INDEX, DOMPurify.sanitize(indexMenu))
   return html
 }
 
-export async function createPage(layout: string, md: string, title: string, url: string) {
+export async function createPage(layout: string, md: string, title: string, url: string, indexMenu: string) {
   const body = marked.parse(md)
   const description = createDescription(body)
-  return createHTML(layout, title, body, description, url, CSS_PATH, '')
+  return createHTML(layout, title, body, description, url, CSS_PATH, indexMenu)
 }
 
 export function createIndexItems(pages: Page[]) {
@@ -111,6 +111,16 @@ export function createIndexItems(pages: Page[]) {
     }
     return p
   }, [] as IndexItem[])
+}
+
+export function createIndexMenu(items: IndexItem[]) {
+  return `
+    <div class="index-menu">${items.reduce((p, item) => `${p}
+      <details>
+        ${item.name}${item.pages.reduce((p, page) => `${p}
+        <summary><a href="${page.url}">${page.title}</a></summary>`, '')}
+      </details>`, '')}
+    </div>`
 }
 
 export function createIndexPage(layout: string, indexItems: IndexItem[]) {
