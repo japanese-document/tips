@@ -23,8 +23,8 @@ body {
   height: max-content;
 }
 
-.left-side:not(:has(.index-menu)) {
-  border-left: 1px solid var(--color-border-muted);
+.left-side:has(.index-menu) {
+  border-right: 1px solid var(--color-border-muted);
 }
 
 .right-side {
