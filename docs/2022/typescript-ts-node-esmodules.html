@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html" />
     <meta property="og:title" content="ts-nodeでESModulesを使う方法" />
-    <meta property="og:description" content="設定下記の設定をします。package.jsonに&quot;type&quot;: &quot;module&quot;を加えます。tsconfig.jsonのcompilerOptions.moduleを&quot;ESNext&quot;にします。tsconfig.jsonのts-nodeを次のようにします。{  ...  &quot;ts-node&quot;: {    &quot;esm&quot;: true,    &quot;require&quot;: [&quot;tsconfig-paths/register&quot;]  }  ...}tsconfig-pathsを" />
+    <meta property="og:description" content="設定下記の設定をします。package.jsonに&quot;type&quot;: &quot;module&quot;を加えます。tsconfig.jsonのcompilerOptions.moduleを&quot;ESNext&quot;にします。tsconfig.jsonのts-nodeを次のようにします。{  ...  &quot;ts-node&quot;: {    &quot;esm&quot;: true,    &quot;require&quot;: [&quot;tsconfig-paths/register&quot;]  },  ...}tsconfig-paths" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="設定下記の設定をします。package.jsonに&quot;type&quot;: &quot;module&quot;を加えます。tsconfig.jsonのcompilerOptions.moduleを&quot;ESNext&quot;にします。tsconfig.jsonのts-nodeを次のようにします。{  ...  &quot;ts-node&quot;: {    &quot;esm&quot;: true,    &quot;require&quot;: [&quot;tsconfig-paths/register&quot;]  }  ...}tsconfig-pathsを" />
+    <meta name="description" content="設定下記の設定をします。package.jsonに&quot;type&quot;: &quot;module&quot;を加えます。tsconfig.jsonのcompilerOptions.moduleを&quot;ESNext&quot;にします。tsconfig.jsonのts-nodeを次のようにします。{  ...  &quot;ts-node&quot;: {    &quot;esm&quot;: true,    &quot;require&quot;: [&quot;tsconfig-paths/register&quot;]  },  ...}tsconfig-paths" />
     <title>ts-nodeでESModulesを使う方法</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
@@ -80,7 +80,7 @@
   "ts-node": {
     "esm": true,
     "require": ["tsconfig-paths/register"]
-  }
+  },
   ...
 }
 </code></pre>
@@ -95,9 +95,11 @@
 </li>
 </ul>
 <pre><code class="language-json">{
+  ...
   "scripts": {
     "execute": "ts-node scripts/index.ts"
-  }
+  },
+  ...
 }
 </code></pre>
 <p><a class="Link" href="https://typestrong.org/ts-node/docs/imports#native-ecmascript-modules">Native ECMAScript modules</a><br><a class="Link" href="https://typestrong.org/ts-node/docs/paths/">paths and baseUrl</a></p>

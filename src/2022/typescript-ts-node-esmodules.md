@@ -17,7 +17,7 @@
   "ts-node": {
     "esm": true,
     "require": ["tsconfig-paths/register"]
-  }
+  },
   ...
 }
 ```
@@ -32,9 +32,11 @@
 
 ```json
 {
+  ...
   "scripts": {
     "execute": "ts-node scripts/index.ts"
-  }
+  },
+  ...
 }
 ```
 
