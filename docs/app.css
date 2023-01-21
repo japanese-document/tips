@@ -68,7 +68,11 @@ a {
 /* index-menu */
 
 .index-menu {
+  position: sticky;
+  top: 0px;
   padding: 1.25rem;
+  width: max-content;
+  margin-left: auto;
 }
 
 .index-menu p {
