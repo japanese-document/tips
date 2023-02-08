@@ -50,5 +50,6 @@
 
 ## Jest
 
-[ts-jest](https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration)を使います。
+[ts-jest](https://kulshekhar.github.io/ts-jest/)を使います。
+設定ファイルは[これ](https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration)を参考にします。
 設定ファイルの拡張子を`.cjs`にします。(例: `jest.config.cjs`)
