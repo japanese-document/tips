@@ -80,3 +80,24 @@
 [ts-jest](https://kulshekhar.github.io/ts-jest/)を使います。
 設定ファイルは[これ](https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration)を参考にします。
 設定ファイルの拡張子を`.cjs`にします。(例: `jest.config.cjs`)
+
+### jest.config.cjsの例
+
+```js
+module.exports = {
+  roots: ['<rootDir>/scripts'],
+  testMatch: ['**/*.test.ts'],
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+      },
+    ],
+  },
+}
+```
