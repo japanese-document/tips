@@ -43,6 +43,33 @@
 [Native ECMAScript modules](https://typestrong.org/ts-node/docs/imports#native-ecmascript-modules)  
 [paths and baseUrl](https://typestrong.org/ts-node/docs/paths/)
 
+### tsconfig.jsonの例
+
+```json
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "allowJs": true,
+      "strict": true,
+      "moduleResolution": "NodeNext",
+      "esModuleInterop": true,
+      "baseUrl": "./",
+      "skipLibCheck": true,
+      "typeRoots": ["node_modules/@types"],
+      "sourceMap": false
+    },
+    "ts-node": {
+      "esm": true,
+      "swc": true,
+      "require": ["tsconfig-paths/register"]
+    },
+    "include": [
+      "./scripts/**/*"
+    ]
+}
+```
+
 ## ESLint
 
 [typescript-eslint](https://typescript-eslint.io/)を使います。設定ファイルの拡張子を`.cjs`にします。(例: `.eslintrc.cjs`)
@@ -53,3 +80,24 @@
 [ts-jest](https://kulshekhar.github.io/ts-jest/)を使います。
 設定ファイルは[これ](https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration)を参考にします。
 設定ファイルの拡張子を`.cjs`にします。(例: `jest.config.cjs`)
+
+### jest.config.cjsの例
+
+```js
+module.exports = {
+  roots: ['<rootDir>/scripts'],
+  testMatch: ['**/*.test.ts'],
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+      },
+    ],
+  },
+}
+```
