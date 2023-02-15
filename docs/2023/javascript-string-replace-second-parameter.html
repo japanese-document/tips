@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-slices-contains.html" />
-    <meta property="og:title" content="Goで指定した値が配列内に存在するか判別する" />
-    <meta property="og:description" content="下記のようにGo 1.18で追加されたslices.Contains()を使います。package mainimport (    &quot;fmt&quot;    &quot;golang.org/x/exp/slices&quot;)func main() {    items := []string{&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;}    result := slices.Contains(items, &quot;foo&quot;)    fmt.Println(result) // true    result" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-string-replace-second-parameter.html" />
+    <meta property="og:title" content="JavaScriptのString.replace()の第2引数の文字列をエスケープする" />
+    <meta property="og:description" content="下記のようにString.replaceの第2引数に特殊文字列を含む文字列を渡すとターゲットを素の第2引数の文字列に置き換えません。'foo123bar'.replace('123', '$`')// 'foofoobar'下記のように第2引数に文字列を返す関数を渡すことで文字列をエスケープすることができます。'foo123bar'.replace('123', () => '$`')// 'foo$`bar'" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記のようにGo 1.18で追加されたslices.Contains()を使います。package mainimport (    &quot;fmt&quot;    &quot;golang.org/x/exp/slices&quot;)func main() {    items := []string{&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;}    result := slices.Contains(items, &quot;foo&quot;)    fmt.Println(result) // true    result" />
-    <title>Goで指定した値が配列内に存在するか判別する</title>
+    <meta name="description" content="下記のようにString.replaceの第2引数に特殊文字列を含む文字列を渡すとターゲットを素の第2引数の文字列に置き換えません。'foo123bar'.replace('123', '$`')// 'foofoobar'下記のように第2引数に文字列を返す関数を渡すことで文字列をエスケープすることができます。'foo123bar'.replace('123', () => '$`')// 'foo$`bar'" />
+    <title>JavaScriptのString.replace()の第2引数の文字列をエスケープする</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -67,27 +67,18 @@
       </details>
     </div></div>
     <main class="main markdown-body">
-      <h1 id="Goで指定した値が配列内に存在するか判別する"><a href="#Goで指定した値が配列内に存在するか判別する">Goで指定した値が配列内に存在するか判別する</a></h1>
-<p>下記のように<a class="Link" href="https://tip.golang.org/doc/go1.18">Go 1.18</a>で追加された<a class="Link" href="https://pkg.go.dev/golang.org/x/exp/slices#Contains">slices.Contains()</a>を使います。</p>
-<pre><code class="language-go">package main
-
-import (
-    "fmt"
-
-    "golang.org/x/exp/slices"
-)
-
-func main() {
-    items := []string{"foo", "bar", "baz"}
-    result := slices.Contains(items, "foo")
-    fmt.Println(result) // true
-    result = slices.Contains(items, "abc")
-    fmt.Println(result) // false
-}
+      <h1 id="JavaScriptのString.replace()の第2引数の文字列をエスケープする"><a href="#JavaScriptのString.replace()の第2引数の文字列をエスケープする">JavaScriptのString.replace()の第2引数の文字列をエスケープする</a></h1>
+<p>下記のようにString.replaceの第2引数に<a class="Link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_the_replacement">特殊文字列</a>を含む文字列を渡すとターゲットを素の第2引数の文字列に置き換えません。</p>
+<pre><code class="language-js">'foo123bar'.replace('123', '$`')
+// 'foofoobar'
+</code></pre>
+<p>下記のように第2引数に文字列を返す関数を渡すことで文字列をエスケープすることができます。</p>
+<pre><code class="language-js">'foo123bar'.replace('123', () =&gt; '$`')
+// 'foo$`bar'
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Goで指定した値が配列内に存在するか判別する">Goで指定した値が配列内に存在するか判別する</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#JavaScriptのString.replace()の第2引数の文字列をエスケープする">JavaScriptのString.replace()の第2引数の文字列をエスケープする</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
