@@ -105,6 +105,30 @@
 }
 </code></pre>
 <p><a class="Link" href="https://typestrong.org/ts-node/docs/imports#native-ecmascript-modules">Native ECMAScript modules</a><br><a class="Link" href="https://typestrong.org/ts-node/docs/paths/">paths and baseUrl</a></p>
+<h3 id="tsconfig.jsonの例"><a href="#tsconfig.jsonの例">tsconfig.jsonの例</a></h3>
+<pre><code class="language-json">{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "allowJs": true,
+      "strict": true,
+      "moduleResolution": "NodeNext",
+      "esModuleInterop": true,
+      "baseUrl": "./",
+      "skipLibCheck": true,
+      "typeRoots": ["node_modules/@types"],
+      "sourceMap": false
+    },
+    "ts-node": {
+      "esm": true,
+      "swc": true,
+      "require": ["tsconfig-paths/register"]
+    },
+    "include": [
+      "./scripts/**/*"
+    ]
+}
+</code></pre>
 <h2 id="ESLint"><a href="#ESLint">ESLint</a></h2>
 <p><a class="Link" href="https://typescript-eslint.io/">typescript-eslint</a>を使います。設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>.eslintrc.cjs</code>)
 これをしない場合、<code>Error [ERR_REQUIRE_ESM]</code>が発生します。</p>
@@ -112,12 +136,46 @@
 <p><a class="Link" href="https://kulshekhar.github.io/ts-jest/">ts-jest</a>を使います。
 設定ファイルは<a class="Link" href="https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration">これ</a>を参考にします。
 設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
-
+<h3 id="jest.config.cjsの例"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></h3>
+<pre><code class="language-js">module.exports = {
+  roots: ['&lt;rootDir&gt;/scripts'],
+  testMatch: ['**/*.test.ts'],
+  extensionsToTreatAsEsm: ['.ts'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js
     </main>
     <div class="right-side"><div class="header-list"><p class="h1"><a href="#ts-nodeでESModulesを使う方法">ts-nodeでESModulesを使う方法</a></p>
 <p class="h2"><a href="#設定">設定</a></p>
+<p class="h3"><a href="#tsconfig.jsonの例">tsconfig.jsonの例</a></p>
 <p class="h2"><a href="#ESLint">ESLint</a></p>
-<p class="h2"><a href="#Jest">Jest</a></p></div></div>
+<p class="h2"><a href="#Jest">Jest</a></p>
+<p class="h3"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></p></div></div>
+    <footer class="footer markdown-body">
+      <a href="/tips">Top</a>
+    </footer>
+  </body>
+</html>: '$1',
+  },
+  transform: {
+    '^.+\\.tsx?
+    </main>
+    <div class="right-side">__HEADER__</div>
+    <footer class="footer markdown-body">
+      <a href="/tips">Top</a>
+    </footer>
+  </body>
+</html>: [
+      'ts-jest',
+      {
+        useESM: true,
+      },
+    ],
+  },
+}
+</code></pre>
+
+    </main>
+    <div class="right-side">__HEADER__</div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
