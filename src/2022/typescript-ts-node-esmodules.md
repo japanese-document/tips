@@ -61,7 +61,6 @@
     },
     "ts-node": {
       "esm": true,
-      "swc": true,
       "require": ["tsconfig-paths/register"]
     },
     "include": [
