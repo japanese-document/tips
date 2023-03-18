@@ -10,6 +10,6 @@
 
 ## test毎に実行する設定
 
-* 設定ファイルに[clearMocks](https://jestjs.io/docs/configuration#clearmocks-boolean)を追加すると各testが実行される前に[jest.clearAllMocks()](https://jestjs.io/docs/jest-object#jestclearallmocks)を実行する。 
-* 設定ファイルに[resetMocks](https://jestjs.io/docs/configuration#resetmocks-boolean)を追加すると各testが実行される前に[jest.resetAllMocks()](https://jestjs.io/docs/jest-object#jestresetallmocks)を実行する。 
-* 設定ファイルに[restoreMocks](https://jestjs.io/docs/configuration#restoremocks-boolean)を追加すると各testが実行される前に[jest.restoreAllMocks()](https://jestjs.io/docs/jest-object#jestrestoreallmocks)を実行する。 
+* 設定ファイルに[clearMocks](https://jestjs.io/docs/configuration#clearmocks-boolean)を追加すると各testが実行される前に[jest.clearAllMocks()](https://jestjs.io/docs/jest-object#jestclearallmocks)が実行されます。 
+* 設定ファイルに[resetMocks](https://jestjs.io/docs/configuration#resetmocks-boolean)を追加すると各testが実行される前に[jest.resetAllMocks()](https://jestjs.io/docs/jest-object#jestresetallmocks)が実行されます。 
+* 設定ファイルに[restoreMocks](https://jestjs.io/docs/configuration#restoremocks-boolean)を追加すると各testが実行される前に[jest.restoreAllMocks()](https://jestjs.io/docs/jest-object#jestrestoreallmocks)が実行されます。 
