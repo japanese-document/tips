@@ -2,6 +2,9 @@
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
+* [react.dev](https://github.com/reactjs/react.dev)  
+Reactのウェブサイト
+
 * [leerob.io](https://github.com/leerob/leerob.io)  
 個人のウェブサイト
 
