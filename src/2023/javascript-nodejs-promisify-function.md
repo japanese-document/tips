@@ -6,7 +6,7 @@
 コールバック関数は関数の最後の引数である必要があります。
 コールバック関数はエラーが最初の引数として渡される必要があります。(`(err, value) => {...}`)
 
-下記は[glob](https://github.com/isaacs/node-glob)をPromise化する例です。
+下記は[glob](https://github.com/isaacs/node-glob)8.xをPromise化する例です。
 
 ```js
 import { promisify } from 'node:util'
