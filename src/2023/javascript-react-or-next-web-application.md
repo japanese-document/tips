@@ -22,3 +22,6 @@ Lens Protocolに基づいたソーシャルメディアアプリケーション
 
 * [Linen](https://github.com/Linen-dev/linen.dev)  
 Slack。メッセージの配信にはElixirを使っている。
+
+* [Plane](https://github.com/makeplane/plane)  
+Open Source JIRA。サーバーサイドはDjango。
