@@ -19,3 +19,6 @@ Headless CMS
 
 * [Lenster](https://github.com/lensterxyz/lenster)  
 Lens Protocolに基づいたソーシャルメディアアプリケーション
+
+* [Linen](https://github.com/Linen-dev/linen.dev)  
+Slack。メッセージの配信にはElixirを使っている。
