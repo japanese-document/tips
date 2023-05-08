@@ -13,6 +13,6 @@ describe('SortedLimitedArray', () => {
     const arr = SortedLimitedArray.create([7, 1, 5, 2, 6, 3, 4], 3, (a, b) => a - b)
     const length = arr.push(-1)
     expect([...arr]).toEqual([-1, 1, 2])
-    expect(length).toEqual(3)
+    expect(length).toBe(3)
   })
 })

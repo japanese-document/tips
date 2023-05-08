@@ -1,3 +1,5 @@
+import { createPages, getMarkDownFileNames } from './utils.js'
+
 export class SortedLimitedArray<T> extends Array {
 
   limit = 0
@@ -24,3 +26,7 @@ export class SortedLimitedArray<T> extends Array {
     }
   }
 }
+
+const markDownFileNames = await getMarkDownFileNames()
+
+const pages = await createPages(markDownFileNames)
