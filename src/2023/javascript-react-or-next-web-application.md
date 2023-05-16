@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5 }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-05-16 19:00" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -25,3 +25,6 @@ Slack。メッセージの配信にはElixirを使っている。
 
 * [Plane](https://github.com/makeplane/plane)  
 Open Source JIRA。サーバーサイドはDjango。
+
+* [Bluesky Social App](https://github.com/bluesky-social/social-app)  
+BlueskyのWebクライアント
