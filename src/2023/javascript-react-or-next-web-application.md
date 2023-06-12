@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-05-16 19:00" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-06-13 02:00" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -28,3 +28,6 @@ Open Source JIRA。サーバーサイドはDjango。
 
 * [Bluesky Social App](https://github.com/bluesky-social/social-app)  
 BlueskyのWebクライアント
+
+* [Owncast](https://github.com/owncast/owncast)  
+ライブ配信。サーバーサイドはGo。
