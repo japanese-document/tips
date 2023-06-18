@@ -1,4 +1,4 @@
-{ "header": {"name": "AWS", "order": 5}, "order": 0 }
+{ "header": {"name": "AWS", "order": 4}, "order": 0 }
 ---
 # aws-cliの設定ファイルの例
 
