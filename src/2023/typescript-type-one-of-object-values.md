@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 6}, "order": 2 }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 2 }
 ---
 # TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法
 

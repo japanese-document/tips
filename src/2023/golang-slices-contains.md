@@ -1,4 +1,4 @@
-{ "header": {"name": "Go", "order": 7}, "order": 0 }
+{ "header": {"name": "Go", "order": 6}, "order": 0 }
 ---
 # Goで指定した値が配列内に存在するか判別する
 

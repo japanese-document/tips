@@ -1,4 +1,4 @@
-{ "header": {"name": "Go", "order": 7}, "order": 1, "date": "2023-05-16 18:30" }
+{ "header": {"name": "Go", "order": 6}, "order": 1, "date": "2023-05-16 18:30" }
 ---
 # UbuntuでGoのバージョンをアップグレードする方法
 

@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 6}, "order": 1 }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 1 }
 ---
 # TypeScriptでDOMPurifyとjsdomを使う方法
 

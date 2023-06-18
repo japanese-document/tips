@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 6}, "order": 0 }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 0 }
 ---
 # ts-nodeでESModulesを使う方法
 

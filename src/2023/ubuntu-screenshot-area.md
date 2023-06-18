@@ -1,4 +1,4 @@
-{ "header": {"name": "Ubuntu", "order": 8}, "order": 0 }
+{ "header": {"name": "Ubuntu", "order": 7}, "order": 0 }
 ---
 # Ubuntuで範囲を指定してスクリーンショットを撮る方法
 
