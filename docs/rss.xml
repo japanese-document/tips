@@ -5,10 +5,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Jul 2023 15:52:17 GMT</pubDate>
-    <lastBuildDate>Tue, 04 Jul 2023 15:52:17 GMT</lastBuildDate>
+    <pubDate>Sat, 05 Aug 2023 05:03:13 GMT</pubDate>
+    <lastBuildDate>Sat, 05 Aug 2023 05:03:13 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>CSSでMaterial UI(MUI)のボタンのカーソルをnot allowedにする</title>
+    <pubDate>Sat, 05 Aug 2023 05:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/react-mui-button-cursor-not-allowed.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-mui-button-cursor-not-allowed.html</guid>
+  </item>
   <item>
     <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
     <pubDate>Tue, 04 Jul 2023 15:00:00 GMT</pubDate>
