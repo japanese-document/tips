@@ -5,10 +5,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Aug 2023 05:03:13 GMT</pubDate>
-    <lastBuildDate>Sat, 05 Aug 2023 05:03:13 GMT</lastBuildDate>
+    <pubDate>Sun, 06 Aug 2023 09:12:57 GMT</pubDate>
+    <lastBuildDate>Sun, 06 Aug 2023 09:12:57 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Material UI(MUI)のTypographyコンポーネントを改行させない方法</title>
+    <pubDate>Sun, 06 Aug 2023 09:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/react-mui-typography-no-new-line.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-mui-typography-no-new-line.html</guid>
+  </item>
   <item>
     <title>CSSでMaterial UI(MUI)のボタンのカーソルをnot allowedにする</title>
     <pubDate>Sat, 05 Aug 2023 05:00:00 GMT</pubDate>
