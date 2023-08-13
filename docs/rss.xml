@@ -5,10 +5,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Aug 2023 12:00:45 GMT</pubDate>
-    <lastBuildDate>Sat, 12 Aug 2023 12:00:45 GMT</lastBuildDate>
+    <pubDate>Sun, 13 Aug 2023 14:27:14 GMT</pubDate>
+    <lastBuildDate>Sun, 13 Aug 2023 14:27:14 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>TypeScriptで特定のプロパティを持つジェネリクスを定義する方法</title>
+    <pubDate>Sun, 13 Aug 2023 14:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/typescript-generics-having-property.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-generics-having-property.html</guid>
+  </item>
   <item>
     <title>TypeScriptで配列から配列の各値のどれか１つに該当する型を生成する方法</title>
     <pubDate>Sat, 12 Aug 2023 12:00:00 GMT</pubDate>
