@@ -60,6 +60,6 @@ const rss = `
   </channel>
   ${items}
 </rss>
-`
+`.trim()
 
 fs.writeFileSync(`${OUTPUT_DIR}/rss.xml`, rss)
