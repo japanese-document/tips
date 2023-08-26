@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 5}, "order": 0 }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-08-27 0:05" }
 ---
 # ts-nodeでESModulesを使う方法
 
@@ -49,7 +49,7 @@
 {
     "compilerOptions": {
       "target": "ESNext",
-      "module": "ESNext",
+      "module": "NodeNext",
       "allowJs": true,
       "strict": true,
       "moduleResolution": "NodeNext",
