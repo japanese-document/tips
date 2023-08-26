@@ -5,10 +5,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Aug 2023 12:15:28 GMT</pubDate>
-    <lastBuildDate>Sat, 19 Aug 2023 12:15:28 GMT</lastBuildDate>
+    <pubDate>Sat, 26 Aug 2023 15:06:53 GMT</pubDate>
+    <lastBuildDate>Sat, 26 Aug 2023 15:06:53 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>ts-nodeでESModulesを使う方法</title>
+    <pubDate>Sat, 26 Aug 2023 15:05:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html</guid>
+  </item>
   <item>
     <title>TypeScriptでオブジェクトのプロパティの値の型をプロパティ名のパターン毎に定義する方法</title>
     <pubDate>Sat, 19 Aug 2023 12:00:00 GMT</pubDate>
