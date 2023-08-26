@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-08-27 0:05" }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-08-27 0:20" }
 ---
 # ts-nodeでESModulesを使う方法
 
@@ -8,7 +8,7 @@
 
 * `package.json`に`"type": "module"`を加えます。
 
-* `tsconfig.json`の`compilerOptions.module`を`"ESNext"`にします。
+* `tsconfig.json`の`compilerOptions.module`を`"NodeNext"`にします。
 
 * `tsconfig.json`の`ts-node`を次のようにします。
 ```
