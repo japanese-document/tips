@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-type-one-of-object-values.html" />
-    <meta property="og:title" content="TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法" />
+    <meta property="og:title" content="既存のObjectの値のうち1つが該当する型を定義する方法" />
     <meta property="og:description" content="下記のようにします。const obj = {  foo: 'abc',  bar: 123,  baz: true} as consttype Value = typeof obj[keyof typeof obj]const v: Value = 123" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
     <meta name="description" content="下記のようにします。const obj = {  foo: 'abc',  bar: 123,  baz: true} as consttype Value = typeof obj[keyof typeof obj]const v: Value = 123" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
-    <title>TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法</title>
+    <title>既存のObjectの値のうち1つが該当する型を定義する方法</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -61,8 +61,8 @@
         <summary>TypeScript</summary>
         <p><a href="https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html">ts-nodeでESModulesを使う方法</a></p>
         <p><a href="https://japanese-document.github.io/tips/2022/typescript-dompurify-and-jsdom.html">TypeScriptでDOMPurifyとjsdomを使う方法</a></p>
-        <p><a href="https://japanese-document.github.io/tips/2023/typescript-type-one-of-object-values.html">TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法</a></p>
-        <p><a href="https://japanese-document.github.io/tips/2023/typescript-type-from-array.html">TypeScriptで配列から配列の各値のどれか１つに該当する型を生成する方法</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2023/typescript-type-one-of-object-values.html">既存のObjectの値のうち1つが該当する型を定義する方法</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2023/typescript-type-from-array.html">配列から配列の各値のどれか１つに該当する型を生成する方法</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/typescript-generics-having-property.html">TypeScriptで特定のプロパティを持つジェネリクスを定義する方法</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/typescript-typing-value-by-pattern-property.html">プロパティの値の型をプロパティ名のパターン毎に定義する方法</a></p>
       </details>
@@ -82,7 +82,7 @@
       </details>
     </div></div>
     <main class="main markdown-body">
-      <h1 id="TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法"><a href="#TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法">TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法</a></h1>
+      <h1 id="既存のObjectの値のうち1つが該当する型を定義する方法"><a href="#既存のObjectの値のうち1つが該当する型を定義する方法">既存のObjectの値のうち1つが該当する型を定義する方法</a></h1>
 <p>下記のようにします。</p>
 <pre><code class="language-ts">const obj = {
   foo: 'abc',
@@ -96,7 +96,7 @@ const v: Value = 123
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法">TypeScriptで既存のObjectの値のうち1つが該当する型を定義する方法</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#既存のObjectの値のうち1つが該当する型を定義する方法">既存のObjectの値のうち1つが該当する型を定義する方法</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
