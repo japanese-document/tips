@@ -4,8 +4,8 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 26 Aug 2023 15:20:18 GMT</pubDate>
-    <lastBuildDate>Sat, 26 Aug 2023 15:20:18 GMT</lastBuildDate>
+    <pubDate>Sat, 26 Aug 2023 15:24:32 GMT</pubDate>
+    <lastBuildDate>Sat, 26 Aug 2023 15:24:32 GMT</lastBuildDate>
   </channel>
   
   <item>
@@ -15,7 +15,7 @@
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html</guid>
   </item>
   <item>
-    <title>TypeScriptでオブジェクトのプロパティの値の型をプロパティ名のパターン毎に定義する方法</title>
+    <title>プロパティの値の型をプロパティ名のパターン毎に定義する方法</title>
     <pubDate>Sat, 19 Aug 2023 12:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/typescript-typing-value-by-pattern-property.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-typing-value-by-pattern-property.html</guid>
