@@ -4,8 +4,8 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 26 Aug 2023 15:24:32 GMT</pubDate>
-    <lastBuildDate>Sat, 26 Aug 2023 15:24:32 GMT</lastBuildDate>
+    <pubDate>Sat, 26 Aug 2023 15:35:43 GMT</pubDate>
+    <lastBuildDate>Sat, 26 Aug 2023 15:35:43 GMT</lastBuildDate>
   </channel>
   
   <item>
@@ -27,7 +27,7 @@
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-generics-having-property.html</guid>
   </item>
   <item>
-    <title>TypeScriptで配列から配列の各値のどれか１つに該当する型を生成する方法</title>
+    <title>配列から配列の各値のどれか１つに該当する型を生成する方法</title>
     <pubDate>Sat, 12 Aug 2023 12:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/typescript-type-from-array.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-type-from-array.html</guid>
