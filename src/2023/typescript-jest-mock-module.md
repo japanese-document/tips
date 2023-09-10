@@ -2,7 +2,9 @@
 ---
 # TypeScriptでJestを使ってモジュールをモック(mock)する
 
-[jest.mock()](https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)でモジュールをモック(mock)すると、モックにJestの[Mock functions](https://jestjs.io/docs/mock-function-api)の型が付与されていません。
+TypeScriptで[jest.mock()](https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)でモジュールをモック(mock)すると、モックには[Mock functions](https://jestjs.io/docs/mock-function-api)の型が付与されていません。
+だから、Mock functionsを使ってモックの設定をするとエラーになります。
+これを解決するには、
 下記のように[jest.mocked()](https://jestjs.io/docs/mock-function-api/#jestmockedsource-options)にモックを渡します。
 その戻り値にはMock functionsの型が付与されてています。
 その戻り値にモックの設定を付与します。
