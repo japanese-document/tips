@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 26 Aug 2023 15:35:43 GMT</pubDate>
-    <lastBuildDate>Sat, 26 Aug 2023 15:35:43 GMT</lastBuildDate>
+    <pubDate>Sun, 10 Sep 2023 07:28:41 GMT</pubDate>
+    <lastBuildDate>Sun, 10 Sep 2023 07:28:41 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>TypeScriptでJestを使ってモジュールをモック(mock)する</title>
+    <pubDate>Sun, 10 Sep 2023 07:20:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/typescript-jest-mock-module.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-jest-mock-module.html</guid>
+  </item>
   <item>
     <title>ts-nodeでESModulesを使う方法</title>
     <pubDate>Sat, 26 Aug 2023 15:20:00 GMT</pubDate>
