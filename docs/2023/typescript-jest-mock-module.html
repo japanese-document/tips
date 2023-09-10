@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-jest-mock-module.html" />
     <meta property="og:title" content="TypeScriptでJestを使ってモジュールをモック(mock)する" />
-    <meta property="og:description" content="jest.mock()でモジュールをモック(mock)すると、モックにJestのMock functionsの型が付与されていません。下記のようにjest.mocked()にモックを渡します。その戻り値にはMock functionsの型が付与されてています。その戻り値にモックの設定を付与します。下記の例ではfs.promise.readFileをモックして、モックの設定をしています。import { readFile } from 'node:fs/promises'jest.mock('node:fs/promises')import { targetFunc } from './targ" />
+    <meta property="og:description" content="TypeScriptでjest.mock()でモジュールをモック(mock)すると、モックにはMock functionsの型が付与されていません。だから、Mock functionsを使ってモックの設定をするとエラーになります。これを解決するには、下記のようにjest.mocked()にモックを渡します。その戻り値にはMock functionsの型が付与されてています。その戻り値にモックの設定を付与します。下記の例ではfs.promise.readFileをモックして、モックの設定をしています。import { readFile } from 'node:fs/promises'jest." />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="jest.mock()でモジュールをモック(mock)すると、モックにJestのMock functionsの型が付与されていません。下記のようにjest.mocked()にモックを渡します。その戻り値にはMock functionsの型が付与されてています。その戻り値にモックの設定を付与します。下記の例ではfs.promise.readFileをモックして、モックの設定をしています。import { readFile } from 'node:fs/promises'jest.mock('node:fs/promises')import { targetFunc } from './targ" />
+    <meta name="description" content="TypeScriptでjest.mock()でモジュールをモック(mock)すると、モックにはMock functionsの型が付与されていません。だから、Mock functionsを使ってモックの設定をするとエラーになります。これを解決するには、下記のようにjest.mocked()にモックを渡します。その戻り値にはMock functionsの型が付与されてています。その戻り値にモックの設定を付与します。下記の例ではfs.promise.readFileをモックして、モックの設定をしています。import { readFile } from 'node:fs/promises'jest." />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <title>TypeScriptでJestを使ってモジュールをモック(mock)する</title>
@@ -84,7 +84,9 @@
     </div></div>
     <main class="main markdown-body">
       <h1 id="TypeScriptでJestを使ってモジュールをモック(mock)する"><a href="#TypeScriptでJestを使ってモジュールをモック(mock)する">TypeScriptでJestを使ってモジュールをモック(mock)する</a></h1>
-<p><a class="Link" href="https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options">jest.mock()</a>でモジュールをモック(mock)すると、モックにJestの<a class="Link" href="https://jestjs.io/docs/mock-function-api">Mock functions</a>の型が付与されていません。
+<p>TypeScriptで<a class="Link" href="https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options">jest.mock()</a>でモジュールをモック(mock)すると、モックには<a class="Link" href="https://jestjs.io/docs/mock-function-api">Mock functions</a>の型が付与されていません。
+だから、Mock functionsを使ってモックの設定をするとエラーになります。
+これを解決するには、
 下記のように<a class="Link" href="https://jestjs.io/docs/mock-function-api/#jestmockedsource-options">jest.mocked()</a>にモックを渡します。
 その戻り値にはMock functionsの型が付与されてています。
 その戻り値にモックの設定を付与します。</p>
