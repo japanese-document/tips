@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Sep 2023 07:28:41 GMT</pubDate>
-    <lastBuildDate>Sun, 10 Sep 2023 07:28:41 GMT</lastBuildDate>
+    <pubDate>Sat, 23 Sep 2023 02:04:52 GMT</pubDate>
+    <lastBuildDate>Sat, 23 Sep 2023 02:04:52 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>objectとnullのUnion型のプロパティの型からnullを削除する</title>
+    <pubDate>Sat, 23 Sep 2023 02:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/typescript-union-property.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-union-property.html</guid>
+  </item>
   <item>
     <title>TypeScriptでJestを使ってモジュールをモック(mock)する</title>
     <pubDate>Sun, 10 Sep 2023 07:20:00 GMT</pubDate>
