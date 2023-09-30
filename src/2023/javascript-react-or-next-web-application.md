@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-07-05 00:00" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-09-30 00:00" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -27,7 +27,10 @@ Slack、メッセージの配信にはElixirを使っている。
 Open Source JIRA、サーバーサイドはDjango。
 
 * [Bluesky Social App](https://github.com/bluesky-social/social-app)  
-BlueskyのWebクライアント
+BlueskyのWebクライアント。ステート管理はMobx。
 
 * [Owncast](https://github.com/owncast/owncast)  
 ライブ配信、サーバーサイドはGo。
+
+* [Focalboard](https://github.com/mattermost/focalboard)  
+Trello、Notion、Asanaのようなプロジェクトマネジメントツール。ステート管理はRedux、サーバーサイドはGo。
