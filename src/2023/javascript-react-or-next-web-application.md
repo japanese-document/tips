@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-09-30 00:00" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-10-01 14:30" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -24,7 +24,7 @@ Lens Protocolに基づいたソーシャルメディアアプリケーション
 Slack、メッセージの配信にはElixirを使っている。
 
 * [Plane](https://github.com/makeplane/plane)  
-Open Source JIRA、サーバーサイドはDjango。
+Open Source JIRA。ステート管理はMobx。サーバーサイドはDjango。
 
 * [Bluesky Social App](https://github.com/bluesky-social/social-app)  
 BlueskyのWebクライアント。ステート管理はMobx。
