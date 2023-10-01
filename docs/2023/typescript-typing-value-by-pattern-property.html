@@ -12,6 +12,7 @@
     <meta name="description" content="TypeScriptでオブジェクトのプロパティの値の型をプロパティ名のパターン毎に定義するには、下記のように、Template Literal Typesを使ってプロパティ名の型を定義します。そして、それをオブジェクトの型定義で使用します。type NumberProperty = `number${string}`type StringProperty = `string${string}`interface Foo {  [bar: NumberProperty]: number,  [baz: StringProperty]: string,}const foo: Foo = {  nu" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
+    <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
     <title>プロパティの値の型をプロパティ名のパターン毎に定義する方法</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
