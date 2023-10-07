@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-08-27 0:20" }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-10-07 10:30" }
 ---
 # ts-nodeでESModulesを使う方法
 
@@ -98,5 +98,28 @@ module.exports = {
       },
     ],
   },
+}
+```
+
+## VSCode
+
+VSCodeでdebugするには`.vscode/launch.json`の[runtimeExecutable](https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_launch-configuration-attributes)に`${workspaceFolder}/node_modules/.bin/ts-node`をセットします。
+
+### .vscode/launch.jsonの例
+
+```json
+{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "ts-node",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ts-node",
+            "args": [
+                "${workspaceFolder}/scripts/index.ts"
+            ]
+        }
+    ]
 }
 ```
