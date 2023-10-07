@@ -172,6 +172,24 @@
   },
 }
 </code></pre>
+<h2 id="VSCode"><a href="#VSCode">VSCode</a></h2>
+<p>VSCodeでdebugするには<code>.vscode/launch.json</code>の<a class="Link" href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_launch-configuration-attributes">runtimeExecutable</a>に<code>${workspaceFolder}/node_modules/.bin/ts-node</code>をセットします。</p>
+<h3 id=".vscode_launch.jsonの例"><a href="#.vscode_launch.jsonの例">.vscode/launch.jsonの例</a></h3>
+<pre><code class="language-json">{
+    "version": "2.0.0",
+    "configurations": [
+        {
+            "name": "ts-node",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ts-node",
+            "args": [
+                "${workspaceFolder}/scripts/index.ts"
+            ]
+        }
+    ]
+}
+</code></pre>
 
     </main>
     <div class="right-side"><div class="header-list"><p class="h1"><a href="#ts-nodeでESModulesを使う方法">ts-nodeでESModulesを使う方法</a></p>
@@ -179,7 +197,9 @@
 <p class="h3"><a href="#tsconfig.jsonの例">tsconfig.jsonの例</a></p>
 <p class="h2"><a href="#ESLint">ESLint</a></p>
 <p class="h2"><a href="#Jest">Jest</a></p>
-<p class="h3"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></p></div></div>
+<p class="h3"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></p>
+<p class="h2"><a href="#VSCode">VSCode</a></p>
+<p class="h3"><a href="#.vscode_launch.jsonの例">.vscode/launch.jsonの例</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
