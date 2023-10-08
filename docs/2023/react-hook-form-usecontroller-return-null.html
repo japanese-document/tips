@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2022/aws-cli-config.html" />
-    <meta property="og:title" content="aws-cliの設定ファイルの例" />
-    <meta property="og:description" content="~/.aws/credentials[foo]aws_access_key_id = ...aws_secret_access_key = ...~/.aws/config[profile bar]region = ap-northeast-1output = textsource_profile = foomfa_serial = arn:aws:iam::...role_arn = arn:aws:iam::..." />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/react-hook-form-usecontroller-return-null.html" />
+    <meta property="og:title" content="React Hook FormのuseControllerがnullを返す時の対処法" />
+    <meta property="og:description" content="React Hook FormのuseControllerがnullを返す場合、useControllerを実行しているコンポーネントをFormProviderコンポーネントの子コンポーネントにする必要があります。詳しくはFormProviderを見てください。useWatchを実行するコンポーネントがFormProviderコンポーネントの子コンポーネントでない場合、controlを渡す必要があります。" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="~/.aws/credentials[foo]aws_access_key_id = ...aws_secret_access_key = ...~/.aws/config[profile bar]region = ap-northeast-1output = textsource_profile = foomfa_serial = arn:aws:iam::...role_arn = arn:aws:iam::..." />
+    <meta name="description" content="React Hook FormのuseControllerがnullを返す場合、useControllerを実行しているコンポーネントをFormProviderコンポーネントの子コンポーネントにする必要があります。詳しくはFormProviderを見てください。useWatchを実行するコンポーネントがFormProviderコンポーネントの子コンポーネントでない場合、controlを渡す必要があります。" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>aws-cliの設定ファイルの例</title>
+    <title>React Hook FormのuseControllerがnullを返す時の対処法</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -86,23 +86,15 @@
       </details>
     </div></div>
     <main class="main markdown-body">
-      <h1 id="aws-cliの設定ファイルの例"><a href="#aws-cliの設定ファイルの例">aws-cliの設定ファイルの例</a></h1>
-<p><code>~/.aws/credentials</code></p>
-<pre><code>[foo]
-aws_access_key_id = ...
-aws_secret_access_key = ...
-</code></pre>
-<p><code>~/.aws/config</code></p>
-<pre><code>[profile bar]
-region = ap-northeast-1
-output = text
-source_profile = foo
-mfa_serial = arn:aws:iam::...
-role_arn = arn:aws:iam::...
-</code></pre>
+      <h1 id="React_Hook_FormのuseControllerがnullを返す時の対処法"><a href="#React_Hook_FormのuseControllerがnullを返す時の対処法">React Hook FormのuseControllerがnullを返す時の対処法</a></h1>
+<p><a class="Link" href="https://www.react-hook-form.com/">React Hook Form</a>の<a class="Link" href="https://www.react-hook-form.com/api/usecontroller/">useController</a>が<code>null</code>を返す場合、
+useControllerを実行しているコンポーネントをFormProviderコンポーネントの子コンポーネントにする必要があります。
+詳しくは<a class="Link" href="https://www.react-hook-form.com/api/formprovider/">FormProvider</a>を見てください。
+<a class="Link" href="https://www.react-hook-form.com/api/usewatch/">useWatch</a>を実行するコンポーネントがFormProviderコンポーネントの子コンポーネントでない場合、
+<a class="Link" href="https://www.react-hook-form.com/api/useform/control/">control</a>を渡す必要があります。</p>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#aws-cliの設定ファイルの例">aws-cliの設定ファイルの例</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#React_Hook_FormのuseControllerがnullを返す時の対処法">React Hook FormのuseControllerがnullを返す時の対処法</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
