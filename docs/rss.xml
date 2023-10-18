@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Oct 2023 13:54:17 GMT</pubDate>
-    <lastBuildDate>Mon, 16 Oct 2023 13:54:17 GMT</lastBuildDate>
+    <pubDate>Wed, 18 Oct 2023 13:23:49 GMT</pubDate>
+    <lastBuildDate>Wed, 18 Oct 2023 13:23:49 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Reactで親コンポーネントで子コンポーネントを変更する</title>
+    <pubDate>Wed, 18 Oct 2023 13:30:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/react-parent-change.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-parent-change.html</guid>
+  </item>
   <item>
     <title>Type AnnotationsとSatisfies Operatorの違い</title>
     <pubDate>Mon, 16 Oct 2023 13:00:00 GMT</pubDate>
