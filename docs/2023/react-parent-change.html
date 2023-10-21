@@ -113,8 +113,8 @@ root.render(&lt;Parent word="1"&gt;a&lt;p&gt;b&lt;/p&gt;c&lt;/Parent&gt;);
 // b2
 // c1
 </code></pre>
-<h2 id="子コンポーネント内の要素を変更する"><a href="#子コンポーネント内の要素を変更する">子コンポーネント内の要素を変更する</a></h2>
-<p>下記のように<a class="Link" href="https://react.dev/reference/react/forwardRef">forwardRef()</a>を使って、子コンポーネント内の要素にアクセスします。</p>
+<h2 id="子コンポーネント内の要素を参照する"><a href="#子コンポーネント内の要素を参照する">子コンポーネント内の要素を参照する</a></h2>
+<p>下記のように<a class="Link" href="https://react.dev/reference/react/forwardRef">forwardRef()</a>を使って、子コンポーネント内の要素を参照します。</p>
 <pre><code class="language-jsx">import { forwardRef, useRef, useEffect } from 'react'
 
 function _Child(_, ref) {
@@ -124,7 +124,7 @@ function _Child(_, ref) {
 const Child = forwardRef(_Child)
 
 function Parent() {
-  const ref = useRef()
+  const ref = useRef(null)
   
   useEffect(() =&gt; {
     setTimeout(() =&gt; {
@@ -134,11 +134,44 @@ function Parent() {
   return &lt;Child ref={ref} /&gt;
 }
 </code></pre>
+<h2 id="子コンポーネント内で定義された関数を実行する"><a href="#子コンポーネント内で定義された関数を実行する">子コンポーネント内で定義された関数を実行する</a></h2>
+<p>下記のように<a class="Link" href="https://react.dev/reference/react/useImperativeHandle">useImperativeHandle()</a>を使って、子コンポーネント内で定義された関数を実行します。</p>
+<pre><code class="language-jsx">import { forwardRef, useRef, useEffect, useImperativeHandle } from 'react'
+
+function _Child(_, ref) {
+  const _ref = useRef(null)
+  
+  useImperativeHandle(ref, () =&gt; {
+    return {
+      changeText() {
+        _ref.current.textContent = 'bar'
+      },
+    };
+  }, []);
+
+  return &lt;p ref={_ref}&gt;foo&lt;/p&gt;
+}
+
+const Child = forwardRef(_Child)
+
+function Parent() {
+  const ref = useRef(null)
+  
+  useEffect(() =&gt; {
+    setTimeout(() =&gt; {
+      ref.current.changeText()
+    }, 1000)
+  }, [])
+  
+  return &lt;Child ref={ref} /&gt;
+}
+</code></pre>
 
     </main>
     <div class="right-side"><div class="header-list"><p class="h1"><a href="#Reactで親コンポーネントで子コンポーネントを変更する">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
 <p class="h2"><a href="#VNodeを変更する">VNodeを変更する</a></p>
-<p class="h2"><a href="#子コンポーネント内の要素を変更する">子コンポーネント内の要素を変更する</a></p></div></div>
+<p class="h2"><a href="#子コンポーネント内の要素を参照する">子コンポーネント内の要素を参照する</a></p>
+<p class="h2"><a href="#子コンポーネント内で定義された関数を実行する">子コンポーネント内で定義された関数を実行する</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
