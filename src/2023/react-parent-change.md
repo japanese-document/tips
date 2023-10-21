@@ -1,4 +1,4 @@
-{ "header": {"name": "React", "order": 8}, "order": 3, "date": "2023-10-21 14:30"  }
+{ "header": {"name": "React", "order": 8}, "order": 3, "date": "2023-10-21 21:00"  }
 ---
 # Reactで親コンポーネントで子コンポーネントを変更する
 
@@ -30,9 +30,9 @@ root.render(<Parent word="1">a<p>b</p>c</Parent>);
 // c1
 ```
 
-## 子コンポーネント内の要素を変更する
+## 子コンポーネント内の要素を参照する
 
-下記のように[forwardRef()](https://react.dev/reference/react/forwardRef)を使って、子コンポーネント内の要素にアクセスします。
+下記のように[forwardRef()](https://react.dev/reference/react/forwardRef)を使って、子コンポーネント内の要素を参照します。
 
 ```jsx
 import { forwardRef, useRef, useEffect } from 'react'
@@ -44,11 +44,47 @@ function _Child(_, ref) {
 const Child = forwardRef(_Child)
 
 function Parent() {
-  const ref = useRef()
+  const ref = useRef(null)
   
   useEffect(() => {
     setTimeout(() => {
       ref.current.textContent = 'bar'}, 1000)
+  }, [])
+  
+  return <Child ref={ref} />
+}
+```
+
+## 子コンポーネント内で定義された関数を実行する
+
+下記のように[useImperativeHandle()](https://react.dev/reference/react/useImperativeHandle)を使って、子コンポーネント内で定義された関数を実行します。
+
+```jsx
+import { forwardRef, useRef, useEffect, useImperativeHandle } from 'react'
+
+function _Child(_, ref) {
+  const _ref = useRef(null)
+  
+  useImperativeHandle(ref, () => {
+    return {
+      changeText() {
+        _ref.current.textContent = 'bar'
+      },
+    };
+  }, []);
+
+  return <p ref={_ref}>foo</p>
+}
+
+const Child = forwardRef(_Child)
+
+function Parent() {
+  const ref = useRef(null)
+  
+  useEffect(() => {
+    setTimeout(() => {
+      ref.current.changeText()
+    }, 1000)
   }, [])
   
   return <Child ref={ref} />
