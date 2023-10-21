@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/react-parent-change.html" />
     <meta property="og:title" content="Reactで親コンポーネントで子コンポーネントを変更する" />
-    <meta property="og:description" content="Reactで親コンポーネントで子コンポーネントを変更するには、下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  const changedCompone" />
+    <meta property="og:description" content="Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。VNodeを変更する下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  cons" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="Reactで親コンポーネントで子コンポーネントを変更するには、下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  const changedCompone" />
+    <meta name="description" content="Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。VNodeを変更する下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  cons" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -90,8 +90,9 @@
     </div></div>
     <main class="main markdown-body">
       <h1 id="Reactで親コンポーネントで子コンポーネントを変更する"><a href="#Reactで親コンポーネントで子コンポーネントを変更する">Reactで親コンポーネントで子コンポーネントを変更する</a></h1>
-<p>Reactで親コンポーネントで子コンポーネントを変更するには、
-下記のように<a class="Link" href="https://react.dev/reference/react/Children#children-toarray">Children.toArray()</a>を使って、<code>children</code>をVNodeの配列に変換します。
+<p>Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。</p>
+<h2 id="VNodeを変更する"><a href="#VNodeを変更する">VNodeを変更する</a></h2>
+<p>下記のように<a class="Link" href="https://react.dev/reference/react/Children#children-toarray">Children.toArray()</a>を使って、<code>children</code>をVNodeの配列に変換します。
 <a class="Link" href="https://react.dev/reference/react/isValidElement#isvalidelement">isValidElement()</a>でReact elementかどうかを判別します。
 <a class="Link" href="https://react.dev/reference/react/cloneElement#cloneelement">cloneElement()</a>を使ってReact elementを変更します。</p>
 <pre><code class="language-jsx">const root = createRoot(document.getElementById('app'));
@@ -112,9 +113,32 @@ root.render(&lt;Parent word="1"&gt;a&lt;p&gt;b&lt;/p&gt;c&lt;/Parent&gt;);
 // b2
 // c1
 </code></pre>
+<h2 id="子コンポーネント内の要素を変更する"><a href="#子コンポーネント内の要素を変更する">子コンポーネント内の要素を変更する</a></h2>
+<p>下記のように<a class="Link" href="https://react.dev/reference/react/forwardRef">forwardRef()</a>を使って、子コンポーネント内の要素にアクセスします。</p>
+<pre><code class="language-jsx">import { forwardRef, useRef, useEffect } from 'react'
+
+function _Child(_, ref) {
+  return &lt;p ref={ref}&gt;foo&lt;/p&gt;
+}
+
+const Child = forwardRef(_Child)
+
+function Parent() {
+  const ref = useRef()
+  
+  useEffect(() =&gt; {
+    setTimeout(() =&gt; {
+      ref.current.textContent = 'bar'}, 1000)
+  }, [])
+  
+  return &lt;Child ref={ref} /&gt;
+}
+</code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Reactで親コンポーネントで子コンポーネントを変更する">Reactで親コンポーネントで子コンポーネントを変更する</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Reactで親コンポーネントで子コンポーネントを変更する">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
+<p class="h2"><a href="#VNodeを変更する">VNodeを変更する</a></p>
+<p class="h2"><a href="#子コンポーネント内の要素を変更する">子コンポーネント内の要素を変更する</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
