@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2022/git-alias.html" />
-    <meta property="og:title" content="Gitでaliasを設定する" />
-    <meta property="og:description" content=".gitconfigで[alias]の下に記述します。[alias]    l = log --onelinegit lはgit log --onelineになります。" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-integer-range-typing.html" />
+    <meta property="og:title" content="TypeScriptで数値の範囲を指定する型を定義する" />
+    <meta property="og:description" content="TypeScriptで数値(正の整数のみ)の範囲を指定するには、type-festのIntRangeを使います。import type { IntRange } from 'type-fest'const foo: IntRange&lt;0, 101&gt; = 100const bar: IntRange&lt;0, 101, 10&gt; = 30" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content=".gitconfigで[alias]の下に記述します。[alias]    l = log --onelinegit lはgit log --onelineになります。" />
+    <meta name="description" content="TypeScriptで数値(正の整数のみ)の範囲を指定するには、type-festのIntRangeを使います。import type { IntRange } from 'type-fest'const foo: IntRange&lt;0, 101&gt; = 100const bar: IntRange&lt;0, 101, 10&gt; = 30" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>Gitでaliasを設定する</title>
+    <title>TypeScriptで数値の範囲を指定する型を定義する</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -89,15 +89,17 @@
       </details>
     </div></div>
     <main class="main markdown-body">
-      <h1 id="Gitでaliasを設定する"><a href="#Gitでaliasを設定する">Gitでaliasを設定する</a></h1>
-<p><code>.gitconfig</code>で<code>[alias]</code>の下に記述します。</p>
-<pre><code>[alias]
-    l = log --oneline
+      <h1 id="TypeScriptで数値の範囲を指定する型を定義する"><a href="#TypeScriptで数値の範囲を指定する型を定義する">TypeScriptで数値の範囲を指定する型を定義する</a></h1>
+<p>TypeScriptで数値(正の整数のみ)の範囲を指定するには、<a class="Link" href="https://github.com/sindresorhus/type-fest">type-fest</a>の<code>IntRange</code>を使います。</p>
+<pre><code class="language-ts">import type { IntRange } from 'type-fest'
+
+const foo: IntRange&lt;0, 101&gt; = 100
+
+const bar: IntRange&lt;0, 101, 10&gt; = 30
 </code></pre>
-<p><code>git l</code>は<code>git log --oneline</code>になります。</p>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Gitでaliasを設定する">Gitでaliasを設定する</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#TypeScriptで数値の範囲を指定する型を定義する">TypeScriptで数値の範囲を指定する型を定義する</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
