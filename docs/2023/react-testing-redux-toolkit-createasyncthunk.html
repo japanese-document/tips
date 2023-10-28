@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html" />
-    <meta property="og:title" content="Redux ToolkitのcreateAsyncThunkで生成されたAsync Actionのテスト" />
+    <meta property="og:title" content="createAsyncThunk()で生成されたAsync Actionのテスト" />
     <meta property="og:description" content="Redux ToolkitのcreateAsyncThunk()で生成されたAsync Actionのテストのやり方の例を示します。import { configureStore , createReducer, createAsyncThunk } from '@reduxjs/toolkit'interface AsyncThunkConfig {  state: RootState}export const asyncIncrement = createAsyncThunk('ASYNC_INCREMENT', (_, { " />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
@@ -13,7 +13,7 @@
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>Redux ToolkitのcreateAsyncThunkで生成されたAsync Actionのテスト</title>
+    <title>createAsyncThunk()で生成されたAsync Actionのテスト</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -86,11 +86,11 @@
         <p><a href="https://japanese-document.github.io/tips/2023/react-mui-typography-no-new-line.html">Material UI(MUI)のTypographyコンポーネントを改行させない方法</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/react-hook-form-useformcontext-return-null.html">React Hook FormのuseFormContextがnullを返す時の対処法</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/react-parent-change.html">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
-        <p><a href="https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html">Redux ToolkitのcreateAsyncThunkで生成されたAsync Actionのテスト</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html">createAsyncThunk()で生成されたAsync Actionのテスト</a></p>
       </details>
     </div></div>
     <main class="main markdown-body">
-      <h1 id="Redux_ToolkitのcreateAsyncThunkで生成されたAsync_Actionのテスト"><a href="#Redux_ToolkitのcreateAsyncThunkで生成されたAsync_Actionのテスト">Redux ToolkitのcreateAsyncThunkで生成されたAsync Actionのテスト</a></h1>
+      <h1 id="createAsyncThunk()で生成されたAsync_Actionのテスト"><a href="#createAsyncThunk()で生成されたAsync_Actionのテスト">createAsyncThunk()で生成されたAsync Actionのテスト</a></h1>
 <p>Redux Toolkitの<a class="Link" href="https://redux-toolkit.js.org/api/createAsyncThunk">createAsyncThunk()</a>で生成されたAsync Actionのテストのやり方の例を示します。</p>
 <pre><code class="language-ts">import { configureStore , createReducer, createAsyncThunk } from '@reduxjs/toolkit'
 
@@ -155,7 +155,7 @@ describe('asyncIncrement', () =&gt; {
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Redux_ToolkitのcreateAsyncThunkで生成されたAsync_Actionのテスト">Redux ToolkitのcreateAsyncThunkで生成されたAsync Actionのテスト</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#createAsyncThunk()で生成されたAsync_Actionのテスト">createAsyncThunk()で生成されたAsync Actionのテスト</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
