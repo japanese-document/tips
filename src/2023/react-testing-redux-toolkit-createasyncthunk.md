@@ -1,6 +1,6 @@
 { "header": {"name": "React", "order": 8}, "order": 4, "date": "2023-10-28 18:30"  }
 ---
-# Redux ToolkitのcreateAsyncThunkで生成されたAsync Actionのテスト
+# createAsyncThunk()で生成されたAsync Actionのテスト
 
 Redux Toolkitの[createAsyncThunk()](https://redux-toolkit.js.org/api/createAsyncThunk)で生成されたAsync Actionのテストのやり方の例を示します。
 

@@ -4,12 +4,12 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Oct 2023 09:44:12 GMT</pubDate>
-    <lastBuildDate>Sat, 28 Oct 2023 09:44:12 GMT</lastBuildDate>
+    <pubDate>Sat, 28 Oct 2023 09:48:40 GMT</pubDate>
+    <lastBuildDate>Sat, 28 Oct 2023 09:48:40 GMT</lastBuildDate>
   </channel>
   
   <item>
-    <title>Redux ToolkitのcreateAsyncThunkで生成されたAsync Actionのテスト</title>
+    <title>createAsyncThunk()で生成されたAsync Actionのテスト</title>
     <pubDate>Sat, 28 Oct 2023 09:30:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html</guid>
