@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Oct 2023 09:48:40 GMT</pubDate>
-    <lastBuildDate>Sat, 28 Oct 2023 09:48:40 GMT</lastBuildDate>
+    <pubDate>Mon, 30 Oct 2023 11:22:03 GMT</pubDate>
+    <lastBuildDate>Mon, 30 Oct 2023 11:22:03 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>TypeScriptで数値の範囲を指定する型を定義する</title>
+    <pubDate>Mon, 30 Oct 2023 11:30:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/typescript-integer-range-typing.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-integer-range-typing.html</guid>
+  </item>
   <item>
     <title>createAsyncThunk()で生成されたAsync Actionのテスト</title>
     <pubDate>Sat, 28 Oct 2023 09:30:00 GMT</pubDate>
@@ -19,12 +25,6 @@
     <pubDate>Sat, 21 Oct 2023 12:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/react-parent-change.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-parent-change.html</guid>
-  </item>
-  <item>
-    <title>TypeScriptで数値の範囲を指定する型を定義する</title>
-    <pubDate>Sat, 21 Oct 2023 01:30:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/typescript-integer-range-typing.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-integer-range-typing.html</guid>
   </item>
   <item>
     <title>Type AnnotationsとSatisfies Operatorの違い</title>

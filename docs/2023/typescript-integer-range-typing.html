@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-integer-range-typing.html" />
     <meta property="og:title" content="TypeScriptで数値の範囲を指定する型を定義する" />
-    <meta property="og:description" content="TypeScriptで数値(正の整数のみ)の範囲を指定するには、type-festのIntRangeを使います。import type { IntRange } from 'type-fest'const foo: IntRange&lt;0, 101&gt; = 100const bar: IntRange&lt;0, 101, 10&gt; = 30" />
+    <meta property="og:description" content="TypeScriptで数値(0以上の整数のみ)の範囲を指定するには、type-festのIntRangeを使います。import type { IntRange } from 'type-fest'const foo: IntRange&lt;0, 101&gt; = 0const bar: IntRange&lt;0, 101&gt; = 100const baz: IntRange&lt;0, 101, 10&gt; = 30" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="TypeScriptで数値(正の整数のみ)の範囲を指定するには、type-festのIntRangeを使います。import type { IntRange } from 'type-fest'const foo: IntRange&lt;0, 101&gt; = 100const bar: IntRange&lt;0, 101, 10&gt; = 30" />
+    <meta name="description" content="TypeScriptで数値(0以上の整数のみ)の範囲を指定するには、type-festのIntRangeを使います。import type { IntRange } from 'type-fest'const foo: IntRange&lt;0, 101&gt; = 0const bar: IntRange&lt;0, 101&gt; = 100const baz: IntRange&lt;0, 101, 10&gt; = 30" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -91,12 +91,14 @@
     </div></div>
     <main class="main markdown-body">
       <h1 id="TypeScriptで数値の範囲を指定する型を定義する"><a href="#TypeScriptで数値の範囲を指定する型を定義する">TypeScriptで数値の範囲を指定する型を定義する</a></h1>
-<p>TypeScriptで数値(正の整数のみ)の範囲を指定するには、<a class="Link" href="https://github.com/sindresorhus/type-fest">type-fest</a>の<code>IntRange</code>を使います。</p>
+<p>TypeScriptで数値(0以上の整数のみ)の範囲を指定するには、<a class="Link" href="https://github.com/sindresorhus/type-fest">type-fest</a>の<code>IntRange</code>を使います。</p>
 <pre><code class="language-ts">import type { IntRange } from 'type-fest'
 
-const foo: IntRange&lt;0, 101&gt; = 100
+const foo: IntRange&lt;0, 101&gt; = 0
 
-const bar: IntRange&lt;0, 101, 10&gt; = 30
+const bar: IntRange&lt;0, 101&gt; = 100
+
+const baz: IntRange&lt;0, 101, 10&gt; = 30
 </code></pre>
 
     </main>
