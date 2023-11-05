@@ -1,6 +1,8 @@
-{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-10-07 10:30" }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-11-05 16:30" }
 ---
 # ts-nodeでESModulesを使う方法
+
+NodeJSのバージョンが20で正常に動作しない場合はバージョン18を使う。
 
 ## 設定
 
