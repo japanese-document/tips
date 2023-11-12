@@ -157,14 +157,33 @@
 <p><a class="Link" href="https://typescript-eslint.io/">typescript-eslint</a>を使います。設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>.eslintrc.cjs</code>)
 これをしない場合、<code>Error [ERR_REQUIRE_ESM]</code>が発生します。</p>
 <h2 id="Jest"><a href="#Jest">Jest</a></h2>
-<p><a class="Link" href="https://kulshekhar.github.io/ts-jest/">ts-jest</a>を使います。
-設定ファイルは<a class="Link" href="https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration">これ</a>を参考にします。
-設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
-<h3 id="jest.config.cjsの例"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></h3>
+<p><a class="Link" href="https://github.com/swc-project/jest">@swc/jest</a>、もしくは<a class="Link" href="https://kulshekhar.github.io/ts-jest/">ts-jest</a>を使います。</p>
+<h3 id="_swc_jest"><a href="#_swc_jest">@swc/jest</a></h3>
+<p>設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
+<h4 id="jest.config.cjsの例"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></h4>
 <pre><code class="language-js">module.exports = {
   roots: ['&lt;rootDir&gt;/scripts'],
   testMatch: ['**/*.test.ts'],
-  extensionsToTreatAsEsm: ['.ts'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  transform: {
+    '^.+\\.ts$': [
+      '@swc/jest',
+    ],
+  },
+  resetMocks: true,
+}
+</code></pre>
+<h3 id="ts-jest"><a href="#ts-jest">ts-jest</a></h3>
+<p>設定ファイルは<a class="Link" href="https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration">これ</a>を参考にします。
+設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
+<h4 id="jest.config.cjsの例"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></h4>
+<pre><code class="language-js">module.exports = {
+  roots: ['&lt;rootDir&gt;/scripts'],
+  testMatch: ['**/*.test.ts'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },
@@ -203,7 +222,10 @@
 <p class="h3"><a href="#tsconfig.jsonの例">tsconfig.jsonの例</a></p>
 <p class="h2"><a href="#ESLint">ESLint</a></p>
 <p class="h2"><a href="#Jest">Jest</a></p>
-<p class="h3"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></p>
+<p class="h3"><a href="#_swc_jest">@swc/jest</a></p>
+<p class="h4"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></p>
+<p class="h3"><a href="#ts-jest">ts-jest</a></p>
+<p class="h4"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></p>
 <p class="h2"><a href="#VSCode">VSCode</a></p>
 <p class="h3"><a href="#.vscode_launch.jsonの例">.vscode/launch.jsonの例</a></p></div></div>
     <footer class="footer markdown-body">
