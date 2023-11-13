@@ -60,13 +60,11 @@
 
 package.jsonの`scripts`を[以下のように](https://jestjs.io/docs/ecmascript-modules)します。
 
-```
+```json
 {
     ...
     "scripts": {
-        ...
         "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-        ...
     },
     ...
 }

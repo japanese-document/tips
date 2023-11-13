@@ -160,12 +160,10 @@
 <h2 id="Jest"><a href="#Jest">Jest</a></h2>
 <p><a class="Link" href="https://github.com/swc-project/jest">@swc/jest</a>、もしくは<a class="Link" href="https://kulshekhar.github.io/ts-jest/">ts-jest</a>を使います。</p>
 <p>package.jsonの<code>scripts</code>を<a class="Link" href="https://jestjs.io/docs/ecmascript-modules">以下のように</a>します。</p>
-<pre><code>{
+<pre><code class="language-json">{
     ...
     "scripts": {
-        ...
         "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-        ...
     },
     ...
 }
