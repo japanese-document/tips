@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-generics-having-property.html" />
-    <meta property="og:title" content="TypeScriptで特定のプロパティを持つジェネリクスを定義する方法" />
-    <meta property="og:description" content="下記のように、ジェネリクスが持つべきプロパティを持つ型を継承します。function foo(v: T) {  console.log(v.bar)}foo({bar: 1})" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-swc-node-esmodules.html" />
+    <meta property="og:title" content="swc-nodeでESModulesを使う方法" />
+    <meta property="og:description" content="@swc/coreと@swc-node/registerをインストールします。設定下記の設定をします。package.jsonに&quot;type&quot;: &quot;module&quot;を加えます。tsconfig.jsonのcompilerOptions.moduleを&quot;NodeNext&quot;にします。importする際にpathに.jsを付けます。(例: import { createTitle } from './utils.js')package.jsonに下記のような処理を実行する設定を追加します。{  ...  &quot;scripts&quot;:" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記のように、ジェネリクスが持つべきプロパティを持つ型を継承します。function foo(v: T) {  console.log(v.bar)}foo({bar: 1})" />
+    <meta name="description" content="@swc/coreと@swc-node/registerをインストールします。設定下記の設定をします。package.jsonに&quot;type&quot;: &quot;module&quot;を加えます。tsconfig.jsonのcompilerOptions.moduleを&quot;NodeNext&quot;にします。importする際にpathに.jsを付けます。(例: import { createTitle } from './utils.js')package.jsonに下記のような処理を実行する設定を追加します。{  ...  &quot;scripts&quot;:" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>TypeScriptで特定のプロパティを持つジェネリクスを定義する方法</title>
+    <title>swc-nodeでESModulesを使う方法</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -91,16 +91,92 @@
       </details>
     </div></div>
     <main class="main markdown-body">
-      <h1 id="TypeScriptで特定のプロパティを持つジェネリクスを定義する方法"><a href="#TypeScriptで特定のプロパティを持つジェネリクスを定義する方法">TypeScriptで特定のプロパティを持つジェネリクスを定義する方法</a></h1>
-<p>下記のように、ジェネリクスが持つべきプロパティを持つ型を継承します。</p>
-<pre><code class="language-ts">function foo&lt;T extends {bar: unknown}&gt;(v: T) {
-  console.log(v.bar)
+      <h1 id="swc-nodeでESModulesを使う方法"><a href="#swc-nodeでESModulesを使う方法">swc-nodeでESModulesを使う方法</a></h1>
+<p>@swc/coreと@swc-node/registerをインストールします。</p>
+<h2 id="設定"><a href="#設定">設定</a></h2>
+<p>下記の設定をします。</p>
+<ul>
+<li><p><code>package.json</code>に<code>"type": "module"</code>を加えます。</p>
+</li>
+<li><p><code>tsconfig.json</code>の<code>compilerOptions.module</code>を<code>"NodeNext"</code>にします。</p>
+</li>
+<li><p>importする際にpathに<code>.js</code>を付けます。
+(例: <code>import { createTitle } from './utils.js'</code>)</p>
+</li>
+<li><p><code>package.json</code>に下記のような処理を実行する設定を追加します。</p>
+</li>
+</ul>
+<pre><code class="language-json">{
+  ...
+  "scripts": {
+    "execute": "node --loader @swc-node/register/esm scripts/index.ts"
+  },
+  ...
 }
-foo({bar: 1})
+</code></pre>
+<h3 id="tsconfig.jsonの例"><a href="#tsconfig.jsonの例">tsconfig.jsonの例</a></h3>
+<pre><code class="language-json">{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "NodeNext",
+      "allowJs": true,
+      "strict": true,
+      "moduleResolution": "NodeNext",
+      "esModuleInterop": true,
+      "baseUrl": "./",
+      "skipLibCheck": true,
+      "typeRoots": ["node_modules/@types"],
+      "sourceMap": false
+    },
+    "include": [
+      "./scripts/**/*"
+    ]
+}
+</code></pre>
+<h2 id="ESLint"><a href="#ESLint">ESLint</a></h2>
+<p><a class="Link" href="https://typescript-eslint.io/">typescript-eslint</a>を使います。設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>.eslintrc.cjs</code>)
+これをしない場合、<code>Error [ERR_REQUIRE_ESM]</code>が発生します。</p>
+<h2 id="Jest"><a href="#Jest">Jest</a></h2>
+<p><a class="Link" href="https://github.com/swc-project/jest">@swc/jest</a>を使います。</p>
+<p>package.jsonの<code>scripts</code>を<a class="Link" href="https://jestjs.io/docs/ecmascript-modules">以下のように</a>します。</p>
+<pre><code>{
+    ...
+    "scripts": {
+        ...
+        "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+        ...
+    },
+    ...
+}
+</code></pre>
+<h3 id="_swc_jest"><a href="#_swc_jest">@swc/jest</a></h3>
+<p>jest、@types/jest、@swc/core、@swc/jestをインストールします。
+設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
+<h4 id="jest.config.cjsの例"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></h4>
+<pre><code class="language-js">module.exports = {
+  roots: ['&lt;rootDir&gt;/scripts'],
+  testMatch: ['**/*.test.ts'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+  transform: {
+    '^.+\\.ts$': [
+      '@swc/jest',
+    ],
+  },
+  resetMocks: true,
+}
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#TypeScriptで特定のプロパティを持つジェネリクスを定義する方法">TypeScriptで特定のプロパティを持つジェネリクスを定義する方法</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#swc-nodeでESModulesを使う方法">swc-nodeでESModulesを使う方法</a></p>
+<p class="h2"><a href="#設定">設定</a></p>
+<p class="h3"><a href="#tsconfig.jsonの例">tsconfig.jsonの例</a></p>
+<p class="h2"><a href="#ESLint">ESLint</a></p>
+<p class="h2"><a href="#Jest">Jest</a></p>
+<p class="h3"><a href="#_swc_jest">@swc/jest</a></p>
+<p class="h4"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

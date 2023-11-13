@@ -70,6 +70,7 @@
         <p><a href="https://japanese-document.github.io/tips/2023/typescript-union-property.html">objectとnullのUnion型のプロパティの型からnullを削除する</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/typescript-type-annotation-and-satisfies.html">Type AnnotationsとSatisfies Operatorの違い</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/typescript-integer-range-typing.html">TypeScriptで数値の範囲を指定する型を定義する</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2023/typescript-swc-node-esmodules.html">swc-nodeでESModulesを使う方法</a></p>
       </details>
       <details open="">
         <summary>Go</summary>
@@ -158,8 +159,20 @@
 これをしない場合、<code>Error [ERR_REQUIRE_ESM]</code>が発生します。</p>
 <h2 id="Jest"><a href="#Jest">Jest</a></h2>
 <p><a class="Link" href="https://github.com/swc-project/jest">@swc/jest</a>、もしくは<a class="Link" href="https://kulshekhar.github.io/ts-jest/">ts-jest</a>を使います。</p>
+<p>package.jsonの<code>scripts</code>を<a class="Link" href="https://jestjs.io/docs/ecmascript-modules">以下のように</a>します。</p>
+<pre><code>{
+    ...
+    "scripts": {
+        ...
+        "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+        ...
+    },
+    ...
+}
+</code></pre>
 <h3 id="_swc_jest"><a href="#_swc_jest">@swc/jest</a></h3>
-<p>設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
+<p>jest、@types/jest、@swc/core、@swc/jestをインストールします。
+設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
 <h4 id="jest.config.cjsの例"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></h4>
 <pre><code class="language-js">module.exports = {
   roots: ['&lt;rootDir&gt;/scripts'],
@@ -177,7 +190,8 @@
 }
 </code></pre>
 <h3 id="ts-jest"><a href="#ts-jest">ts-jest</a></h3>
-<p>設定ファイルは<a class="Link" href="https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration">これ</a>を参考にします。
+<p>jest、@types/jest、ts-jestをインストールします。
+設定ファイルは<a class="Link" href="https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration">これ</a>を参考にします。
 設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>
 <h4 id="jest.config.cjsの例"><a href="#jest.config.cjsの例">jest.config.cjsの例</a></h4>
 <pre><code class="language-js">module.exports = {

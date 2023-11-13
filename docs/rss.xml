@@ -4,13 +4,19 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Nov 2023 14:26:11 GMT</pubDate>
-    <lastBuildDate>Sun, 12 Nov 2023 14:26:11 GMT</lastBuildDate>
+    <pubDate>Mon, 13 Nov 2023 03:16:55 GMT</pubDate>
+    <lastBuildDate>Mon, 13 Nov 2023 03:16:55 GMT</lastBuildDate>
   </channel>
   
   <item>
+    <title>swc-nodeでESModulesを使う方法</title>
+    <pubDate>Mon, 13 Nov 2023 03:15:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/typescript-swc-node-esmodules.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-swc-node-esmodules.html</guid>
+  </item>
+  <item>
     <title>ts-nodeでESModulesを使う方法</title>
-    <pubDate>Sun, 12 Nov 2023 14:10:00 GMT</pubDate>
+    <pubDate>Mon, 13 Nov 2023 03:15:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html</guid>
   </item>
