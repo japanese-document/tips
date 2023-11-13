@@ -82,13 +82,11 @@ NodeJSのバージョンが20で正常に動作しない場合はバージョン
 
 package.jsonの`scripts`を[以下のように](https://jestjs.io/docs/ecmascript-modules)します。
 
-```
+```json
 {
     ...
     "scripts": {
-        ...
         "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-        ...
     },
     ...
 }
