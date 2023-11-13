@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-11-12 23:10" }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 0, "date": "2023-11-13 12:15" }
 ---
 # ts-nodeでESModulesを使う方法
 
@@ -80,8 +80,23 @@ NodeJSのバージョンが20で正常に動作しない場合はバージョン
 
 [@swc/jest](https://github.com/swc-project/jest)、もしくは[ts-jest](https://kulshekhar.github.io/ts-jest/)を使います。
 
+package.jsonの`scripts`を[以下のように](https://jestjs.io/docs/ecmascript-modules)します。
+
+```
+{
+    ...
+    "scripts": {
+        ...
+        "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+        ...
+    },
+    ...
+}
+```
+
 ### @swc/jest
 
+jest、@types/jest、@swc/core、@swc/jestをインストールします。
 設定ファイルの拡張子を`.cjs`にします。(例: `jest.config.cjs`)
 
 #### jest.config.cjsの例
@@ -105,6 +120,7 @@ module.exports = {
 
 ### ts-jest
 
+jest、@types/jest、ts-jestをインストールします。
 設定ファイルは[これ](https://kulshekhar.github.io/ts-jest/docs/guides/esm-support#manual-configuration)を参考にします。
 設定ファイルの拡張子を`.cjs`にします。(例: `jest.config.cjs`)
 

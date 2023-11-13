@@ -1,3 +1,4 @@
+import { jest } from '@jest/globals'
 import { createTitle, createDescription, getMetaAndMd, createURL, createHash, createIndexItems }  from './utils.js'
 
 describe('createTitle', () => {
@@ -66,7 +67,7 @@ describe('createIndexItems', () => {
     }))
   }
 
-  let spy: jest.SpyInstance
+  let spy: ReturnType<typeof jest.spyOn>
 
   beforeAll(() => {
     spy = jest.spyOn(console, 'log')
