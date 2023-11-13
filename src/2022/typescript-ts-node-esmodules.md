@@ -132,7 +132,6 @@ module.exports = {
       '@swc/jest',
     ],
   },
-  resetMocks: true,
 }
 ```
 
