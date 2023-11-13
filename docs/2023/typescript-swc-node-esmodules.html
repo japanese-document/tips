@@ -147,6 +147,18 @@
     ...
 }
 </code></pre>
+<p>モックとimport処理を<a class="Link" href="https://jestjs.io/docs/ecmascript-modules#module-mocking-in-esm">以下のように</a>変更します。</p>
+<p>変更前</p>
+<pre><code class="language-ts">import { readFile } from 'node:fs/promises'
+jest.mock('node:fs/promises')
+import { createTitle }  from './utils.js'
+</code></pre>
+<p>変更後</p>
+<pre><code class="language-ts">import { jest } from '@jest/globals'
+jest.unstable_mockModule('node:fs/promises', () =&gt; ({ readFile: jest.fn() }))
+const { readFile } = await import ('node:fs/promises')
+const { createTitle } = await import('./utils.js')
+</code></pre>
 <h3 id="_swc_jest"><a href="#_swc_jest">@swc/jest</a></h3>
 <p>jest、@types/jest、@swc/core、@swc/jestをインストールします。
 設定ファイルの拡張子を<code>.cjs</code>にします。(例: <code>jest.config.cjs</code>)</p>

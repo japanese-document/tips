@@ -93,6 +93,25 @@ package.jsonの`scripts`を[以下のように](https://jestjs.io/docs/ecmascrip
 }
 ```
 
+モックとimport処理を[以下のように](https://jestjs.io/docs/ecmascript-modules#module-mocking-in-esm)変更します。
+
+変更前
+
+```ts
+import { readFile } from 'node:fs/promises'
+jest.mock('node:fs/promises')
+import { createTitle }  from './utils.js'
+```
+
+変更後
+
+```ts
+import { jest } from '@jest/globals'
+jest.unstable_mockModule('node:fs/promises', () => ({ readFile: jest.fn() }))
+const { readFile } = await import ('node:fs/promises')
+const { createTitle } = await import('./utils.js')
+```
+
 ### @swc/jest
 
 jest、@types/jest、@swc/core、@swc/jestをインストールします。
