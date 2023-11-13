@@ -3,6 +3,7 @@
 # ts-nodeでESModulesを使う方法
 
 NodeJSのバージョンが20で正常に動作しない場合はバージョン18を使う。
+ts-nodeの代わりに[swc-node](https://japanese-document.github.io/tips/2023/typescript-swc-node-esmodules.html)を使うことができます。
 
 ## 設定
 
