@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-string-replace-second-parameter.html" />
-    <meta property="og:title" content="JavaScriptのString.replace()の第2引数の文字列をエスケープする" />
-    <meta property="og:description" content="下記のようにString.replaceの第2引数に特殊文字列を含む文字列を渡すとターゲットを素の第2引数の文字列に置き換えません。'foo123bar'.replace('123', '$`')// 'foofoobar'下記のように第2引数に文字列を返す関数を渡すことで文字列をエスケープすることができます。'foo123bar'.replace('123', () => '$`')// 'foo$`bar'" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-jest-is-not-defined.html" />
+    <meta property="og:title" content="ReferenceError: jest is not definedの対処法" />
+    <meta property="og:description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'setupFilesでjestをimportする。下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  ." />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記のようにString.replaceの第2引数に特殊文字列を含む文字列を渡すとターゲットを素の第2引数の文字列に置き換えません。'foo123bar'.replace('123', '$`')// 'foofoobar'下記のように第2引数に文字列を返す関数を渡すことで文字列をエスケープすることができます。'foo123bar'.replace('123', () => '$`')// 'foo$`bar'" />
+    <meta name="description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'setupFilesでjestをimportする。下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  ." />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>JavaScriptのString.replace()の第2引数の文字列をエスケープする</title>
+    <title>ReferenceError: jest is not definedの対処法</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -92,18 +92,39 @@
       </details>
     </div></div>
     <main class="main markdown-body">
-      <h1 id="JavaScriptのString.replace()の第2引数の文字列をエスケープする"><a href="#JavaScriptのString.replace()の第2引数の文字列をエスケープする">JavaScriptのString.replace()の第2引数の文字列をエスケープする</a></h1>
-<p>下記のようにString.replaceの第2引数に<a class="Link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_string_as_the_replacement">特殊文字列</a>を含む文字列を渡すとターゲットを素の第2引数の文字列に置き換えません。</p>
-<pre><code class="language-js">'foo123bar'.replace('123', '$`')
-// 'foofoobar'
+      <h1 id="ReferenceError__jest_is_not_definedの対処法"><a href="#ReferenceError__jest_is_not_definedの対処法">ReferenceError: jest is not definedの対処法</a></h1>
+<p>下記２つの方法のうち1つを選択します。</p>
+<ul>
+<li><p>テストのファイルでjestをimportする。</p>
+</li>
+<li><p>setupFilesでjestをimportする。</p>
+</li>
+</ul>
+<h2 id="テストでjestをimportする"><a href="#テストでjestをimportする">テストでjestをimportする</a></h2>
+<p>各テストのファイルで下記のコードを記述します。</p>
+<pre><code class="language-js">import { jest } from '@jest/globals'
 </code></pre>
-<p>下記のように第2引数に文字列を返す関数を渡すことで文字列をエスケープすることができます。</p>
-<pre><code class="language-js">'foo123bar'.replace('123', () =&gt; '$`')
-// 'foo$`bar'
+<h2 id="setupFilesでjestをimportする。"><a href="#setupFilesでjestをimportする。">setupFilesでjestをimportする。</a></h2>
+<p>下記のファイルを作成して、jestの設定ファイルに追加します。</p>
+<p>jestSetup.js</p>
+<pre><code class="language-js">import { jest } from '@jest/globals'
+
+global.jest = jest
+</code></pre>
+<p>jest.config.js</p>
+<pre><code class="language-js">module.exports = {
+  ...
+  setupFiles: [
+    '&lt;rootDir&gt;/jestSetup.js'
+  ],
+  ...
+}
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#JavaScriptのString.replace()の第2引数の文字列をエスケープする">JavaScriptのString.replace()の第2引数の文字列をエスケープする</a></p></div></div>
+    <div class="right-side"><div class="header-list"><p class="h1"><a href="#ReferenceError__jest_is_not_definedの対処法">ReferenceError: jest is not definedの対処法</a></p>
+<p class="h2"><a href="#テストでjestをimportする">テストでjestをimportする</a></p>
+<p class="h2"><a href="#setupFilesでjestをimportする。">setupFilesでjestをimportする。</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

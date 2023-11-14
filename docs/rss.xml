@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Nov 2023 07:20:49 GMT</pubDate>
-    <lastBuildDate>Mon, 13 Nov 2023 07:20:49 GMT</lastBuildDate>
+    <pubDate>Tue, 14 Nov 2023 11:18:17 GMT</pubDate>
+    <lastBuildDate>Tue, 14 Nov 2023 11:18:17 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>ReferenceError: jest is not definedの対処法</title>
+    <pubDate>Tue, 14 Nov 2023 11:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/javascript-jest-is-not-defined.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/javascript-jest-is-not-defined.html</guid>
+  </item>
   <item>
     <title>swc-nodeでESModulesを使う方法</title>
     <pubDate>Mon, 13 Nov 2023 03:15:00 GMT</pubDate>

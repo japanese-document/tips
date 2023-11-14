@@ -49,6 +49,7 @@
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-jest-mockclear-mockreset-mockrestore.html">JestのmockClear、mockReset、mockRestore</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-vue-web-application.html">Vueを使っているオープンソースのWebアプリケーション</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-nodejs-glob.html">NodeJSでパターンにマッチしたパスのリストを取得する方法</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2023/javascript-jest-is-not-defined.html">ReferenceError: jest is not definedの対処法</a></p>
       </details>
       <details open="">
         <summary>Python</summary>
@@ -147,7 +148,7 @@
     ...
 }
 </code></pre>
-<p>モックとimport処理を<a class="Link" href="https://jestjs.io/docs/ecmascript-modules#module-mocking-in-esm">以下のように</a>変更します。</p>
+<p>モックでのimport処理を<a class="Link" href="https://jestjs.io/docs/ecmascript-modules#module-mocking-in-esm">以下のように</a>変更します。</p>
 <p>変更前</p>
 <pre><code class="language-ts">import { readFile } from 'node:fs/promises'
 jest.mock('node:fs/promises')
