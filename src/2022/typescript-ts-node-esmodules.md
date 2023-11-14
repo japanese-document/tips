@@ -93,7 +93,7 @@ package.jsonの`scripts`を[以下のように](https://jestjs.io/docs/ecmascrip
 }
 ```
 
-モックとimport処理を[以下のように](https://jestjs.io/docs/ecmascript-modules#module-mocking-in-esm)変更します。
+モックでのimport処理を[以下のように](https://jestjs.io/docs/ecmascript-modules#module-mocking-in-esm)変更します。
 
 変更前
 
