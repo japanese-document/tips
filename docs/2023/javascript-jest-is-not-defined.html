@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-jest-is-not-defined.html" />
     <meta property="og:title" content="ReferenceError: jest is not definedの対処法" />
-    <meta property="og:description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'setupFilesでjestをimportする。下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  ." />
+    <meta property="og:description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'setupFilesでjestをimportする下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  .." />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'setupFilesでjestをimportする。下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  ." />
+    <meta name="description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'setupFilesでjestをimportする下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  .." />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -50,6 +50,7 @@
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-vue-web-application.html">Vueを使っているオープンソースのWebアプリケーション</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-nodejs-glob.html">NodeJSでパターンにマッチしたパスのリストを取得する方法</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-jest-is-not-defined.html">ReferenceError: jest is not definedの対処法</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2023/javascript-jest-change-process-env.html">Jest用のprocess.envの値を設定する方法</a></p>
       </details>
       <details open="">
         <summary>Python</summary>
@@ -104,7 +105,7 @@
 <p>各テストのファイルで下記のコードを記述します。</p>
 <pre><code class="language-js">import { jest } from '@jest/globals'
 </code></pre>
-<h2 id="setupFilesでjestをimportする。"><a href="#setupFilesでjestをimportする。">setupFilesでjestをimportする。</a></h2>
+<h2 id="setupFilesでjestをimportする"><a href="#setupFilesでjestをimportする">setupFilesでjestをimportする</a></h2>
 <p>下記のファイルを作成して、jestの設定ファイルに追加します。</p>
 <p>jestSetup.js</p>
 <pre><code class="language-js">import { jest } from '@jest/globals'
@@ -124,7 +125,7 @@ global.jest = jest
     </main>
     <div class="right-side"><div class="header-list"><p class="h1"><a href="#ReferenceError__jest_is_not_definedの対処法">ReferenceError: jest is not definedの対処法</a></p>
 <p class="h2"><a href="#テストでjestをimportする">テストでjestをimportする</a></p>
-<p class="h2"><a href="#setupFilesでjestをimportする。">setupFilesでjestをimportする。</a></p></div></div>
+<p class="h2"><a href="#setupFilesでjestをimportする">setupFilesでjestをimportする</a></p></div></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
