@@ -16,7 +16,7 @@
 import { jest } from '@jest/globals'
 ```
 
-## setupFilesでjestをimportする。
+## setupFilesでjestをimportする
 
 下記のファイルを作成して、jestの設定ファイルに追加します。
 
