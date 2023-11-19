@@ -77,8 +77,8 @@ a {
   text-decoration: none;
 }
 
-:is(h1, h2, h3, h4, h5, h6) a {
-  color: initial;
+table {
+  border-collapse: collapse;
 }
 
 /* index-menu */
@@ -145,6 +145,17 @@ a {
 .markdown-body img {
   display: block;
   margin: auto;
+}
+
+.markdown-body :is(h1, h2, h3, h4, h5, h6) .anchor {
+  float: initial;
+  color: initial;
+  line-height: unset;
+  visibility: hidden;
+}
+
+.markdown-body :is(h1, h2, h3, h4, h5, h6):hover .anchor {
+  visibility: visible;
 }
 
 /* MIT © GitHub */
