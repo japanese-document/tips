@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-jest-mockclear-mockreset-mockrestore.html" />
     <meta property="og:title" content="JestのmockClear、mockReset、mockRestore" />
-    <meta property="og:description" content="各メソッドの効果mockClearはmockに保存されているtestの結果をリセットする。mockResetはmockに保存されているtestの結果とmockの設定をリセットする。mockRestoreはmockResetの効果とjest.spyOn()で変更された処理を元の処理に戻します。test毎に実行する設定設定ファイルにclearMocksを追加すると各testが実行される前にjest.clearAllMocks()が実行されます。 設定ファイルにresetMocksを追加すると各testが実行される前にjest.resetAllMocks()が実行されます。 設定ファイルにresto" />
+    <meta property="og:description" content="#各メソッドの効果mockClearはmockに保存されているtestの結果をリセットする。mockResetはmockに保存されているtestの結果とmockの設定をリセットする。mockRestoreはmockResetの効果とjest.spyOn()で変更された処理を元の処理に戻します。#test毎に実行する設定設定ファイルにclearMocksを追加すると各testが実行される前にjest.clearAllMocks()が実行されます。 設定ファイルにresetMocksを追加すると各testが実行される前にjest.resetAllMocks()が実行されます。 設定ファイルにres" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="各メソッドの効果mockClearはmockに保存されているtestの結果をリセットする。mockResetはmockに保存されているtestの結果とmockの設定をリセットする。mockRestoreはmockResetの効果とjest.spyOn()で変更された処理を元の処理に戻します。test毎に実行する設定設定ファイルにclearMocksを追加すると各testが実行される前にjest.clearAllMocks()が実行されます。 設定ファイルにresetMocksを追加すると各testが実行される前にjest.resetAllMocks()が実行されます。 設定ファイルにresto" />
+    <meta name="description" content="#各メソッドの効果mockClearはmockに保存されているtestの結果をリセットする。mockResetはmockに保存されているtestの結果とmockの設定をリセットする。mockRestoreはmockResetの効果とjest.spyOn()で変更された処理を元の処理に戻します。#test毎に実行する設定設定ファイルにclearMocksを追加すると各testが実行される前にjest.clearAllMocks()が実行されます。 設定ファイルにresetMocksを追加すると各testが実行される前にjest.resetAllMocks()が実行されます。 設定ファイルにres" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -25,7 +25,7 @@
   </head>
   <body class="container">
     <div class="left-side">
-    <div class="index-menu">
+    <nav class="index-menu">
       <details open="">
         <summary>CSS</summary>
         <p><a href="https://japanese-document.github.io/tips/2022/css-has-pseudo-class.html">特定の子要素を持つ要素を指定するCSSセレクタ</a></p>
@@ -91,16 +91,16 @@
         <p><a href="https://japanese-document.github.io/tips/2023/react-parent-change.html">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html">createAsyncThunk()で生成されたAsync Actionのテスト</a></p>
       </details>
-    </div></div>
+    </nav></div>
     <main class="main markdown-body">
-      <h1 id="JestのmockClear、mockReset、mockRestore"><a href="#JestのmockClear、mockReset、mockRestore">JestのmockClear、mockReset、mockRestore</a></h1>
-<h2 id="各メソッドの効果"><a href="#各メソッドの効果">各メソッドの効果</a></h2>
+      <h1 id="JestのmockClear、mockReset、mockRestore"><a class="anchor" href="#JestのmockClear、mockReset、mockRestore">#</a>JestのmockClear、mockReset、mockRestore</h1>
+<h2 id="各メソッドの効果"><a class="anchor" href="#各メソッドの効果">#</a>各メソッドの効果</h2>
 <ul>
 <li><a class="Link" href="https://jestjs.io/docs/mock-function-api#mockfnmockclear">mockClear</a>はmockに保存されているtestの結果をリセットする。</li>
 <li><a class="Link" href="https://jestjs.io/docs/mock-function-api#mockfnmockreset">mockReset</a>はmockに保存されているtestの結果とmockの設定をリセットする。</li>
 <li><a class="Link" href="https://jestjs.io/docs/mock-function-api#mockfnmockrestore">mockRestore</a>はmockResetの効果と<a class="Link" href="https://jestjs.io/docs/jest-object#jestspyonobject-methodname">jest.spyOn()</a>で変更された処理を元の処理に戻します。</li>
 </ul>
-<h2 id="test毎に実行する設定"><a href="#test毎に実行する設定">test毎に実行する設定</a></h2>
+<h2 id="test毎に実行する設定"><a class="anchor" href="#test毎に実行する設定">#</a>test毎に実行する設定</h2>
 <ul>
 <li>設定ファイルに<a class="Link" href="https://jestjs.io/docs/configuration#clearmocks-boolean">clearMocks</a>を追加すると各testが実行される前に<a class="Link" href="https://jestjs.io/docs/jest-object#jestclearallmocks">jest.clearAllMocks()</a>が実行されます。 </li>
 <li>設定ファイルに<a class="Link" href="https://jestjs.io/docs/configuration#resetmocks-boolean">resetMocks</a>を追加すると各testが実行される前に<a class="Link" href="https://jestjs.io/docs/jest-object#jestresetallmocks">jest.resetAllMocks()</a>が実行されます。 </li>
@@ -108,9 +108,9 @@
 </ul>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#JestのmockClear、mockReset、mockRestore">JestのmockClear、mockReset、mockRestore</a></p>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#JestのmockClear、mockReset、mockRestore">JestのmockClear、mockReset、mockRestore</a></p>
 <p class="h2"><a href="#各メソッドの効果">各メソッドの効果</a></p>
-<p class="h2"><a href="#test毎に実行する設定">test毎に実行する設定</a></p></div></div>
+<p class="h2"><a href="#test毎に実行する設定">test毎に実行する設定</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

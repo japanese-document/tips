@@ -1,13 +1,11 @@
-import fs from 'node:fs'
+import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { glob } from 'glob'
 import createDOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
-import {
-  BASE_URL, BODY, CSS_PATH, DESCRIPTION, SEPARATOR, TITLE, CSS, URL, INDEX,
-  INDEX_PAGE_DESCRIPTION, INDEX_PAGE_HEADER, INDEX_PAGE_TITLE, SOURCE_DIR, HEADER
-} from './config.js'
+import { URL, CSS, BASE_URL, BODY, CSS_PATH, DESCRIPTION, HEADER, INDEX, INDEX_PAGE_DESCRIPTION,
+  INDEX_PAGE_HEADER, INDEX_PAGE_TITLE, SEPARATOR, SOURCE_DIR, TITLE } from './const.js'
 
 const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window as unknown as Window)
@@ -20,8 +18,8 @@ export function createHash(text: string) {
     .replaceAll(/>/g, '_-')
 }
 
-async function createPageData(markDownFileName: string): Promise<Page> {
-  const content = await fs.promises.readFile(markDownFileName, 'utf8')
+export async function createPageData(markDownFileName: string): Promise<Page> {
+  const content = await readFile(markDownFileName, 'utf8')
   const [meta, md] = getMetaAndMd(content)
   const title = createTitle(md)
   const { name, dir } = path.parse(markDownFileName)
@@ -46,11 +44,19 @@ const renderer = {
   },
   heading(text: string, level: number) {
     const hash = createHash(text)
-    return `<h${level} id="${hash}"><a href="#${hash}">${text}</a></h${level}>\n`
+    return `<h${level} id="${hash}"><a href="#${hash}" class="anchor">#</a>${text}</h${level}>\n`
+  },
+  image(src: string) {
+    const alt = src.split('/').at(-1)
+    return `<img alt="${alt}" src="${src}" loading="lazy">`
   }
 }
 
-marked.use({ renderer })
+marked.use({
+  mangle: false,
+  headerIds: false,
+  renderer
+})
 
 interface Meta {
   header: {
@@ -69,10 +75,7 @@ export interface Page {
 
 interface IndexItem {
   name: string
-  pages: {
-    title: string
-    url: string
-  }[]
+  pages: Pick<Page, 'title' | 'url'>[]
 }
 
 export function createTitle(md: string) {
@@ -86,7 +89,7 @@ export function getMarkDownFileNames(): Promise<string[]> {
   })
 }
 
-export function getMetaAndMd(content: string): [Meta, string] {
+export function getMetaAndMd(content: string): [meta: Meta, md: string] {
   const [meta, md] = content.split(SEPARATOR)
   return [JSON.parse(meta), md.trim()]
 }
@@ -153,31 +156,35 @@ export function createIndexItems(pages: Page[]) {
 
 export function createIndexMenu(items: IndexItem[]) {
   return `
-    <div class="index-menu">${items.reduce((p, item) => `${p}
+    <nav class="index-menu">${items.reduce((p, item) => `${p}
       <details open>
         <summary>${item.name}</summary>${item.pages.reduce((p, page) => `${p}
         <p><a href="${page.url}">${page.title}</a></p>`, '')}
       </details>`, '')}
-    </div>`
+    </nav>`
+}
+
+function isHeader(line: string) {
+  return [2, 3, 4, 5].some((maxCharacter) => line.slice(0, maxCharacter) === `${'#'.repeat(maxCharacter - 1)} `)
 }
 
 export function createHeaderList(md: string) {
   const list = md
     .split('\n')
-    .filter((l) => l.slice(0, 2) === '# ' || l.slice(0, 3) === '## ' || l.slice(0, 4) === '### ' || l.slice(0, 5) === '#### ')
-    .map((l) => {
+    .filter(line => isHeader(line))
+    .map((line) => {
       for (let i = 2; i <= 5; i++ ) {
-        if (l.slice(0, i) === `${'#'.repeat(i -1)} `) {
-          const _header = l.slice(i).trim()
+        if (line.slice(0, i) === `${'#'.repeat(i - 1)} `) {
+          const _header = line.slice(i).trim()
           const header = marked.parse(_header).trim()
           const href = createHash(header)
           const document = new window.DOMParser().parseFromString(header, 'text/html')
-          return `<p class="h${i -1}"><a href="#${href}">${document.body.textContent}</a></p>`
+          return `<p class="h${i - 1}"><a href="#${href}">${document.body.textContent}</a></p>`
         }
       }
     })
     .join('\n')
-  return `<div class="header-list">${list}</div>`
+  return `<nav class="header-list">${list}</nav>`
 }
 
 export function createIndexPage(layout: string, indexItems: IndexItem[]) {

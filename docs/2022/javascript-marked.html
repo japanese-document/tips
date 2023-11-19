@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2022/javascript-marked.html" />
     <meta property="og:title" content="Marked" />
-    <meta property="og:description" content="NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))置き換えるHTML要素を変更するrendererを設定します。import" />
+    <meta property="og:description" content="#NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))#置き換えるHTML要素を変更するrendererを設定します。impo" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))置き換えるHTML要素を変更するrendererを設定します。import" />
+    <meta name="description" content="#NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))#置き換えるHTML要素を変更するrendererを設定します。impo" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -25,7 +25,7 @@
   </head>
   <body class="container">
     <div class="left-side">
-    <div class="index-menu">
+    <nav class="index-menu">
       <details open="">
         <summary>CSS</summary>
         <p><a href="https://japanese-document.github.io/tips/2022/css-has-pseudo-class.html">特定の子要素を持つ要素を指定するCSSセレクタ</a></p>
@@ -91,10 +91,10 @@
         <p><a href="https://japanese-document.github.io/tips/2023/react-parent-change.html">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html">createAsyncThunk()で生成されたAsync Actionのテスト</a></p>
       </details>
-    </div></div>
+    </nav></div>
     <main class="main markdown-body">
-      <h1 id="Marked"><a href="#Marked">Marked</a></h1>
-<h2 id="NodeJSでsanitizeする方法"><a href="#NodeJSでsanitizeする方法">NodeJSでsanitizeする方法</a></h2>
+      <h1 id="Marked"><a class="anchor" href="#Marked">#</a>Marked</h1>
+<h2 id="NodeJSでsanitizeする方法"><a class="anchor" href="#NodeJSでsanitizeする方法">#</a>NodeJSでsanitizeする方法</h2>
 <p><a class="Link" href="https://github.com/cure53/DOMPurify">DOMPurify</a>を使います。</p>
 <pre><code>import { marked } from 'marked'
 import { JSDOM } from 'jsdom'
@@ -104,7 +104,7 @@ const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window)
 const html = DOMPurify.sanitize(marked.parse('# Foo'))
 </code></pre>
-<h2 id="置き換えるHTML要素を変更する"><a href="#置き換えるHTML要素を変更する">置き換えるHTML要素を変更する</a></h2>
+<h2 id="置き換えるHTML要素を変更する"><a class="anchor" href="#置き換えるHTML要素を変更する">#</a>置き換えるHTML要素を変更する</h2>
 <p>rendererを設定します。</p>
 <pre><code>import { marked } from 'marked'
 
@@ -117,9 +117,9 @@ marked.use({ renderer })
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Marked">Marked</a></p>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Marked">Marked</a></p>
 <p class="h2"><a href="#NodeJSでsanitizeする方法">NodeJSでsanitizeする方法</a></p>
-<p class="h2"><a href="#置き換えるHTML要素を変更する">置き換えるHTML要素を変更する</a></p></div></div>
+<p class="h2"><a href="#置き換えるHTML要素を変更する">置き換えるHTML要素を変更する</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

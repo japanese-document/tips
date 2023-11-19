@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-jest-change-process-env.html" />
     <meta property="og:title" content="Jest用のprocess.envの値を設定する方法" />
-    <meta property="og:description" content="Jest用のprocess.envの値を設定するには下記の2つの方法があります。Jest用の.envファイルを指定する。(NodeJS 20.6以上)setupFilesで値をセットする。Jest用の.envファイルを指定するNodeJS 20.6で導入された--env-fileオプションを使用して、Jest用の.envファイルを指定します。/scripts/.env.testFOO=fooBAR=barpackage.jsonを下記のように記述します。{  ...  "scripts": {    "test": "node" />
+    <meta property="og:description" content="Jest用のprocess.envの値を設定するには下記の2つの方法があります。Jest用の.envファイルを指定する。(NodeJS 20.6以上)setupFilesで値をセットする。#Jest用の.envファイルを指定するNodeJS 20.6で導入された--env-fileオプションを使用して、Jest用の.envファイルを指定します。/scripts/.env.testFOO=fooBAR=barpackage.jsonを下記のように記述します。{  ...  "scripts": {    "test": "nod" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="Jest用のprocess.envの値を設定するには下記の2つの方法があります。Jest用の.envファイルを指定する。(NodeJS 20.6以上)setupFilesで値をセットする。Jest用の.envファイルを指定するNodeJS 20.6で導入された--env-fileオプションを使用して、Jest用の.envファイルを指定します。/scripts/.env.testFOO=fooBAR=barpackage.jsonを下記のように記述します。{  ...  "scripts": {    "test": "node" />
+    <meta name="description" content="Jest用のprocess.envの値を設定するには下記の2つの方法があります。Jest用の.envファイルを指定する。(NodeJS 20.6以上)setupFilesで値をセットする。#Jest用の.envファイルを指定するNodeJS 20.6で導入された--env-fileオプションを使用して、Jest用の.envファイルを指定します。/scripts/.env.testFOO=fooBAR=barpackage.jsonを下記のように記述します。{  ...  "scripts": {    "test": "nod" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -25,7 +25,7 @@
   </head>
   <body class="container">
     <div class="left-side">
-    <div class="index-menu">
+    <nav class="index-menu">
       <details open="">
         <summary>CSS</summary>
         <p><a href="https://japanese-document.github.io/tips/2022/css-has-pseudo-class.html">特定の子要素を持つ要素を指定するCSSセレクタ</a></p>
@@ -91,9 +91,9 @@
         <p><a href="https://japanese-document.github.io/tips/2023/react-parent-change.html">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html">createAsyncThunk()で生成されたAsync Actionのテスト</a></p>
       </details>
-    </div></div>
+    </nav></div>
     <main class="main markdown-body">
-      <h1 id="Jest用のprocess.envの値を設定する方法"><a href="#Jest用のprocess.envの値を設定する方法">Jest用のprocess.envの値を設定する方法</a></h1>
+      <h1 id="Jest用のprocess.envの値を設定する方法"><a class="anchor" href="#Jest用のprocess.envの値を設定する方法">#</a>Jest用のprocess.envの値を設定する方法</h1>
 <p>Jest用の<code>process.env</code>の値を設定するには下記の2つの方法があります。</p>
 <ul>
 <li><p>Jest用の<code>.env</code>ファイルを指定する。(NodeJS 20.6以上)</p>
@@ -101,7 +101,7 @@
 <li><p>setupFilesで値をセットする。</p>
 </li>
 </ul>
-<h2 id="Jest用の.envファイルを指定する"><a href="#Jest用の.envファイルを指定する">Jest用の<code>.env</code>ファイルを指定する</a></h2>
+<h2 id="Jest用の.envファイルを指定する"><a class="anchor" href="#Jest用の.envファイルを指定する">#</a>Jest用の<code>.env</code>ファイルを指定する</h2>
 <p><a class="Link" href="https://nodejs.org/en/blog/release/v20.6.0">NodeJS 20.6</a>で導入された<code>--env-file</code>オプションを使用して、
 Jest用の<code>.env</code>ファイルを指定します。</p>
 <p><code>&lt;rootDir&gt;/scripts/.env.test</code></p>
@@ -117,7 +117,7 @@ BAR=bar
   ...
 }
 </code></pre>
-<h2 id="setupFilesで値をセットする"><a href="#setupFilesで値をセットする">setupFilesで値をセットする</a></h2>
+<h2 id="setupFilesで値をセットする"><a class="anchor" href="#setupFilesで値をセットする">#</a>setupFilesで値をセットする</h2>
 <p><a class="Link" href="https://jestjs.io/docs/configuration#setupfiles-array">setupFiles</a>に<code>process.env</code>に値をセットする処理を行うファイルをセットします。</p>
 <p>jestSetup.js</p>
 <pre><code class="language-js">process.env.FOO = 'foo'
@@ -132,9 +132,9 @@ process.env.BAR = 'bar'
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Jest用のprocess.envの値を設定する方法">Jest用のprocess.envの値を設定する方法</a></p>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Jest用のprocess.envの値を設定する方法">Jest用のprocess.envの値を設定する方法</a></p>
 <p class="h2"><a href="#Jest用の.envファイルを指定する">Jest用の.envファイルを指定する</a></p>
-<p class="h2"><a href="#setupFilesで値をセットする">setupFilesで値をセットする</a></p></div></div>
+<p class="h2"><a href="#setupFilesで値をセットする">setupFilesで値をセットする</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

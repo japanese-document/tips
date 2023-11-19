@@ -1,8 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import { INDEX_PAGE_LAYOUT, OUTPUT_DIR, PAGE_LAYOUT, SOURCE_DIR } from './config.js'
 import { createTitle, getMarkDownFileNames, getMetaAndMd, createURL, createPage, createIndexPage,
   createIndexItems, createIndexMenu, createHeaderList, createPages } from './utils.js'
+import { INDEX_PAGE_LAYOUT, OUTPUT_DIR, PAGE_LAYOUT, SOURCE_DIR } from './const.js'
 
 const markDownFileNames = await getMarkDownFileNames()
 
