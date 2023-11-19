@@ -1,5 +1,5 @@
 import fs from 'node:fs'
-import { INDEX_PAGE_DESCRIPTION , BASE_URL , INDEX_PAGE_TITLE , OUTPUT_DIR } from './config.js'
+import { INDEX_PAGE_DESCRIPTION , BASE_URL , INDEX_PAGE_TITLE , OUTPUT_DIR } from './const.js'
 import { createPages, getMarkDownFileNames } from './utils.js'
 
 export class SortedLimitedArray<T> extends Array {

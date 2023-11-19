@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/react-parent-change.html" />
     <meta property="og:title" content="Reactで親コンポーネントで子コンポーネントを変更する" />
-    <meta property="og:description" content="Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。VNodeを変更する下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  cons" />
+    <meta property="og:description" content="Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。#VNodeを変更する下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  con" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。VNodeを変更する下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  cons" />
+    <meta name="description" content="Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。#VNodeを変更する下記のようにChildren.toArray()を使って、childrenをVNodeの配列に変換します。isValidElement()でReact elementかどうかを判別します。cloneElement()を使ってReact elementを変更します。const root = createRoot(document.getElementById('app'));                        function Parent({children, word}) {  con" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -25,7 +25,7 @@
   </head>
   <body class="container">
     <div class="left-side">
-    <div class="index-menu">
+    <nav class="index-menu">
       <details open="">
         <summary>CSS</summary>
         <p><a href="https://japanese-document.github.io/tips/2022/css-has-pseudo-class.html">特定の子要素を持つ要素を指定するCSSセレクタ</a></p>
@@ -91,11 +91,11 @@
         <p><a href="https://japanese-document.github.io/tips/2023/react-parent-change.html">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html">createAsyncThunk()で生成されたAsync Actionのテスト</a></p>
       </details>
-    </div></div>
+    </nav></div>
     <main class="main markdown-body">
-      <h1 id="Reactで親コンポーネントで子コンポーネントを変更する"><a href="#Reactで親コンポーネントで子コンポーネントを変更する">Reactで親コンポーネントで子コンポーネントを変更する</a></h1>
+      <h1 id="Reactで親コンポーネントで子コンポーネントを変更する"><a class="anchor" href="#Reactで親コンポーネントで子コンポーネントを変更する">#</a>Reactで親コンポーネントで子コンポーネントを変更する</h1>
 <p>Reactで親コンポーネントで子コンポーネントを変更する方法を記載します。</p>
-<h2 id="VNodeを変更する"><a href="#VNodeを変更する">VNodeを変更する</a></h2>
+<h2 id="VNodeを変更する"><a class="anchor" href="#VNodeを変更する">#</a>VNodeを変更する</h2>
 <p>下記のように<a class="Link" href="https://react.dev/reference/react/Children#children-toarray">Children.toArray()</a>を使って、<code>children</code>をVNodeの配列に変換します。
 <a class="Link" href="https://react.dev/reference/react/isValidElement#isvalidelement">isValidElement()</a>でReact elementかどうかを判別します。
 <a class="Link" href="https://react.dev/reference/react/cloneElement#cloneelement">cloneElement()</a>を使ってReact elementを変更します。</p>
@@ -117,7 +117,7 @@ root.render(&lt;Parent word="1"&gt;a&lt;p&gt;b&lt;/p&gt;c&lt;/Parent&gt;);
 // b2
 // c1
 </code></pre>
-<h2 id="子コンポーネント内の要素を参照する"><a href="#子コンポーネント内の要素を参照する">子コンポーネント内の要素を参照する</a></h2>
+<h2 id="子コンポーネント内の要素を参照する"><a class="anchor" href="#子コンポーネント内の要素を参照する">#</a>子コンポーネント内の要素を参照する</h2>
 <p>下記のように<a class="Link" href="https://react.dev/reference/react/forwardRef">forwardRef()</a>を使って、子コンポーネント内の要素を参照します。</p>
 <pre><code class="language-jsx">import { forwardRef, useRef, useEffect } from 'react'
 
@@ -138,7 +138,7 @@ function Parent() {
   return &lt;Child ref={ref} /&gt;
 }
 </code></pre>
-<h2 id="子コンポーネント内で定義された関数を実行する"><a href="#子コンポーネント内で定義された関数を実行する">子コンポーネント内で定義された関数を実行する</a></h2>
+<h2 id="子コンポーネント内で定義された関数を実行する"><a class="anchor" href="#子コンポーネント内で定義された関数を実行する">#</a>子コンポーネント内で定義された関数を実行する</h2>
 <p>下記のように<a class="Link" href="https://react.dev/reference/react/useImperativeHandle">useImperativeHandle()</a>を使って、子コンポーネント内で定義された関数を実行します。</p>
 <pre><code class="language-jsx">import { forwardRef, useRef, useEffect, useImperativeHandle } from 'react'
 
@@ -172,10 +172,10 @@ function Parent() {
 </code></pre>
 
     </main>
-    <div class="right-side"><div class="header-list"><p class="h1"><a href="#Reactで親コンポーネントで子コンポーネントを変更する">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Reactで親コンポーネントで子コンポーネントを変更する">Reactで親コンポーネントで子コンポーネントを変更する</a></p>
 <p class="h2"><a href="#VNodeを変更する">VNodeを変更する</a></p>
 <p class="h2"><a href="#子コンポーネント内の要素を参照する">子コンポーネント内の要素を参照する</a></p>
-<p class="h2"><a href="#子コンポーネント内で定義された関数を実行する">子コンポーネント内で定義された関数を実行する</a></p></div></div>
+<p class="h2"><a href="#子コンポーネント内で定義された関数を実行する">子コンポーネント内で定義された関数を実行する</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

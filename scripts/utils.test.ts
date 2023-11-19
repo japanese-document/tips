@@ -1,5 +1,7 @@
 import { jest } from '@jest/globals'
-import { createTitle, createDescription, getMetaAndMd, createURL, createHash, createIndexItems }  from './utils.js'
+jest.unstable_mockModule('node:fs/promises', () => ({ readFile: jest.fn() }))
+const { readFile } = await import ('node:fs/promises')
+const { createTitle, createDescription, getMetaAndMd, createURL, createHash, createIndexItems, createPageData } = await import('./utils.js')
 
 describe('createTitle', () => {
   test('output', () => {
@@ -36,6 +38,27 @@ describe('createHash', () => {
   test('output', () => {
     const hash = createHash('<a>?:&foo=%"\'@><')
     expect(hash).toBe('___foo______--_')
+  })
+})
+
+describe('createPageData', () => {
+  afterAll(() => {
+    jest.restoreAllMocks()
+  })
+
+  test('output', async () => {
+    const mockedReadFile = jest.mocked(readFile)
+    mockedReadFile.mockResolvedValue(`{ "header": {"name": "コンポーネント", "order": 0}, "order": 7 }
+---
+# デコレータ
+
+デコレータはクラス、クラスメソッド、そしてクラスフィールドの動作を変更することができる特別な関数です。`)
+    const pageData = await createPageData('foo/bar/baz.md')
+    expect(pageData).toEqual({
+      meta: { header: { name: 'コンポーネント', order: 0 }, order: 7 },
+      title: 'デコレータ',
+      url: 'https://japanese-document.github.io/tips/bar/baz.html'
+    })
   })
 })
 
