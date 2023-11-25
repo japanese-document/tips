@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-10-01 14:30" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-11-25 14:30" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -11,8 +11,8 @@ Reactのウェブサイト
 * [Cal.com](https://github.com/calcom/cal.com)  
 カレンダーベースのスケジュール管理アプリ
 
-* [Beam](https://github.com/planetscale/beam)  
-ブログ
+* [daily.dev](https://github.com/dailydotdev/apps)  
+RSSリーダーベースのコミュニティサイト、サーバはFastifyとGraphQL。
 
 * [Payload](https://github.com/payloadcms/payload)  
 Headless CMS、通信はGraphQL。
@@ -24,7 +24,7 @@ Lens Protocolに基づいたソーシャルメディアアプリケーション
 Slack、メッセージの配信にはElixirを使っている。
 
 * [Plane](https://github.com/makeplane/plane)  
-Open Source JIRA。ステート管理はMobx。サーバーサイドはDjango。
+Open Source JIRA。ステート管理はMobx。サーバはDjango。
 
 * [Bluesky Social App](https://github.com/bluesky-social/social-app)  
 BlueskyのWebクライアント。ステート管理はMobx。
@@ -33,4 +33,4 @@ BlueskyのWebクライアント。ステート管理はMobx。
 ライブ配信、サーバーサイドはGo。
 
 * [Focalboard](https://github.com/mattermost/focalboard)  
-Trello、Notion、Asanaのようなプロジェクトマネジメントツール。ステート管理はRedux、サーバーサイドはGo。
+Trello、Notion、Asanaのようなプロジェクトマネジメントツール。ステート管理はRedux、サーバはGo。
