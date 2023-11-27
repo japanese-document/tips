@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 26 Nov 2023 15:29:41 GMT</pubDate>
-    <lastBuildDate>Sun, 26 Nov 2023 15:29:41 GMT</lastBuildDate>
+    <pubDate>Mon, 27 Nov 2023 12:41:17 GMT</pubDate>
+    <lastBuildDate>Mon, 27 Nov 2023 12:41:17 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Next.jsのApp RouterでURLのpathのパラメータをオプショナルにする</title>
+    <pubDate>Mon, 27 Nov 2023 12:30:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/nextjs-path-parameter-optional.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/nextjs-path-parameter-optional.html</guid>
+  </item>
   <item>
     <title>Next.jsのApp RouterでURLのpathnameを取得する</title>
     <pubDate>Sun, 26 Nov 2023 15:15:00 GMT</pubDate>
