@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Nov 2023 12:45:31 GMT</pubDate>
-    <lastBuildDate>Mon, 27 Nov 2023 12:45:31 GMT</lastBuildDate>
+    <pubDate>Wed, 29 Nov 2023 13:37:09 GMT</pubDate>
+    <lastBuildDate>Wed, 29 Nov 2023 13:37:09 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Next.jsでホストとポートを変更する</title>
+    <pubDate>Wed, 29 Nov 2023 12:30:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/nextjs-setting-port.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/nextjs-setting-port.html</guid>
+  </item>
   <item>
     <title>App RouterでURLのpathのパラメータをオプションにする</title>
     <pubDate>Mon, 27 Nov 2023 12:30:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sat, 05 Aug 2023 05:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/react-mui-button-cursor-not-allowed.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-mui-button-cursor-not-allowed.html</guid>
-  </item>
-  <item>
-    <title>UbuntuでGoのバージョンをアップグレードする方法</title>
-    <pubDate>Tue, 16 May 2023 09:30:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/golang-upgrade-version-ubuntu.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/golang-upgrade-version-ubuntu.html</guid>
   </item>
 </rss>
