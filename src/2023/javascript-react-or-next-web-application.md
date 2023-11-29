@@ -35,5 +35,5 @@ BlueskyのWebクライアント。ステート管理はMobx。
 * [Focalboard](https://github.com/mattermost/focalboard)  
 Trello、Notion、Asanaのようなプロジェクトマネジメントツール。ステート管理はRedux、サーバはGo。
 
-* [Letterpad](https://github.com/letterpad/letterpad)
+* [Letterpad](https://github.com/letterpad/letterpad)  
 ブログサービス。[GraphQL Yoga](https://github.com/dotansimha/graphql-yoga)を使っている。
