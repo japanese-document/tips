@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 29 Nov 2023 13:37:09 GMT</pubDate>
-    <lastBuildDate>Wed, 29 Nov 2023 13:37:09 GMT</lastBuildDate>
+    <pubDate>Wed, 29 Nov 2023 14:34:11 GMT</pubDate>
+    <lastBuildDate>Wed, 29 Nov 2023 14:34:11 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
+    <pubDate>Wed, 29 Nov 2023 14:30:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</guid>
+  </item>
   <item>
     <title>Next.jsでホストとポートを変更する</title>
     <pubDate>Wed, 29 Nov 2023 12:30:00 GMT</pubDate>
@@ -25,12 +31,6 @@
     <pubDate>Sun, 26 Nov 2023 15:15:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/nextjs-pathname-using-app-router.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/nextjs-pathname-using-app-router.html</guid>
-  </item>
-  <item>
-    <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
-    <pubDate>Sat, 25 Nov 2023 05:30:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</guid>
   </item>
   <item>
     <title>Jest用のprocess.envの値を設定する方法</title>
