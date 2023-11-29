@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-11-25 14:30" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-11-29 23:30" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -34,3 +34,6 @@ BlueskyのWebクライアント。ステート管理はMobx。
 
 * [Focalboard](https://github.com/mattermost/focalboard)  
 Trello、Notion、Asanaのようなプロジェクトマネジメントツール。ステート管理はRedux、サーバはGo。
+
+* [Letterpad](https://github.com/letterpad/letterpad)
+ブログサービス。[GraphQL Yoga](https://github.com/dotansimha/graphql-yoga)を使っている。
