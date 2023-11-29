@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-jest-is-not-defined.html" />
-    <meta property="og:title" content="ReferenceError: jest is not definedの対処法" />
-    <meta property="og:description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。#テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'#setupFilesでjestをimportする下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  " />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/nextjs-setting-port.html" />
+    <meta property="og:title" content="Next.jsでホストとポートを変更する" />
+    <meta property="og:description" content="Next.jsでホスト(host)とポート(port)を変更するには下記のようにコマンドラインでパラメータをセットします。.envでそれらを変更することはできません。#ホストを変更するホストを変更するには下記のように-Hオプションを使ってホストを指定します。  &quot;scripts&quot;: {    &quot;dev&quot;: &quot;next dev -H 127.0.0.1&quot;,  },#ポートを変更するポートを変更するには下記のように-pオプションを使ってポートを指定します。  &quot;scripts&quot;: {    &quot;dev&quot" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記２つの方法のうち1つを選択します。テストのファイルでjestをimportする。setupFilesでjestをimportする。#テストでjestをimportする各テストのファイルで下記のコードを記述します。import { jest } from '@jest/globals'#setupFilesでjestをimportする下記のファイルを作成して、jestの設定ファイルに追加します。jestSetup.jsimport { jest } from '@jest/globals'global.jest = jestjest.config.jsmodule.exports = {  " />
+    <meta name="description" content="Next.jsでホスト(host)とポート(port)を変更するには下記のようにコマンドラインでパラメータをセットします。.envでそれらを変更することはできません。#ホストを変更するホストを変更するには下記のように-Hオプションを使ってホストを指定します。  &quot;scripts&quot;: {    &quot;dev&quot;: &quot;next dev -H 127.0.0.1&quot;,  },#ポートを変更するポートを変更するには下記のように-pオプションを使ってポートを指定します。  &quot;scripts&quot;: {    &quot;dev&quot" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>ReferenceError: jest is not definedの対処法</title>
+    <title>Next.jsでホストとポートを変更する</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -99,39 +99,26 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="ReferenceError__jest_is_not_definedの対処法"><a class="anchor" href="#ReferenceError__jest_is_not_definedの対処法">#</a>ReferenceError: jest is not definedの対処法</h1>
-<p>下記２つの方法のうち1つを選択します。</p>
-<ul>
-<li><p>テストのファイルでjestをimportする。</p>
-</li>
-<li><p>setupFilesでjestをimportする。</p>
-</li>
-</ul>
-<h2 id="テストでjestをimportする"><a class="anchor" href="#テストでjestをimportする">#</a>テストでjestをimportする</h2>
-<p>各テストのファイルで下記のコードを記述します。</p>
-<pre><code class="language-js">import { jest } from '@jest/globals'
+      <h1 id="Next.jsでホストとポートを変更する"><a class="anchor" href="#Next.jsでホストとポートを変更する">#</a>Next.jsでホストとポートを変更する</h1>
+<p>Next.jsでホスト(host)とポート(port)を変更するには下記のようにコマンドラインでパラメータをセットします。
+<code>.env</code>でそれらを<a class="Link" href="https://nextjs.org/docs/pages/api-reference/next-cli#development">変更することはできません</a>。</p>
+<h2 id="ホストを変更する"><a class="anchor" href="#ホストを変更する">#</a>ホストを変更する</h2>
+<p>ホストを変更するには下記のように<code>-H</code>オプションを使ってホストを指定します。</p>
+<pre><code>  "scripts": {
+    "dev": "next dev -H 127.0.0.1",
+  },
 </code></pre>
-<h2 id="setupFilesでjestをimportする"><a class="anchor" href="#setupFilesでjestをimportする">#</a>setupFilesでjestをimportする</h2>
-<p>下記のファイルを作成して、jestの設定ファイルに追加します。</p>
-<p>jestSetup.js</p>
-<pre><code class="language-js">import { jest } from '@jest/globals'
-
-global.jest = jest
-</code></pre>
-<p>jest.config.js</p>
-<pre><code class="language-js">module.exports = {
-  ...
-  setupFiles: [
-    '&lt;rootDir&gt;/jestSetup.js'
-  ],
-  ...
-}
+<h2 id="ポートを変更する"><a class="anchor" href="#ポートを変更する">#</a>ポートを変更する</h2>
+<p>ポートを変更するには下記のように<code>-p</code>オプションを使ってポートを指定します。</p>
+<pre><code>  "scripts": {
+    "dev": "next dev -p 1234",
+  },
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#ReferenceError__jest_is_not_definedの対処法">ReferenceError: jest is not definedの対処法</a></p>
-<p class="h2"><a href="#テストでjestをimportする">テストでjestをimportする</a></p>
-<p class="h2"><a href="#setupFilesでjestをimportする">setupFilesでjestをimportする</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Next.jsでホストとポートを変更する">Next.jsでホストとポートを変更する</a></p>
+<p class="h2"><a href="#ホストを変更する">ホストを変更する</a></p>
+<p class="h2"><a href="#ポートを変更する">ポートを変更する</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
