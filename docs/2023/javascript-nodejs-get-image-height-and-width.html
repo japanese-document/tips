@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-nodejs-promisify-function.html" />
-    <meta property="og:title" content="JavaScript(NodeJS)でコールバック関数をPromise化する " />
-    <meta property="og:description" content="util.promisify(original)を使います。コールバック関数は関数の最後の引数である必要があります。コールバック関数はエラーが最初の引数として渡される必要があります。((err, value) =&gt; {...})下記はglob 8.xをPromise化する例です。import { promisify } from 'node:util'import glob from 'glob'function getFileNames(): Promise {  return promisify(glob)('./**/*.md').catch((err) =&gt; {  " />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-nodejs-get-image-height-and-width.html" />
+    <meta property="og:title" content="NodeJSで画像のheightとwidthを取得する" />
+    <meta property="og:description" content="NodeJSで画像ファイルから画像のheightとwidthを取得するにはimage-sizeを使います。下記はESMでの例です。それ以外の場合はこちらを見てください。import { imageSize } from 'image-size'const { height, width } = imageSize('path/to/image.jpg')console.log(`height=${height}, width=${width}`)" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="util.promisify(original)を使います。コールバック関数は関数の最後の引数である必要があります。コールバック関数はエラーが最初の引数として渡される必要があります。((err, value) =&gt; {...})下記はglob 8.xをPromise化する例です。import { promisify } from 'node:util'import glob from 'glob'function getFileNames(): Promise {  return promisify(glob)('./**/*.md').catch((err) =&gt; {  " />
+    <meta name="description" content="NodeJSで画像ファイルから画像のheightとwidthを取得するにはimage-sizeを使います。下記はESMでの例です。それ以外の場合はこちらを見てください。import { imageSize } from 'image-size'const { height, width } = imageSize('path/to/image.jpg')console.log(`height=${height}, width=${width}`)" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>JavaScript(NodeJS)でコールバック関数をPromise化する </title>
+    <title>NodeJSで画像のheightとwidthを取得する</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -100,24 +100,17 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="JavaScript(NodeJS)でコールバック関数をPromise化する"><a class="anchor" href="#JavaScript(NodeJS)でコールバック関数をPromise化する">#</a>JavaScript(NodeJS)でコールバック関数をPromise化する</h1>
-<p><a class="Link" href="https://nodejs.org/api/util.html#utilpromisifyoriginal">util.promisify(original)</a>を使います。
-コールバック関数は関数の最後の引数である必要があります。
-コールバック関数はエラーが最初の引数として渡される必要があります。(<code>(err, value) =&gt; {...}</code>)</p>
-<p>下記は<a class="Link" href="https://github.com/isaacs/node-glob">glob</a> 8.xをPromise化する例です。</p>
-<pre><code class="language-js">import { promisify } from 'node:util'
-import glob from 'glob'
+      <h1 id="NodeJSで画像のheightとwidthを取得する"><a class="anchor" href="#NodeJSで画像のheightとwidthを取得する">#</a>NodeJSで画像のheightとwidthを取得する</h1>
+<p>NodeJSで画像ファイルから画像のheightとwidthを取得するには<a class="Link" href="https://github.com/image-size/image-size">image-size</a>を使います。
+下記はESMでの例です。それ以外の場合は<a class="Link" href="https://github.com/image-size/image-size#programmatic-usage">こちら</a>を見てください。</p>
+<pre><code class="language-js">import { imageSize } from 'image-size'
 
-function getFileNames(): Promise&lt;string[]&gt; {
-  return promisify(glob)('./**/*.md').catch((err) =&gt; {
-    console.error(err)
-    process.exit(1)
-  })
-}
+const { height, width } = imageSize('path/to/image.jpg')
+console.log(`height=${height}, width=${width}`)
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#JavaScript(NodeJS)でコールバック関数をPromise化する">JavaScript(NodeJS)でコールバック関数をPromise化する</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#NodeJSで画像のheightとwidthを取得する">NodeJSで画像のheightとwidthを取得する</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
