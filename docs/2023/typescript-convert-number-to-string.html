@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-upgrade-version-ubuntu.html" />
-    <meta property="og:title" content="UbuntuでGoのバージョンをアップグレードする方法" />
-    <meta property="og:description" content="公式サイトからGoをダウンロードしてインストールした場合、公式サイトのインストール手順のように古いバージョンを削除して最新のバージョンをダウンロードしてインストールします。例:rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-convert-number-to-string.html" />
+    <meta property="og:title" content="TypeScriptでnumber型の型定義をstring型の型定義に変換する" />
+    <meta property="og:description" content="TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定期を${}で囲みます。type A = 1type B = `${A}`const b: B = '1'また、下記のようにnumberのUnion型の型定義をstringのUnion型の型定義へ変換することができます。type A = 1 | 2 | 3// type B = &quot;1&quot; | &quot;2&quot; | &quot;3&quot;type B = `${A}`const b: B = '1'" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="公式サイトからGoをダウンロードしてインストールした場合、公式サイトのインストール手順のように古いバージョンを削除して最新のバージョンをダウンロードしてインストールします。例:rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz" />
+    <meta name="description" content="TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定期を${}で囲みます。type A = 1type B = `${A}`const b: B = '1'また、下記のようにnumberのUnion型の型定義をstringのUnion型の型定義へ変換することができます。type A = 1 | 2 | 3// type B = &quot;1&quot; | &quot;2&quot; | &quot;3&quot;type B = `${A}`const b: B = '1'" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>UbuntuでGoのバージョンをアップグレードする方法</title>
+    <title>TypeScriptでnumber型の型定義をstring型の型定義に変換する</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -101,14 +101,25 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="UbuntuでGoのバージョンをアップグレードする方法"><a class="anchor" href="#UbuntuでGoのバージョンをアップグレードする方法">#</a>UbuntuでGoのバージョンをアップグレードする方法</h1>
-<p>公式サイトからGoをダウンロードしてインストールした場合、公式サイトの<a class="Link" href="https://go.dev/doc/install">インストール手順</a>のように古いバージョンを削除して最新のバージョンをダウンロードしてインストールします。</p>
-<p>例:</p>
-<pre><code>rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+      <h1 id="TypeScriptでnumber型の型定義をstring型の型定義に変換する"><a class="anchor" href="#TypeScriptでnumber型の型定義をstring型の型定義に変換する">#</a>TypeScriptでnumber型の型定義をstring型の型定義に変換する</h1>
+<p>TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定期を<code>${}</code>で囲みます。</p>
+<pre><code class="language-ts">type A = 1
+
+type B = `${A}`
+
+const b: B = '1'
+</code></pre>
+<p>また、下記のようにnumberのUnion型の型定義をstringのUnion型の型定義へ変換することができます。</p>
+<pre><code class="language-ts">type A = 1 | 2 | 3
+
+// type B = "1" | "2" | "3"
+type B = `${A}`
+
+const b: B = '1'
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#UbuntuでGoのバージョンをアップグレードする方法">UbuntuでGoのバージョンをアップグレードする方法</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#TypeScriptでnumber型の型定義をstring型の型定義に変換する">TypeScriptでnumber型の型定義をstring型の型定義に変換する</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
