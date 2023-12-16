@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Dec 2023 12:16:57 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Dec 2023 12:16:57 GMT</lastBuildDate>
+    <pubDate>Sat, 16 Dec 2023 15:12:06 GMT</pubDate>
+    <lastBuildDate>Sat, 16 Dec 2023 15:12:06 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>TypeScriptでnumber型の型定義をstring型の型定義に変換する</title>
+    <pubDate>Sat, 16 Dec 2023 15:05:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/typescript-convert-number-to-string.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-convert-number-to-string.html</guid>
+  </item>
   <item>
     <title>NodeJSで画像のheightとwidthを取得する</title>
     <pubDate>Sun, 03 Dec 2023 12:00:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sat, 12 Aug 2023 12:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/typescript-type-from-array.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-type-from-array.html</guid>
-  </item>
-  <item>
-    <title>Material UI(MUI)のTypographyコンポーネントを改行させない方法</title>
-    <pubDate>Sun, 06 Aug 2023 09:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/react-mui-typography-no-new-line.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-mui-typography-no-new-line.html</guid>
   </item>
 </rss>
