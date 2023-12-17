@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/typescript-convert-number-to-string.html" />
     <meta property="og:title" content="TypeScriptでnumber型の型定義をstring型の型定義に変換する" />
-    <meta property="og:description" content="TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定期を${}で囲みます。type A = 1type B = `${A}`const b: B = '1'また、下記のようにnumberのUnion型の型定義をstringのUnion型の型定義へ変換することができます。type A = 1 | 2 | 3// type B = &quot;1&quot; | &quot;2&quot; | &quot;3&quot;type B = `${A}`const b: B = '1'" />
+    <meta property="og:description" content="TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定義を${}で囲みます。type A = 1type B = `${A}`const b: B = '1'また、下記のようにnumberのUnion型の型定義をstringのUnion型の型定義へ変換することができます。type A = 1 | 2 | 3// type B = &quot;1&quot; | &quot;2&quot; | &quot;3&quot;type B = `${A}`const b: B = '1'" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定期を${}で囲みます。type A = 1type B = `${A}`const b: B = '1'また、下記のようにnumberのUnion型の型定義をstringのUnion型の型定義へ変換することができます。type A = 1 | 2 | 3// type B = &quot;1&quot; | &quot;2&quot; | &quot;3&quot;type B = `${A}`const b: B = '1'" />
+    <meta name="description" content="TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定義を${}で囲みます。type A = 1type B = `${A}`const b: B = '1'また、下記のようにnumberのUnion型の型定義をstringのUnion型の型定義へ変換することができます。type A = 1 | 2 | 3// type B = &quot;1&quot; | &quot;2&quot; | &quot;3&quot;type B = `${A}`const b: B = '1'" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -102,7 +102,7 @@
     </nav></div>
     <main class="main markdown-body">
       <h1 id="TypeScriptでnumber型の型定義をstring型の型定義に変換する"><a class="anchor" href="#TypeScriptでnumber型の型定義をstring型の型定義に変換する">#</a>TypeScriptでnumber型の型定義をstring型の型定義に変換する</h1>
-<p>TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定期を<code>${}</code>で囲みます。</p>
+<p>TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定義を<code>${}</code>で囲みます。</p>
 <pre><code class="language-ts">type A = 1
 
 type B = `${A}`
