@@ -1,4 +1,4 @@
-{ "header": {"name": "TypeScript", "order": 5}, "order": 9, "date": "2023-11-05 18:30"  }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 9, "date": "2023-12-17 11:00"  }
 ---
 # TypeScriptで数値の範囲を指定する型を定義する
 
@@ -23,3 +23,5 @@ if (isIntRange(a, 1, 10)) {
   foo = a
 }
 ```
+
+これをstringのUnion型の型定義へ変換する方法は[こちら](https://japanese-document.github.io/tips/2023/typescript-convert-number-to-string.html)を見てください。

@@ -1,8 +1,8 @@
-{ "header": {"name": "TypeScript", "order": 5}, "order": 11, "date": "2023-12-17 00:05" }
+{ "header": {"name": "TypeScript", "order": 5}, "order": 11, "date": "2023-12-17 10:00" }
 ---
 # TypeScriptでnumber型の型定義をstring型の型定義に変換する
 
-TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定期を``${}``で囲みます。
+TypeScriptでnumber型の型定義をstring型の型定義に変換するには、下記のようにnumber型の型定義を``${}``で囲みます。
 
 ```ts
 type A = 1
