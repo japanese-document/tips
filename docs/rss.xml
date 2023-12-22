@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Dec 2023 02:25:20 GMT</pubDate>
-    <lastBuildDate>Sun, 17 Dec 2023 02:25:20 GMT</lastBuildDate>
+    <pubDate>Fri, 22 Dec 2023 11:10:36 GMT</pubDate>
+    <lastBuildDate>Fri, 22 Dec 2023 11:10:36 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>WSLのUbuntuで突然にGithubにsshで接続できなくなった</title>
+    <pubDate>Fri, 22 Dec 2023 10:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/ubuntu-ssh-github-wsl.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/ubuntu-ssh-github-wsl.html</guid>
+  </item>
   <item>
     <title>TypeScriptで数値の範囲を指定する型を定義する</title>
     <pubDate>Sun, 17 Dec 2023 02:00:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sun, 13 Aug 2023 14:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/typescript-generics-having-property.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-generics-having-property.html</guid>
-  </item>
-  <item>
-    <title>配列から配列の各値のどれか１つに該当する型を生成する方法</title>
-    <pubDate>Sat, 12 Aug 2023 12:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/typescript-type-from-array.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-type-from-array.html</guid>
   </item>
 </rss>
