@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/ubuntu-ssh-github-wsl.html" />
-    <meta property="og:title" content="WSLのUbuntuで突然にGithubにsshで接続できなくなった" />
-    <meta property="og:description" content="sshでGithubに接続できていたにもかかわらず、突然にsshで接続できなくなりました。ssh -T git@github.comを実行すると下記のエラーメッセージが表示される。ssh: Could not resolve hostname github.com: Temporary failure in name resolution以下の手順で解決しました。/etc/wsl.confの変更/etc/resolv.confの内容を下記のようにgenerateResolvConfを変更します。下記の内容に変更して不具合が生じないか注意してください。[network]generateResol" />
+    <meta property="og:title" content="突然、WSLのUbuntuでGitHubにsshで接続できなくなった" />
+    <meta property="og:description" content="sshでGitHubに接続できていたにもかかわらず、突然、sshで接続できなくなりました。ssh -T git@github.comを実行すると下記のエラーメッセージが表示される。ssh: Could not resolve hostname github.com: Temporary failure in name resolution以下の手順で解決しました。/etc/wsl.confの変更/etc/resolv.confの内容を下記のようにgenerateResolvConfを変更します。下記の内容に変更して不具合が生じないか注意してください。[network]generateResol" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="sshでGithubに接続できていたにもかかわらず、突然にsshで接続できなくなりました。ssh -T git@github.comを実行すると下記のエラーメッセージが表示される。ssh: Could not resolve hostname github.com: Temporary failure in name resolution以下の手順で解決しました。/etc/wsl.confの変更/etc/resolv.confの内容を下記のようにgenerateResolvConfを変更します。下記の内容に変更して不具合が生じないか注意してください。[network]generateResol" />
+    <meta name="description" content="sshでGitHubに接続できていたにもかかわらず、突然、sshで接続できなくなりました。ssh -T git@github.comを実行すると下記のエラーメッセージが表示される。ssh: Could not resolve hostname github.com: Temporary failure in name resolution以下の手順で解決しました。/etc/wsl.confの変更/etc/resolv.confの内容を下記のようにgenerateResolvConfを変更します。下記の内容に変更して不具合が生じないか注意してください。[network]generateResol" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>WSLのUbuntuで突然にGithubにsshで接続できなくなった</title>
+    <title>突然、WSLのUbuntuでGitHubにsshで接続できなくなった</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -84,7 +84,7 @@
       <details open="">
         <summary>Ubuntu</summary>
         <p><a href="https://japanese-document.github.io/tips/2023/ubuntu-screenshot-area.html">Ubuntuで範囲を指定してスクリーンショットを撮る方法</a></p>
-        <p><a href="https://japanese-document.github.io/tips/2023/ubuntu-ssh-github-wsl.html">WSLのUbuntuで突然にGithubにsshで接続できなくなった</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2023/ubuntu-ssh-github-wsl.html">突然、WSLのUbuntuでGitHubにsshで接続できなくなった</a></p>
       </details>
       <details open="">
         <summary>React</summary>
@@ -102,8 +102,8 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="WSLのUbuntuで突然にGithubにsshで接続できなくなった"><a class="anchor" href="#WSLのUbuntuで突然にGithubにsshで接続できなくなった">#</a>WSLのUbuntuで突然にGithubにsshで接続できなくなった</h1>
-<p>sshでGithubに接続できていたにもかかわらず、突然にsshで接続できなくなりました。
+      <h1 id="突然、WSLのUbuntuでGitHubにsshで接続できなくなった"><a class="anchor" href="#突然、WSLのUbuntuでGitHubにsshで接続できなくなった">#</a>突然、WSLのUbuntuでGitHubにsshで接続できなくなった</h1>
+<p>sshでGitHubに接続できていたにもかかわらず、突然、sshで接続できなくなりました。
 <code>ssh -T git@github.com</code>を実行すると下記のエラーメッセージが表示される。</p>
 <p><code>ssh: Could not resolve hostname github.com: Temporary failure in name resolution</code></p>
 <p>以下の手順で解決しました。</p>
@@ -135,7 +135,7 @@ generateResolvConf=false
 </ol>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#WSLのUbuntuで突然にGithubにsshで接続できなくなった">WSLのUbuntuで突然にGithubにsshで接続できなくなった</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#突然、WSLのUbuntuでGitHubにsshで接続できなくなった">突然、WSLのUbuntuでGitHubにsshで接続できなくなった</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

@@ -1,8 +1,8 @@
 { "header": {"name": "Ubuntu", "order": 7}, "order": 1, "date": "2023-12-22 19:00" }
 ---
-# WSLのUbuntuで突然にGithubにsshで接続できなくなった
+# 突然、WSLのUbuntuでGitHubにsshで接続できなくなった
 
-sshでGithubに接続できていたにもかかわらず、突然にsshで接続できなくなりました。
+sshでGitHubに接続できていたにもかかわらず、突然、sshで接続できなくなりました。
 `ssh -T git@github.com`を実行すると下記のエラーメッセージが表示される。
 
 `ssh: Could not resolve hostname github.com: Temporary failure in name resolution`
