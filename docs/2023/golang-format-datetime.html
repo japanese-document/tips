@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2022/python-simple-server.html" />
-    <meta property="og:title" content="PythonでWebサーバをたてるコマンド" />
-    <meta property="og:description" content="以下のコマンドを実行する。python -m http.server 8000 --bind 127.0.0.1" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-format-datetime.html" />
+    <meta property="og:title" content="Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にする" />
+    <meta property="og:description" content="Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にするには、Go 1.20以降の場合はTime.Format()にtime.DateTimeを渡します。Go 1.20以前の場合は&quot;2006-01-02 15:04:05&quot;を渡します。Go 1.20以降ではtime.DateTime以外のフォーマットが用意されています。package mainimport (    &quot;fmt&quot;    &quot;time&quot;)func main() {    t := time.Now()    // Go 1.20以降    fm" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="以下のコマンドを実行する。python -m http.server 8000 --bind 127.0.0.1" />
+    <meta name="description" content="Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にするには、Go 1.20以降の場合はTime.Format()にtime.DateTimeを渡します。Go 1.20以前の場合は&quot;2006-01-02 15:04:05&quot;を渡します。Go 1.20以降ではtime.DateTime以外のフォーマットが用意されています。package mainimport (    &quot;fmt&quot;    &quot;time&quot;)func main() {    t := time.Now()    // Go 1.20以降    fm" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>PythonでWebサーバをたてるコマンド</title>
+    <title>Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にする</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -103,13 +103,29 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="PythonでWebサーバをたてるコマンド"><a class="anchor" href="#PythonでWebサーバをたてるコマンド">#</a>PythonでWebサーバをたてるコマンド</h1>
-<p>以下のコマンドを実行する。</p>
-<pre><code>python -m http.server 8000 --bind 127.0.0.1
+      <h1 id="Goで日時(datetime)をyyyy-MM-dd_HH_mm_ss形式の文字列にする"><a class="anchor" href="#Goで日時(datetime)をyyyy-MM-dd_HH_mm_ss形式の文字列にする">#</a>Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にする</h1>
+<p>Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にするには、
+<a class="Link" href="https://tip.golang.org/doc/go1.20">Go 1.20</a>以降の場合は<a class="Link" href="https://pkg.go.dev/time@master#Time.Format">Time.Format()</a>に<a class="Link" href="https://pkg.go.dev/time@master#DateTime">time.DateTime</a>を渡します。
+Go 1.20以前の場合は<code>"2006-01-02 15:04:05"</code>を渡します。
+Go 1.20以降では<code>time.DateTime</code>以外の<a class="Link" href="https://pkg.go.dev/time@master#pkg-constants">フォーマット</a>が用意されています。</p>
+<pre><code class="language-go">package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    t := time.Now()
+    // Go 1.20以降
+    fmt.Println(t.Format(time.DateTime))
+    // Go 1.20以前
+    fmt.Println(t.Format("2006-01-02 15:04:05"))
+}
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#PythonでWebサーバをたてるコマンド">PythonでWebサーバをたてるコマンド</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Goで日時(datetime)をyyyy-MM-dd_HH_mm_ss形式の文字列にする">Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にする</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
