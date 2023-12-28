@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html" />
-    <meta property="og:title" content="ReactやNext.jsを使っているオープンソースのWebアプリケーション" />
-    <meta property="og:description" content="react.devReactのウェブサイトleerob.io個人のウェブサイトCal.comカレンダーベースのスケジュール管理アプリdaily.devRSSリーダーベースのコミュニティサイト、サーバはFastifyとGraphQL。PayloadHeadless CMS、通信はGraphQL。LensterLens Protocolに基づいたソーシャルメディアアプリケーションLinenSlack、メッセージの配信にはElixirを使っている。PlaneOpen Source JIRA。ステート管理はMobx。サーバはDjango。Bluesky Social AppBlueskyのWebクライ" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-array-find.html" />
+    <meta property="og:title" content="GoでArray.find()のような関数を使う" />
+    <meta property="og:description" content="GoでJavaScriptのArray.find()ような関数を使うには、loのFind()を使います。package mainimport (    &quot;fmt&quot;    &quot;github.com/samber/lo&quot;)type Item struct {    Name  string    Price int}func main() {    items := []*Item{        {            Name:  &quot;foo&quot;,            Price: 11,        },        {     " />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="react.devReactのウェブサイトleerob.io個人のウェブサイトCal.comカレンダーベースのスケジュール管理アプリdaily.devRSSリーダーベースのコミュニティサイト、サーバはFastifyとGraphQL。PayloadHeadless CMS、通信はGraphQL。LensterLens Protocolに基づいたソーシャルメディアアプリケーションLinenSlack、メッセージの配信にはElixirを使っている。PlaneOpen Source JIRA。ステート管理はMobx。サーバはDjango。Bluesky Social AppBlueskyのWebクライ" />
+    <meta name="description" content="GoでJavaScriptのArray.find()ような関数を使うには、loのFind()を使います。package mainimport (    &quot;fmt&quot;    &quot;github.com/samber/lo&quot;)type Item struct {    Name  string    Price int}func main() {    items := []*Item{        {            Name:  &quot;foo&quot;,            Price: 11,        },        {     " />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
+    <title>GoでArray.find()のような関数を使う</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -104,36 +104,51 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="ReactやNext.jsを使っているオープンソースのWebアプリケーション"><a class="anchor" href="#ReactやNext.jsを使っているオープンソースのWebアプリケーション">#</a>ReactやNext.jsを使っているオープンソースのWebアプリケーション</h1>
-<ul>
-<li><p><a class="Link" href="https://github.com/reactjs/react.dev">react.dev</a><br>Reactのウェブサイト</p>
-</li>
-<li><p><a class="Link" href="https://github.com/leerob/leerob.io">leerob.io</a><br>個人のウェブサイト</p>
-</li>
-<li><p><a class="Link" href="https://github.com/calcom/cal.com">Cal.com</a><br>カレンダーベースのスケジュール管理アプリ</p>
-</li>
-<li><p><a class="Link" href="https://github.com/dailydotdev/apps">daily.dev</a><br>RSSリーダーベースのコミュニティサイト、サーバはFastifyとGraphQL。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/payloadcms/payload">Payload</a><br>Headless CMS、通信はGraphQL。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/lensterxyz/lenster">Lenster</a><br>Lens Protocolに基づいたソーシャルメディアアプリケーション</p>
-</li>
-<li><p><a class="Link" href="https://github.com/Linen-dev/linen.dev">Linen</a><br>Slack、メッセージの配信にはElixirを使っている。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/makeplane/plane">Plane</a><br>Open Source JIRA。ステート管理はMobx。サーバはDjango。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/bluesky-social/social-app">Bluesky Social App</a><br>BlueskyのWebクライアント。ステート管理はMobx。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/owncast/owncast">Owncast</a><br>ライブ配信、サーバーサイドはGo。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/mattermost/focalboard">Focalboard</a><br>Trello、Notion、Asanaのようなプロジェクトマネジメントツール。ステート管理はRedux、サーバはGo。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/letterpad/letterpad">Letterpad</a><br>ブログサービス。<a class="Link" href="https://github.com/dotansimha/graphql-yoga">GraphQL Yoga</a>を使っている。</p>
-</li>
-</ul>
+      <h1 id="GoでArray.find()のような関数を使う"><a class="anchor" href="#GoでArray.find()のような関数を使う">#</a>GoでArray.find()のような関数を使う</h1>
+<p>GoでJavaScriptの<a class="Link" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find">Array.find()</a>ような関数を使うには、
+loの<a class="Link" href="https://github.com/samber/lo?tab=readme-ov-file#find">Find()</a>を使います。</p>
+<pre><code class="language-go">package main
+
+import (
+    "fmt"
+
+    "github.com/samber/lo"
+)
+
+type Item struct {
+    Name  string
+    Price int
+}
+
+func main() {
+    items := []*Item{
+        {
+            Name:  "foo",
+            Price: 11,
+        },
+        {
+            Name:  "bar",
+            Price: 23,
+        },
+        {
+            Name:  "baz",
+            Price: 15,
+        },
+        {
+            Name:  "qux",
+            Price: 23,
+        },
+    }
+    item, result := lo.Find(items, func(i *Item) bool { return i.Price == 23 })
+    if result {
+        // &amp;main.Item{Name:"bar", Price:23}
+        fmt.Printf("%#v\n", item)
+    }
+}
+</code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#ReactやNext.jsを使っているオープンソースのWebアプリケーション">ReactやNext.jsを使っているオープンソースのWebアプリケーション</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#GoでArray.find()のような関数を使う">GoでArray.find()のような関数を使う</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
