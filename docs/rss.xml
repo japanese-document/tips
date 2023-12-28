@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Dec 2023 14:13:54 GMT</pubDate>
-    <lastBuildDate>Wed, 27 Dec 2023 14:13:54 GMT</lastBuildDate>
+    <pubDate>Thu, 28 Dec 2023 09:01:26 GMT</pubDate>
+    <lastBuildDate>Thu, 28 Dec 2023 09:01:26 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>GoでArray.find()のような関数を使う</title>
+    <pubDate>Thu, 28 Dec 2023 09:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/golang-array-find.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/golang-array-find.html</guid>
+  </item>
   <item>
     <title>Goで日時(datetime)をyyyy-MM-dd HH:mm:ss形式の文字列にする</title>
     <pubDate>Wed, 27 Dec 2023 14:10:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sun, 10 Sep 2023 07:20:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/typescript-jest-mock-module.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-jest-mock-module.html</guid>
-  </item>
-  <item>
-    <title>プロパティの値の型をプロパティ名のパターン毎に定義する方法</title>
-    <pubDate>Sat, 19 Aug 2023 12:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/typescript-typing-value-by-pattern-property.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-typing-value-by-pattern-property.html</guid>
   </item>
 </rss>
