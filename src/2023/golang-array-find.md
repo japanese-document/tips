@@ -3,7 +3,7 @@
 # GoでArray.find()のような関数を使う
 
 GoでJavaScriptの[Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)ような関数を使うには、
-loの[Find()](https://github.com/samber/lo?tab=readme-ov-file#find)を使います。
+下記のようにloの[Find()](https://github.com/samber/lo?tab=readme-ov-file#find)を使います。
 
 ```go
 package main
