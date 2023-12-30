@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Dec 2023 07:10:42 GMT</pubDate>
-    <lastBuildDate>Sat, 30 Dec 2023 07:10:42 GMT</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 09:32:07 GMT</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 09:32:07 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Goメモ</title>
+    <pubDate>Sat, 30 Dec 2023 09:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/golang-memo.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/golang-memo.html</guid>
+  </item>
   <item>
     <title>GoでArray.find()のような関数を使う</title>
     <pubDate>Sat, 30 Dec 2023 07:00:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sat, 23 Sep 2023 02:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/typescript-union-property.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-union-property.html</guid>
-  </item>
-  <item>
-    <title>TypeScriptでJestを使ってモジュールをモック(mock)する</title>
-    <pubDate>Sun, 10 Sep 2023 07:20:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/typescript-jest-mock-module.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-jest-mock-module.html</guid>
   </item>
 </rss>
