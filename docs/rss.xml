@@ -4,13 +4,13 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Dec 2023 09:32:07 GMT</pubDate>
-    <lastBuildDate>Sat, 30 Dec 2023 09:32:07 GMT</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 15:13:45 GMT</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 15:13:45 GMT</lastBuildDate>
   </channel>
   
   <item>
     <title>Goメモ</title>
-    <pubDate>Sat, 30 Dec 2023 09:00:00 GMT</pubDate>
+    <pubDate>Sat, 30 Dec 2023 15:10:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/golang-memo.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/golang-memo.html</guid>
   </item>
