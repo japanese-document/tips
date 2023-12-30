@@ -1,9 +1,10 @@
-{ "header": {"name": "Go", "order": 6},  "order": 3, "date": "2023-12-28 18:00" }
+{ "header": {"name": "Go", "order": 6},  "order": 3, "date": "2023-12-30 16:00" }
 ---
 # GoでArray.find()のような関数を使う
 
 GoでJavaScriptの[Array.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)ような関数を使うには、
 下記のようにloの[Find()](https://github.com/samber/lo?tab=readme-ov-file#find)を使います。
+loは[Lodash](https://lodash.com/)のように`slice`や`map`を処理する関数を提供します。
 
 ```go
 package main
