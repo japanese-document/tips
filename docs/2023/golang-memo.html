@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-memo.html" />
     <meta property="og:title" content="Goメモ" />
-    <meta property="og:description" content="#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。" />
+    <meta property="og:description" content="#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。#JSONのエンコードとデコードjson:&quot;foo&quot;のようなフィールドタグはvscode-goではGo: Add Tags To Struct Fieldsを使うと自動で付与することができます。package mainimport (    &quot;encoding/json&quot;    &quot;fmt&quot;    &quot;log&quot;)type Meta struct {    Foo string `json:&quot;foo&quot;`    // " />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。" />
+    <meta name="description" content="#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。#JSONのエンコードとデコードjson:&quot;foo&quot;のようなフィールドタグはvscode-goではGo: Add Tags To Struct Fieldsを使うと自動で付与することができます。package mainimport (    &quot;encoding/json&quot;    &quot;fmt&quot;    &quot;log&quot;)type Meta struct {    Foo string `json:&quot;foo&quot;`    // " />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -108,10 +108,68 @@
       <h1 id="Goメモ"><a class="anchor" href="#Goメモ">#</a>Goメモ</h1>
 <h2 id="slice、map、channelはポインタで配列は値"><a class="anchor" href="#slice、map、channelはポインタで配列は値">#</a>slice、map、channelはポインタで配列は値</h2>
 <p>詳しくは<a class="Link" href="https://go.dev/doc/faq#references">こちら</a>を見てください。</p>
+<h2 id="JSONのエンコードとデコード"><a class="anchor" href="#JSONのエンコードとデコード">#</a>JSONのエンコードとデコード</h2>
+<p><code>json:"foo"</code>のようなフィールドタグはvscode-goでは<a class="Link" href="https://github.com/golang/vscode-go/blob/master/docs/commands.md#go-add-tags-to-struct-fields">Go: Add Tags To Struct Fields</a>を使うと自動で付与することができます。</p>
+<pre><code class="language-go">package main
+
+import (
+    "encoding/json"
+    "fmt"
+    "log"
+)
+
+type Meta struct {
+    Foo string `json:"foo"`
+    // `json:"-"`にするとエンコード時に結果に反映されない
+    Bar string `json:"bar"`
+}
+
+type Item struct {
+    Name  string `json:"name"`
+    Price int    `json:"price"`
+    Meta  Meta   `json:"meta"`
+}
+
+func main() {
+    items := []Item{
+        {
+            Name:  "name1",
+            Price: 11,
+            Meta: Meta{
+                Foo: "foo",
+                Bar: "bar",
+            },
+        },
+        {
+            Name:  "name2",
+            Price: 23,
+            Meta: Meta{
+                Foo: "foo",
+                Bar: "bar",
+            },
+        },
+    }
+
+    resultString, err := json.Marshal(items)
+    if err != nil {
+        log.Fatal(err)
+    }
+    // [{"name":"name1","price":11,"meta":{"foo":"foo","bar":"bar"}},{"name":"name2","price":23,"meta":{"foo":"foo","bar":"bar"}}]
+    fmt.Println(string(resultString))
+
+    resultStruct := []Item{}
+    if err := json.Unmarshal(resultString, &amp;resultStruct); err != nil {
+        log.Fatal(err)
+    }
+    // []main.Item{main.Item{Name:"name1", Price:11, Meta:main.Meta{Foo:"foo", Bar:"bar"}}, main.Item{Name:"name2", Price:23, Meta:main.Meta{Foo:"foo", Bar:"bar"}}}
+    fmt.Printf("%#v", resultStruct)
+}
+</code></pre>
 
     </main>
     <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Goメモ">Goメモ</a></p>
-<p class="h2"><a href="#slice、map、channelはポインタで配列は値">slice、map、channelはポインタで配列は値</a></p></nav></div>
+<p class="h2"><a href="#slice、map、channelはポインタで配列は値">slice、map、channelはポインタで配列は値</a></p>
+<p class="h2"><a href="#JSONのエンコードとデコード">JSONのエンコードとデコード</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
