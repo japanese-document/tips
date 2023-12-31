@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 30 Dec 2023 15:13:45 GMT</pubDate>
-    <lastBuildDate>Sat, 30 Dec 2023 15:13:45 GMT</lastBuildDate>
+    <pubDate>Sun, 31 Dec 2023 11:47:20 GMT</pubDate>
+    <lastBuildDate>Sun, 31 Dec 2023 11:47:20 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>errgroup.withContext()を使ってTimeoutでgoroutineを終了する</title>
+    <pubDate>Sun, 31 Dec 2023 11:45:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/golang-errgroup-context-timeout.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/golang-errgroup-context-timeout.html</guid>
+  </item>
   <item>
     <title>Goメモ</title>
     <pubDate>Sat, 30 Dec 2023 15:10:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sun, 08 Oct 2023 09:50:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/react-hook-form-useformcontext-return-null.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-hook-form-useformcontext-return-null.html</guid>
-  </item>
-  <item>
-    <title>objectとnullのUnion型のプロパティの型からnullを削除する</title>
-    <pubDate>Sat, 23 Sep 2023 02:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/typescript-union-property.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-union-property.html</guid>
   </item>
 </rss>
