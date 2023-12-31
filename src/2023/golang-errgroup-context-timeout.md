@@ -41,7 +41,7 @@ func createWorker(ctx context.Context, i int) func() error {
 			// return fmt.Errorf("i is %d", i)
 			return nil
 		}
-		time.Sleep(time.Duration(i*100) * time.Millisecond)
+		time.Sleep(time.Duration(i) * 100 * time.Millisecond)
 		select {
 		case <-ctx.Done():
 			return ctx.Err()
