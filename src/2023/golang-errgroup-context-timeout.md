@@ -37,6 +37,7 @@ func createWorker(ctx context.Context, i int) func() error {
 	worker := func() error {
 		fmt.Printf("before: i = %d\n", i)
 		if i == 3 {
+			// goroutine内でerrorにするには以下のコードのコメントをはずします。
 			// return fmt.Errorf("i is %d", i)
 			return nil
 		}
@@ -58,6 +59,7 @@ func main() {
 	for i := 0; i < 5; i++ {
 		eg.Go(createWorker(ctx, i))
 	}
+	// Timeoutにするには以下のコードのコメントをはずします。
 	// ms := 200 * time.Millisecond
 	ms := 2000 * time.Millisecond
 	if err := timeout(cancel, eg, ms); err != nil {
