@@ -1,4 +1,4 @@
-{ "header": {"name": "Go", "order": 6},  "order": 5, "date": "2023-12-31 20:45" }
+{ "header": {"name": "Go", "order": 6},  "order": 5, "date": "2024-01-02 01:00" }
 ---
 # errgroup.withContext()を使ってTimeoutでgoroutineを終了する
 
@@ -10,28 +10,12 @@ package main
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"log"
 	"time"
 
 	"golang.org/x/sync/errgroup"
 )
-
-func timeout(cancel context.CancelFunc, eg *errgroup.Group, ms time.Duration) error {
-	c := make(chan error)
-	go func() {
-		defer close(c)
-		c <- eg.Wait()
-	}()
-	select {
-	case err := <-c:
-		return err
-	case <-time.After(ms):
-		cancel()
-		return errors.New("timeout")
-	}
-}
 
 func createWorker(ctx context.Context, i int) func() error {
 	worker := func() error {
@@ -54,17 +38,18 @@ func createWorker(ctx context.Context, i int) func() error {
 }
 
 func main() {
-	_ctx, cancel := context.WithCancel(context.Background())
+	// Timeoutにするには以下のコードのコメントをはずします。
+	// ms := 200 * time.Millisecond
+	ms := 2000 * time.Millisecond
+	_ctx, cancel := context.WithTimeout(context.Background(), ms)
 	eg, ctx := errgroup.WithContext(_ctx)
 	for i := 0; i < 5; i++ {
 		eg.Go(createWorker(ctx, i))
 	}
-	// Timeoutにするには以下のコードのコメントをはずします。
-	// ms := 200 * time.Millisecond
-	ms := 2000 * time.Millisecond
-	if err := timeout(cancel, eg, ms); err != nil {
+	if err := eg.Wait(); err != nil {
 		log.Fatal(err)
 	}
+	cancel()
 	fmt.Println("end")
 }
 ```
