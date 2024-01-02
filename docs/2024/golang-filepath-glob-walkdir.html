@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-upgrade-version-ubuntu.html" />
-    <meta property="og:title" content="UbuntuでGoのバージョンをアップグレードする方法" />
-    <meta property="og:description" content="公式サイトからGoをダウンロードしてインストールした場合、公式サイトのインストール手順のように古いバージョンを削除して最新のバージョンをダウンロードしてインストールします。例:rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-filepath-glob-walkdir.html" />
+    <meta property="og:title" content="Goで階層に制限なくパターンにマッチしたパスのリストを取得する" />
+    <meta property="og:description" content="Goでディレクトリを指定して、ディレクトリの階層に制限なくパターンにマッチしたパスのリストを取得するには、filepath.WalkDir()を使って指定したディレクトリ以下のファイルを走査します。下記はNodeJSのglobに./foo/**/*.goを指定することと同じような処理をするGoのコードです。package mainimport (    &quot;errors&quot;    &quot;fmt&quot;    &quot;io/fs&quot;    &quot;log&quot;    &quot;path/filepath&quot;)func createWalk" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="公式サイトからGoをダウンロードしてインストールした場合、公式サイトのインストール手順のように古いバージョンを削除して最新のバージョンをダウンロードしてインストールします。例:rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz" />
+    <meta name="description" content="Goでディレクトリを指定して、ディレクトリの階層に制限なくパターンにマッチしたパスのリストを取得するには、filepath.WalkDir()を使って指定したディレクトリ以下のファイルを走査します。下記はNodeJSのglobに./foo/**/*.goを指定することと同じような処理をするGoのコードです。package mainimport (    &quot;errors&quot;    &quot;fmt&quot;    &quot;io/fs&quot;    &quot;log&quot;    &quot;path/filepath&quot;)func createWalk" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>UbuntuでGoのバージョンをアップグレードする方法</title>
+    <title>Goで階層に制限なくパターンにマッチしたパスのリストを取得する</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -107,14 +107,56 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="UbuntuでGoのバージョンをアップグレードする方法"><a class="anchor" href="#UbuntuでGoのバージョンをアップグレードする方法">#</a>UbuntuでGoのバージョンをアップグレードする方法</h1>
-<p>公式サイトからGoをダウンロードしてインストールした場合、公式サイトの<a class="Link" href="https://go.dev/doc/install">インストール手順</a>のように古いバージョンを削除して最新のバージョンをダウンロードしてインストールします。</p>
-<p>例:</p>
-<pre><code>rm -rf /usr/local/go &amp;&amp; tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+      <h1 id="Goで階層に制限なくパターンにマッチしたパスのリストを取得する"><a class="anchor" href="#Goで階層に制限なくパターンにマッチしたパスのリストを取得する">#</a>Goで階層に制限なくパターンにマッチしたパスのリストを取得する</h1>
+<p>Goでディレクトリを指定して、ディレクトリの階層に制限なくパターンにマッチしたパスのリストを取得するには、
+<a class="Link" href="https://pkg.go.dev/path/filepath#WalkDir">filepath.WalkDir()</a>を使って指定したディレクトリ以下のファイルを走査します。
+下記は<a class="Link" href="https://japanese-document.github.io/tips/2023/javascript-nodejs-glob.html">NodeJSのglob</a>に<code>./foo/**/*.go</code>を指定することと同じような処理をするGoのコードです。</p>
+<pre><code class="language-go">package main
+
+import (
+    "errors"
+    "fmt"
+    "io/fs"
+    "log"
+    "path/filepath"
+)
+
+func createWalkDirFunc(paths *[]string, suffix string) (func(string, fs.DirEntry, error) error, error) {
+    if paths == nil {
+        return nil, errors.New("paths is nil")
+    }
+    walkDirFunc := func(path string, d fs.DirEntry, err error) error {
+        if err != nil {
+            return err
+        }
+        if d.IsDir() {
+            return nil
+        }
+        lastIndex := len(path) - len(suffix)
+        if lastIndex &gt;= 0 &amp;&amp; path[lastIndex:] == suffix {
+            *paths = append(*paths, path)
+        }
+        return nil
+    }
+    return walkDirFunc, nil
+}
+
+func main() {
+    root := "./foo"
+    paths := []string{}
+    walkDirFunc, err := createWalkDirFunc(&amp;paths, ".go")
+    if err != nil {
+        log.Fatal(err)
+    }
+    if err := filepath.WalkDir(root, walkDirFunc); err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(paths)
+}
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#UbuntuでGoのバージョンをアップグレードする方法">UbuntuでGoのバージョンをアップグレードする方法</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Goで階層に制限なくパターンにマッチしたパスのリストを取得する">Goで階層に制限なくパターンにマッチしたパスのリストを取得する</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
