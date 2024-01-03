@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Jan 2024 08:19:22 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Jan 2024 08:19:22 GMT</lastBuildDate>
+    <pubDate>Wed, 03 Jan 2024 13:00:45 GMT</pubDate>
+    <lastBuildDate>Wed, 03 Jan 2024 13:00:45 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
+    <pubDate>Thu, 04 Jan 2024 13:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</guid>
+  </item>
   <item>
     <title>Goで画像のheightとwidthを取得する</title>
     <pubDate>Wed, 03 Jan 2024 06:00:00 GMT</pubDate>
@@ -67,12 +73,6 @@
     <pubDate>Sun, 03 Dec 2023 12:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/javascript-nodejs-get-image-height-and-width.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/javascript-nodejs-get-image-height-and-width.html</guid>
-  </item>
-  <item>
-    <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
-    <pubDate>Wed, 29 Nov 2023 14:30:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/javascript-react-or-next-web-application.html</guid>
   </item>
   <item>
     <title>Next.jsでホストとポートを変更する</title>
