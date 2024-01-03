@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Jan 2024 06:37:42 GMT</pubDate>
-    <lastBuildDate>Tue, 02 Jan 2024 06:37:42 GMT</lastBuildDate>
+    <pubDate>Wed, 03 Jan 2024 08:19:22 GMT</pubDate>
+    <lastBuildDate>Wed, 03 Jan 2024 08:19:22 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Goで画像のheightとwidthを取得する</title>
+    <pubDate>Wed, 03 Jan 2024 06:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2024/golang-get-image-height-and-width.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/golang-get-image-height-and-width.html</guid>
+  </item>
   <item>
     <title>Goで階層に制限なくパターンにマッチしたパスのリストを取得する</title>
     <pubDate>Tue, 02 Jan 2024 06:00:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sat, 21 Oct 2023 12:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/react-parent-change.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-parent-change.html</guid>
-  </item>
-  <item>
-    <title>Type AnnotationsとSatisfies Operatorの違い</title>
-    <pubDate>Mon, 16 Oct 2023 13:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/typescript-type-annotation-and-satisfies.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-type-annotation-and-satisfies.html</guid>
   </item>
 </rss>
