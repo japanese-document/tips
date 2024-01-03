@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2023-11-29 23:30" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2024-01-04 22:00" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -37,3 +37,6 @@ Trello、Notion、Asanaのようなプロジェクトマネジメントツール
 
 * [Letterpad](https://github.com/letterpad/letterpad)  
 ブログサービス。[GraphQL Yoga](https://github.com/dotansimha/graphql-yoga)を使っている。
+
+* [Apache Answer](https://github.com/apache/incubator-answer)
+Q & Aプラットフォーム。React Router、ステート管理は[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)、サーバは[Gin](https://gin-gonic.com/)。
