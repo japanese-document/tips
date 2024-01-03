@@ -38,5 +38,5 @@ Trello、Notion、Asanaのようなプロジェクトマネジメントツール
 * [Letterpad](https://github.com/letterpad/letterpad)  
 ブログサービス。[GraphQL Yoga](https://github.com/dotansimha/graphql-yoga)を使っている。
 
-* [Apache Answer](https://github.com/apache/incubator-answer)
+* [Apache Answer](https://github.com/apache/incubator-answer)  
 Q & Aプラットフォーム。React Router、ステート管理は[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)、サーバは[Gin](https://gin-gonic.com/)。
