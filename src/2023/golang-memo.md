@@ -2,6 +2,21 @@
 ---
 # Goメモ
 
+## sliceの分割
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	a := []int{1, 2, 3}
+	b := []int{4, 5, 6}
+	c := append(a, b...)
+	fmt.Printf("%#v", c)
+}
+```
+
 ## slice、map、channelはポインタで配列は値
 
 詳しくは[こちら](https://go.dev/doc/faq#references)を見てください。

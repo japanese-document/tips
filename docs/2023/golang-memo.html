@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-memo.html" />
     <meta property="og:title" content="Goメモ" />
-    <meta property="og:description" content="#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。#JSONのエンコードとデコードjson:&quot;foo&quot;のようなフィールドタグはvscode-goではGo: Add Tags To Struct Fieldsを使うと自動で付与することができます。package mainimport (    &quot;encoding/json&quot;    &quot;fmt&quot;    &quot;log&quot;)type Meta struct {    Foo string `json:&quot;foo&quot;`    // " />
+    <meta property="og:description" content="#sliceの分割package mainimport &quot;fmt&quot;func main() {    a := []int{1, 2, 3}    b := []int{4, 5, 6}    c := append(a, b...)    fmt.Printf(&quot;%#v&quot;, c)}#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。#JSONのエンコードとデコードjson:&quot;foo&quot;のようなフィールドタグはvscode-goではGo: Add Tags To Struct Fieldsを使うと自動で付" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。#JSONのエンコードとデコードjson:&quot;foo&quot;のようなフィールドタグはvscode-goではGo: Add Tags To Struct Fieldsを使うと自動で付与することができます。package mainimport (    &quot;encoding/json&quot;    &quot;fmt&quot;    &quot;log&quot;)type Meta struct {    Foo string `json:&quot;foo&quot;`    // " />
+    <meta name="description" content="#sliceの分割package mainimport &quot;fmt&quot;func main() {    a := []int{1, 2, 3}    b := []int{4, 5, 6}    c := append(a, b...)    fmt.Printf(&quot;%#v&quot;, c)}#slice、map、channelはポインタで配列は値詳しくはこちらを見てください。#JSONのエンコードとデコードjson:&quot;foo&quot;のようなフィールドタグはvscode-goではGo: Add Tags To Struct Fieldsを使うと自動で付" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -109,6 +109,18 @@
     </nav></div>
     <main class="main markdown-body">
       <h1 id="Goメモ"><a class="anchor" href="#Goメモ">#</a>Goメモ</h1>
+<h2 id="sliceの分割"><a class="anchor" href="#sliceの分割">#</a>sliceの分割</h2>
+<pre><code class="language-go">package main
+
+import "fmt"
+
+func main() {
+    a := []int{1, 2, 3}
+    b := []int{4, 5, 6}
+    c := append(a, b...)
+    fmt.Printf("%#v", c)
+}
+</code></pre>
 <h2 id="slice、map、channelはポインタで配列は値"><a class="anchor" href="#slice、map、channelはポインタで配列は値">#</a>slice、map、channelはポインタで配列は値</h2>
 <p>詳しくは<a class="Link" href="https://go.dev/doc/faq#references">こちら</a>を見てください。</p>
 <h2 id="JSONのエンコードとデコード"><a class="anchor" href="#JSONのエンコードとデコード">#</a>JSONのエンコードとデコード</h2>
@@ -171,6 +183,7 @@ func main() {
 
     </main>
     <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Goメモ">Goメモ</a></p>
+<p class="h2"><a href="#sliceの分割">sliceの分割</a></p>
 <p class="h2"><a href="#slice、map、channelはポインタで配列は値">slice、map、channelはポインタで配列は値</a></p>
 <p class="h2"><a href="#JSONのエンコードとデコード">JSONのエンコードとデコード</a></p></nav></div>
     <footer class="footer markdown-body">
