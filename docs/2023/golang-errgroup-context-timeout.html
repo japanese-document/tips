@@ -147,6 +147,7 @@ func main() {
     // ms := 200 * time.Millisecond
     ms := 2000 * time.Millisecond
     _ctx, cancel := context.WithTimeout(context.Background(), ms)
+    defer cancel()
     eg, ctx := errgroup.WithContext(_ctx)
     for i := 0; i &lt; 5; i++ {
         eg.Go(createWorker(ctx, i))
@@ -154,7 +155,6 @@ func main() {
     if err := eg.Wait(); err != nil {
         log.Fatal(err)
     }
-    cancel()
     fmt.Println("end")
 }
 </code></pre>
