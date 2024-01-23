@@ -1,4 +1,4 @@
-{ "header": {"name": "Go", "order": 6},  "order": 5, "date": "2024-01-02 01:00" }
+{ "header": {"name": "Go", "order": 6},  "order": 5, "date": "2024-01-23 13:30" }
 ---
 # errgroup.withContext()を使ってTimeoutでgoroutineを終了する
 
@@ -42,6 +42,7 @@ func main() {
 	// ms := 200 * time.Millisecond
 	ms := 2000 * time.Millisecond
 	_ctx, cancel := context.WithTimeout(context.Background(), ms)
+	defer cancel()
 	eg, ctx := errgroup.WithContext(_ctx)
 	for i := 0; i < 5; i++ {
 		eg.Go(createWorker(ctx, i))
@@ -49,7 +50,6 @@ func main() {
 	if err := eg.Wait(); err != nil {
 		log.Fatal(err)
 	}
-	cancel()
 	fmt.Println("end")
 }
 ```

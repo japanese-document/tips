@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 18 Jan 2024 12:34:48 GMT</pubDate>
-    <lastBuildDate>Thu, 18 Jan 2024 12:34:48 GMT</lastBuildDate>
+    <pubDate>Tue, 23 Jan 2024 04:42:05 GMT</pubDate>
+    <lastBuildDate>Tue, 23 Jan 2024 04:42:05 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>errgroup.withContext()を使ってTimeoutでgoroutineを終了する</title>
+    <pubDate>Tue, 23 Jan 2024 04:30:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2023/golang-errgroup-context-timeout.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/golang-errgroup-context-timeout.html</guid>
+  </item>
   <item>
     <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
     <pubDate>Thu, 18 Jan 2024 12:00:00 GMT</pubDate>
@@ -25,12 +31,6 @@
     <pubDate>Tue, 02 Jan 2024 06:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2024/golang-filepath-glob-walkdir.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/golang-filepath-glob-walkdir.html</guid>
-  </item>
-  <item>
-    <title>errgroup.withContext()を使ってTimeoutでgoroutineを終了する</title>
-    <pubDate>Mon, 01 Jan 2024 16:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/golang-errgroup-context-timeout.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/golang-errgroup-context-timeout.html</guid>
   </item>
   <item>
     <title>Goメモ</title>
