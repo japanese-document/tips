@@ -1,8 +1,8 @@
-{ "header": {"name": "Go", "order": 6},  "order": 5, "date": "2024-01-23 13:30" }
+{ "header": {"name": "Go", "order": 6},  "order": 5, "date": "2024-01-24 18:30" }
 ---
-# errgroup.withContext()を使ってTimeoutでgoroutineを終了する
+# errgroup.WithContext()を使ってTimeoutでgoroutineを終了する
 
-下記のコードではGoの[errgroup.withContext()](https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext)を使って、
+下記のコードではGoの[errgroup.WithContext()](https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext)を使って、
 goroutine内でerrorが発生した場合やTimeoutが発生した場合にgoroutineを終了するようにしています。
 
 ```go
