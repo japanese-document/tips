@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-filepath-glob-walkdir.html" />
-    <meta property="og:title" content="Goで階層に制限なくパターンにマッチしたパスのリストを取得する" />
-    <meta property="og:description" content="Goでディレクトリを指定して、ディレクトリの階層に制限なくパターンにマッチしたパスのリストを取得するには、filepath.WalkDir()を使って指定したディレクトリ以下のファイルを走査します。下記はNodeJSのglobに./foo/**/*.goを指定することと同じような処理をするGoのコードです。package mainimport (    &quot;errors&quot;    &quot;fmt&quot;    &quot;io/fs&quot;    &quot;log&quot;    &quot;path/filepath&quot;)func createWalk" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-goldmark-custom-renderer-markdown.html" />
+    <meta property="og:title" content="goldmarkでカスタムレンダラ(custom renderer)を設定する" />
+    <meta property="og:description" content="下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。package mainimport (    &quot;bytes&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;github.com/yuin/goldmark&quot;    &quot;github.com/yuin/goldmark/ast&quot;    &quot;github.com/yuin/goldmark/extension&quot;    &quot;github.com/yu" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="Goでディレクトリを指定して、ディレクトリの階層に制限なくパターンにマッチしたパスのリストを取得するには、filepath.WalkDir()を使って指定したディレクトリ以下のファイルを走査します。下記はNodeJSのglobに./foo/**/*.goを指定することと同じような処理をするGoのコードです。package mainimport (    &quot;errors&quot;    &quot;fmt&quot;    &quot;io/fs&quot;    &quot;log&quot;    &quot;path/filepath&quot;)func createWalk" />
+    <meta name="description" content="下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。package mainimport (    &quot;bytes&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;github.com/yuin/goldmark&quot;    &quot;github.com/yuin/goldmark/ast&quot;    &quot;github.com/yuin/goldmark/extension&quot;    &quot;github.com/yu" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>Goで階層に制限なくパターンにマッチしたパスのリストを取得する</title>
+    <title>goldmarkでカスタムレンダラ(custom renderer)を設定する</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -109,56 +109,64 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="Goで階層に制限なくパターンにマッチしたパスのリストを取得する"><a class="anchor" href="#Goで階層に制限なくパターンにマッチしたパスのリストを取得する">#</a>Goで階層に制限なくパターンにマッチしたパスのリストを取得する</h1>
-<p>Goでディレクトリを指定して、ディレクトリの階層に制限なくパターンにマッチしたパスのリストを取得するには、
-<a class="Link" href="https://pkg.go.dev/path/filepath#WalkDir">filepath.WalkDir()</a>を使って指定したディレクトリ以下のファイルを走査します。
-下記は<a class="Link" href="https://japanese-document.github.io/tips/2023/javascript-nodejs-glob.html">NodeJSのglob</a>に<code>./foo/**/*.go</code>を指定することと同じような処理をするGoのコードです。</p>
+      <h1 id="goldmarkでカスタムレンダラ(custom_renderer)を設定する"><a class="anchor" href="#goldmarkでカスタムレンダラ(custom_renderer)を設定する">#</a>goldmarkでカスタムレンダラ(custom renderer)を設定する</h1>
+<p>下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。</p>
 <pre><code class="language-go">package main
 
 import (
-    "errors"
+    "bytes"
     "fmt"
-    "io/fs"
     "log"
-    "path/filepath"
+
+    "github.com/yuin/goldmark"
+    "github.com/yuin/goldmark/ast"
+    "github.com/yuin/goldmark/extension"
+    "github.com/yuin/goldmark/renderer"
+    "github.com/yuin/goldmark/util"
 )
 
-func createWalkDirFunc(paths *[]string, suffix string) (func(string, fs.DirEntry, error) error, error) {
-    if paths == nil {
-        return nil, errors.New("paths is nil")
+type customRenderer struct{}
+
+func (r customRenderer) RegisterFuncs(reg renderer.NodeRendererFuncRegisterer) {
+    reg.Register(ast.KindLink, r.renderLink)
+}
+
+func (r customRenderer) renderLink(w util.BufWriter, source []byte, node ast.Node, entering bool) (ast.WalkStatus, error) {
+    if entering {
+        n := node.(*ast.Link)
+        w.WriteString(`&lt;a href="`)
+        w.Write(util.EscapeHTML(n.Destination))
+        w.WriteString(`" class="Link"&gt;`)
+    } else {
+        w.WriteString("&lt;/a&gt;")
     }
-    walkDirFunc := func(path string, d fs.DirEntry, err error) error {
-        if err != nil {
-            return err
-        }
-        if d.IsDir() {
-            return nil
-        }
-        lastIndex := len(path) - len(suffix)
-        if lastIndex &gt;= 0 &amp;&amp; path[lastIndex:] == suffix {
-            *paths = append(*paths, path)
-        }
-        return nil
-    }
-    return walkDirFunc, nil
+    return ast.WalkContinue, nil
+}
+
+func newMarkdown() goldmark.Markdown {
+    option := goldmark.WithRendererOptions(renderer.WithNodeRenderers(
+        util.Prioritized(customRenderer{}, 200),
+    ))
+    markdown := goldmark.New(
+        goldmark.WithExtensions(extension.GFM),
+        option,
+    )
+    return markdown
 }
 
 func main() {
-    root := "./foo"
-    paths := []string{}
-    walkDirFunc, err := createWalkDirFunc(&amp;paths, ".go")
-    if err != nil {
+    markdown := newMarkdown()
+    var body bytes.Buffer
+    if err := markdown.Convert([]byte("[test](https://example.com)"), &amp;body); err != nil {
         log.Fatal(err)
     }
-    if err := filepath.WalkDir(root, walkDirFunc); err != nil {
-        log.Fatal(err)
-    }
-    fmt.Println(paths)
+    // &lt;p&gt;&lt;a href="https://example.com" class="Link"&gt;test&lt;/a&gt;&lt;/p&gt;
+    fmt.Println(body.String())
 }
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Goで階層に制限なくパターンにマッチしたパスのリストを取得する">Goで階層に制限なくパターンにマッチしたパスのリストを取得する</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#goldmarkでカスタムレンダラ(custom_renderer)を設定する">goldmarkでカスタムレンダラ(custom renderer)を設定する</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
