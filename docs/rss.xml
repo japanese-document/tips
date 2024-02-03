@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Jan 2024 09:56:14 GMT</pubDate>
-    <lastBuildDate>Wed, 24 Jan 2024 09:56:14 GMT</lastBuildDate>
+    <pubDate>Sat, 03 Feb 2024 08:23:12 GMT</pubDate>
+    <lastBuildDate>Sat, 03 Feb 2024 08:23:12 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>goldmarkでカスタムレンダラ(custom renderer)を設定する</title>
+    <pubDate>Sat, 03 Feb 2024 08:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2024/golang-goldmark-custom-renderer-markdown.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/golang-goldmark-custom-renderer-markdown.html</guid>
+  </item>
   <item>
     <title>errgroup.WithContext()を使ってTimeoutでgoroutineを終了する</title>
     <pubDate>Wed, 24 Jan 2024 09:30:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Sat, 28 Oct 2023 09:30:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-testing-redux-toolkit-createasyncthunk.html</guid>
-  </item>
-  <item>
-    <title>Reactで親コンポーネントで子コンポーネントを変更する</title>
-    <pubDate>Sat, 21 Oct 2023 12:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/react-parent-change.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/react-parent-change.html</guid>
   </item>
 </rss>

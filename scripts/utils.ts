@@ -6,6 +6,7 @@ import { JSDOM } from 'jsdom'
 import { marked } from 'marked'
 import { URL, CSS, BASE_URL, BODY, CSS_PATH, DESCRIPTION, HEADER, INDEX, INDEX_PAGE_DESCRIPTION,
   INDEX_PAGE_HEADER, INDEX_PAGE_TITLE, SEPARATOR, SOURCE_DIR, TITLE } from './const.js'
+import { error } from 'node:console'
 
 const window = new JSDOM('').window
 const DOMPurify = createDOMPurify(window as unknown as Window)
@@ -103,7 +104,8 @@ export function createDescription(html: string) {
 export function createURL(dir: string, name: string) {
   const prefixDirCount = SOURCE_DIR.length + 1
   if (dir.length <= prefixDirCount) {
-    return `${BASE_URL}/${name}.html`
+    console.dir({dir, name})
+    throw new Error(`${dir} is short`)
   }
   return `${BASE_URL}/${dir.slice(prefixDirCount)}/${name}.html`
 }
