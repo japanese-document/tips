@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-go-install-command-not-found.html" />
     <meta property="og:title" content="go installして実行するとcommand not foundになる" />
-    <meta property="og:description" content="go installでインストールしたアプリケーションを実行するとcommand not foundが表示されました。$GOPATH/binにPATHが通ってないことが原因かもしれません。その場合は下記のように.bashrcで:$GOPATH/binを$PATHの末尾に追加してPATHを通します。そして、.bashrcを反映します(source ~/.bashrc)。export GOPATH=$HOME/goexport PATH=$PATH:$GOPATH/bin" />
+    <meta property="og:description" content="go installでインストールしたアプリケーションを実行するとcommand not foundが表示されました。$GOPATH/binにPATHが通ってないことが原因かもしれません。その場合は下記のようにシェルの設定ファイル(例: .bashrc)で:$GOPATH/binを$PATHの末尾に追加してPATHを通します。そして、シェルの設定ファイルを反映します(source ~/.bashrc)。export GOPATH=$HOME/goexport PATH=$PATH:$GOPATH/bin" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="go installでインストールしたアプリケーションを実行するとcommand not foundが表示されました。$GOPATH/binにPATHが通ってないことが原因かもしれません。その場合は下記のように.bashrcで:$GOPATH/binを$PATHの末尾に追加してPATHを通します。そして、.bashrcを反映します(source ~/.bashrc)。export GOPATH=$HOME/goexport PATH=$PATH:$GOPATH/bin" />
+    <meta name="description" content="go installでインストールしたアプリケーションを実行するとcommand not foundが表示されました。$GOPATH/binにPATHが通ってないことが原因かもしれません。その場合は下記のようにシェルの設定ファイル(例: .bashrc)で:$GOPATH/binを$PATHの末尾に追加してPATHを通します。そして、シェルの設定ファイルを反映します(source ~/.bashrc)。export GOPATH=$HOME/goexport PATH=$PATH:$GOPATH/bin" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -113,8 +113,8 @@
       <h1 id="go_installして実行するとcommand_not_foundになる"><a class="anchor" href="#go_installして実行するとcommand_not_foundになる">#</a>go installして実行するとcommand not foundになる</h1>
 <p><code>go install</code>でインストールしたアプリケーションを実行すると<code>command not found</code>が表示されました。
 <code>$GOPATH/bin</code>にPATHが通ってないことが原因かもしれません。
-その場合は下記のように<code>.bashrc</code>で<code>:$GOPATH/bin</code>を<code>$PATH</code>の末尾に追加してPATHを通します。
-そして、<code>.bashrc</code>を反映します(<code>source ~/.bashrc</code>)。</p>
+その場合は下記のようにシェルの設定ファイル(例: <code>.bashrc</code>)で<code>:$GOPATH/bin</code>を<code>$PATH</code>の末尾に追加してPATHを通します。
+そして、シェルの設定ファイルを反映します(<code>source ~/.bashrc</code>)。</p>
 <pre><code>export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 </code></pre>

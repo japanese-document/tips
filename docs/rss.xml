@@ -4,13 +4,13 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Feb 2024 13:28:32 GMT</pubDate>
-    <lastBuildDate>Sun, 04 Feb 2024 13:28:32 GMT</lastBuildDate>
+    <pubDate>Sun, 04 Feb 2024 13:46:58 GMT</pubDate>
+    <lastBuildDate>Sun, 04 Feb 2024 13:46:58 GMT</lastBuildDate>
   </channel>
   
   <item>
     <title>go installして実行するとcommand not foundになる</title>
-    <pubDate>Sun, 04 Feb 2024 13:00:00 GMT</pubDate>
+    <pubDate>Sun, 04 Feb 2024 13:50:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2024/golang-go-install-command-not-found.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/golang-go-install-command-not-found.html</guid>
   </item>
