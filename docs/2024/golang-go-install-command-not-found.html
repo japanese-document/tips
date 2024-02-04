@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/javascript-vue-web-application.html" />
-    <meta property="og:title" content="Vueを使っているオープンソースのWebアプリケーション" />
-    <meta property="og:description" content="Directusデータベースのデータの管理をする。Headless CMSやダッシュボードとして使う。NocoDBデータベースのデータをスプレッドシートで共同作業できるようにする。" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-go-install-command-not-found.html" />
+    <meta property="og:title" content="go installして実行するとcommand not foundになる" />
+    <meta property="og:description" content="go installでインストールしたアプリケーションを実行するとcommand not foundが表示されました。$GOPATH/binにPATHが通ってないことが原因かもしれません。その場合は下記のように.bashrcで:$GOPATH/binを$PATHの末尾に追加してPATHを通します。そして、.bashrcを反映します(source ~/.bashrc)。export GOPATH=$HOME/goexport PATH=$PATH:$GOPATH/bin" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="Directusデータベースのデータの管理をする。Headless CMSやダッシュボードとして使う。NocoDBデータベースのデータをスプレッドシートで共同作業できるようにする。" />
+    <meta name="description" content="go installでインストールしたアプリケーションを実行するとcommand not foundが表示されました。$GOPATH/binにPATHが通ってないことが原因かもしれません。その場合は下記のように.bashrcで:$GOPATH/binを$PATHの末尾に追加してPATHを通します。そして、.bashrcを反映します(source ~/.bashrc)。export GOPATH=$HOME/goexport PATH=$PATH:$GOPATH/bin" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>Vueを使っているオープンソースのWebアプリケーション</title>
+    <title>go installして実行するとcommand not foundになる</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -110,16 +110,17 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="Vueを使っているオープンソースのWebアプリケーション"><a class="anchor" href="#Vueを使っているオープンソースのWebアプリケーション">#</a>Vueを使っているオープンソースのWebアプリケーション</h1>
-<ul>
-<li><p><a class="Link" href="https://github.com/directus/directus">Directus</a><br>データベースのデータの管理をする。Headless CMSやダッシュボードとして使う。</p>
-</li>
-<li><p><a class="Link" href="https://github.com/nocodb/nocodb">NocoDB</a><br>データベースのデータをスプレッドシートで共同作業できるようにする。</p>
-</li>
-</ul>
+      <h1 id="go_installして実行するとcommand_not_foundになる"><a class="anchor" href="#go_installして実行するとcommand_not_foundになる">#</a>go installして実行するとcommand not foundになる</h1>
+<p><code>go install</code>でインストールしたアプリケーションを実行すると<code>command not found</code>が表示されました。
+<code>$GOPATH/bin</code>にPATHが通ってないことが原因かもしれません。
+その場合は下記のように<code>.bashrc</code>で<code>:$GOPATH/bin</code>を<code>$PATH</code>の末尾に追加してPATHを通します。
+そして、<code>.bashrc</code>を反映します(<code>source ~/.bashrc</code>)。</p>
+<pre><code>export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+</code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Vueを使っているオープンソースのWebアプリケーション">Vueを使っているオープンソースのWebアプリケーション</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#go_installして実行するとcommand_not_foundになる">go installして実行するとcommand not foundになる</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
