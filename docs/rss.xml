@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Feb 2024 13:46:58 GMT</pubDate>
-    <lastBuildDate>Sun, 04 Feb 2024 13:46:58 GMT</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2024 14:13:44 GMT</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2024 14:13:44 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Goで文字列から最初の1行を取得する</title>
+    <pubDate>Fri, 16 Feb 2024 14:10:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2024/golang-first-line-from-string.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/golang-first-line-from-string.html</guid>
+  </item>
   <item>
     <title>go installして実行するとcommand not foundになる</title>
     <pubDate>Sun, 04 Feb 2024 13:50:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Mon, 13 Nov 2023 03:15:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/typescript-swc-node-esmodules.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/typescript-swc-node-esmodules.html</guid>
-  </item>
-  <item>
-    <title>ts-nodeでESModulesを使う方法</title>
-    <pubDate>Mon, 13 Nov 2023 03:15:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2022/typescript-ts-node-esmodules.html</guid>
   </item>
 </rss>
