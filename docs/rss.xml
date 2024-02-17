@@ -4,13 +4,13 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 16 Feb 2024 14:13:44 GMT</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2024 14:13:44 GMT</lastBuildDate>
+    <pubDate>Sat, 17 Feb 2024 00:46:09 GMT</pubDate>
+    <lastBuildDate>Sat, 17 Feb 2024 00:46:09 GMT</lastBuildDate>
   </channel>
   
   <item>
     <title>Goで文字列から最初の1行を取得する</title>
-    <pubDate>Fri, 16 Feb 2024 14:10:00 GMT</pubDate>
+    <pubDate>Sat, 17 Feb 2024 00:45:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2024/golang-first-line-from-string.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/golang-first-line-from-string.html</guid>
   </item>
