@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-first-line-from-string.html" />
     <meta property="og:title" content="Goで文字列から最初の1行を取得する" />
-    <meta property="og:description" content="package mainimport (    &quot;fmt&quot;    &quot;strings&quot;)func main() {    text := &quot;123\n45678\n9&quot;    start := strings.Index(text, &quot;\n&quot;)    if start != -1 {        text = text[:start]    }    fmt.Print(text)}" />
+    <meta property="og:description" content="以下のようにstrings.Index()を使って、最初の改行の位置を取得します。そして、改行位置より前にある文字列を取得します。package mainimport (    &quot;fmt&quot;    &quot;strings&quot;)func main() {    text := &quot;123\n45678\n9&quot;    start := strings.Index(text, &quot;\n&quot;)    if start != -1 {        text = text[:start]    }    fmt.Print(text)}" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="package mainimport (    &quot;fmt&quot;    &quot;strings&quot;)func main() {    text := &quot;123\n45678\n9&quot;    start := strings.Index(text, &quot;\n&quot;)    if start != -1 {        text = text[:start]    }    fmt.Print(text)}" />
+    <meta name="description" content="以下のようにstrings.Index()を使って、最初の改行の位置を取得します。そして、改行位置より前にある文字列を取得します。package mainimport (    &quot;fmt&quot;    &quot;strings&quot;)func main() {    text := &quot;123\n45678\n9&quot;    start := strings.Index(text, &quot;\n&quot;)    if start != -1 {        text = text[:start]    }    fmt.Print(text)}" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -112,6 +112,8 @@
     </nav></div>
     <main class="main markdown-body">
       <h1 id="Goで文字列から最初の1行を取得する"><a class="anchor" href="#Goで文字列から最初の1行を取得する">#</a>Goで文字列から最初の1行を取得する</h1>
+<p>以下のように<a class="Link" href="https://pkg.go.dev/strings#Index">strings.Index()</a>を使って、最初の改行の位置を取得します。
+そして、改行位置より前にある文字列を取得します。</p>
 <pre><code class="language-go">package main
 
 import (
