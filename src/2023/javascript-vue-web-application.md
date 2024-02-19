@@ -1,5 +1,5 @@
 
-{ "header": {"name": "JavaScript", "order": 2}, "order": 8 }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 8, "date": "2024-02-20 07:25" }
 ---
 # Vueを使っているオープンソースのWebアプリケーション
 
@@ -8,3 +8,6 @@
 
 * [NocoDB](https://github.com/nocodb/nocodb)  
 データベースのデータをスプレッドシートで共同作業できるようにする。
+
+* [Misskey](https://github.com/misskey-dev/misskey)  
+分散型ソーシャルネットワーキングプラットフォーム
