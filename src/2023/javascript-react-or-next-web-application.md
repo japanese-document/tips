@@ -40,6 +40,3 @@ Trello、Notion、Asanaのようなプロジェクトマネジメントツール
 
 * [Apache Answer](https://github.com/apache/incubator-answer)  
 Q & Aプラットフォーム。React Router、ステート管理は[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)、サーバは[Gin](https://gin-gonic.com/)。
-
-* [Maybe](https://github.com/maybe-finance/maybe)  
-個人資産管理。React Query、Prisma、Zod、サーバはExpress。
