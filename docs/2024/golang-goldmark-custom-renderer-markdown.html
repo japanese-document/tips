@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-goldmark-custom-renderer-markdown.html" />
     <meta property="og:title" content="goldmarkでカスタムレンダラ(custom renderer)を設定する" />
-    <meta property="og:description" content="下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。package mainimport (    &quot;bytes&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;github.com/yuin/goldmark&quot;    &quot;github.com/yuin/goldmark/ast&quot;    &quot;github.com/yuin/goldmark/extension&quot;    &quot;github.com/yu" />
+    <meta property="og:description" content="下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。各カスタムレンダラの実装はこちらを参考にすると良いと思います。package mainimport (    &quot;bytes&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;github.com/yuin/goldmark&quot;    &quot;github.com/yuin/goldmark/ast&quot;    &quot;github.com/yuin/goldmark/extensi" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。package mainimport (    &quot;bytes&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;github.com/yuin/goldmark&quot;    &quot;github.com/yuin/goldmark/ast&quot;    &quot;github.com/yuin/goldmark/extension&quot;    &quot;github.com/yu" />
+    <meta name="description" content="下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。各カスタムレンダラの実装はこちらを参考にすると良いと思います。package mainimport (    &quot;bytes&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;github.com/yuin/goldmark&quot;    &quot;github.com/yuin/goldmark/ast&quot;    &quot;github.com/yuin/goldmark/extensi" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -112,7 +112,8 @@
     </nav></div>
     <main class="main markdown-body">
       <h1 id="goldmarkでカスタムレンダラ(custom_renderer)を設定する"><a class="anchor" href="#goldmarkでカスタムレンダラ(custom_renderer)を設定する">#</a>goldmarkでカスタムレンダラ(custom renderer)を設定する</h1>
-<p>下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。</p>
+<p>下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。
+各カスタムレンダラの実装は<a class="Link" href="https://github.com/yuin/goldmark/blob/848dc665305d2ed09cf024eeca72be8f0840c4ef/renderer/html/html.go#L262-L287">こちら</a>を参考にすると良いと思います。</p>
 <pre><code class="language-go">package main
 
 import (
