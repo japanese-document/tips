@@ -1,9 +1,10 @@
 
-{ "header": {"name": "Go", "order": 6},  "order": 8, "date": "2024-02-03 17:00" }
+{ "header": {"name": "Go", "order": 6},  "order": 8, "date": "2024-02-24 14:00" }
 ---
 # goldmarkでカスタムレンダラ(custom renderer)を設定する
 
 下記の例では、markdownのリンクをレンダリングするカスタムレンダラを登録することで、リンクのレンダリングを変更しています。
+各カスタムレンダラの実装は[こちら](https://github.com/yuin/goldmark/blob/848dc665305d2ed09cf024eeca72be8f0840c4ef/renderer/html/html.go#L262-L287)を参考にすると良いと思います。
 
 ```go
 package main
