@@ -4,15 +4,21 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 03 Mar 2024 01:11:35 GMT</pubDate>
-    <lastBuildDate>Sun, 03 Mar 2024 01:11:35 GMT</lastBuildDate>
+    <pubDate>Sun, 17 Mar 2024 07:08:22 GMT</pubDate>
+    <lastBuildDate>Sun, 17 Mar 2024 07:08:22 GMT</lastBuildDate>
   </channel>
   
   <item>
     <title>NodeJSでIPv6よりIPv4を優先する</title>
-    <pubDate>Sun, 03 Mar 2024 01:00:00 GMT</pubDate>
+    <pubDate>Sun, 17 Mar 2024 01:00:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2024/javascript-nodejs-ipv4.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/javascript-nodejs-ipv4.html</guid>
+  </item>
+  <item>
+    <title>配列のインデックス(index)をローテーションする</title>
+    <pubDate>Sun, 17 Mar 2024 01:00:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2024/javascript-array-index-rotation.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/javascript-array-index-rotation.html</guid>
   </item>
   <item>
     <title>goldmarkでカスタムレンダラ(custom renderer)を設定する</title>
@@ -121,11 +127,5 @@
     <pubDate>Sun, 26 Nov 2023 15:15:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/nextjs-pathname-using-app-router.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/nextjs-pathname-using-app-router.html</guid>
-  </item>
-  <item>
-    <title>Jest用のprocess.envの値を設定する方法</title>
-    <pubDate>Wed, 15 Nov 2023 11:00:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/javascript-jest-change-process-env.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/javascript-jest-change-process-env.html</guid>
   </item>
 </rss>

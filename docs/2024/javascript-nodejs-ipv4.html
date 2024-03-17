@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2024/javascript-nodejs-ipv4.html" />
     <meta property="og:title" content="NodeJSでIPv6よりIPv4を優先する" />
-    <meta property="og:description" content="NodeJSでIPv6よりIPv4を優先するには下記のようにします。server.listen()のhostにIPv4のアドレス(例: 0.0.0.0)を渡します。--dns-result-orderもしくはdns.setDefaultResultOrder()にipv4firstをセットします。" />
+    <meta property="og:description" content="NodeJSでIPv6よりIPv4を優先するには下記のようにします。server.listen()のhostにIPv4のアドレス(例: 0.0.0.0)を渡します。--dns-result-orderもしくはdns.setDefaultResultOrder()にipv4firstをセットします。dns.lookupのoptions.familyに4を渡します。" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="NodeJSでIPv6よりIPv4を優先するには下記のようにします。server.listen()のhostにIPv4のアドレス(例: 0.0.0.0)を渡します。--dns-result-orderもしくはdns.setDefaultResultOrder()にipv4firstをセットします。" />
+    <meta name="description" content="NodeJSでIPv6よりIPv4を優先するには下記のようにします。server.listen()のhostにIPv4のアドレス(例: 0.0.0.0)を渡します。--dns-result-orderもしくはdns.setDefaultResultOrder()にipv4firstをセットします。dns.lookupのoptions.familyに4を渡します。" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -53,6 +53,7 @@
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-jest-change-process-env.html">Jest用のprocess.envの値を設定する方法</a></p>
         <p><a href="https://japanese-document.github.io/tips/2023/javascript-nodejs-get-image-height-and-width.html">NodeJSで画像のheightとwidthを取得する</a></p>
         <p><a href="https://japanese-document.github.io/tips/2024/javascript-nodejs-ipv4.html">NodeJSでIPv6よりIPv4を優先する</a></p>
+        <p><a href="https://japanese-document.github.io/tips/2024/javascript-array-index-rotation.html">配列のインデックス(index)をローテーションする</a></p>
       </details>
       <details open="">
         <summary>Python</summary>
@@ -117,6 +118,7 @@
 <ul>
 <li><a class="Link" href="https://nodejs.org/api/net.html#socketconnectport-host-connectlistener">server.listen()</a>の<code>host</code>にIPv4のアドレス(例: <code>0.0.0.0</code>)を渡します。</li>
 <li><a class="Link" href="https://nodejs.org/api/cli.html#--dns-result-orderorder">--dns-result-order</a>もしくは<a class="Link" href="https://nodejs.org/api/dns.html#dnssetdefaultresultorderorder">dns.setDefaultResultOrder()</a>に<code>ipv4first</code>をセットします。</li>
+<li><a class="Link" href="https://nodejs.org/api/dns.html#dnslookuphostname-options-callback">dns.lookup</a>の<code>options.family</code>に<code>4</code>を渡します。</li>
 </ul>
 
     </main>
