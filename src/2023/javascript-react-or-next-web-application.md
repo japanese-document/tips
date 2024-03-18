@@ -1,4 +1,4 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2024-01-18 21:00" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2024-03-18 22:00" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
 
@@ -40,3 +40,6 @@ Trello、Notion、Asanaのようなプロジェクトマネジメントツール
 
 * [Apache Answer](https://github.com/apache/incubator-answer)  
 Q & Aプラットフォーム。React Router、ステート管理は[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)、サーバは[Gin](https://gin-gonic.com/)。
+
+* [MinIO Console](https://github.com/minio/console)  
+MinIOのダッシュボード。React RouterとRedux Toolkitを使っている。サーバはGo。
