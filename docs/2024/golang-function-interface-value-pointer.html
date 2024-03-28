@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2023/golang-errgroup-context-timeout.html" />
-    <meta property="og:title" content="errgroup.WithContext()を使ってTimeoutでgoroutineを終了する" />
-    <meta property="og:description" content="下記のコードではGoのerrgroup.WithContext()を使って、goroutine内でerrorが発生した場合やTimeoutが発生した場合にgoroutineを終了するようにしています。package mainimport (    &quot;context&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;time&quot;    &quot;golang.org/x/sync/errgroup&quot;)func createWorker(ctx context.Context, i int) func() err" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-function-interface-value-pointer.html" />
+    <meta property="og:title" content="Goの引数がインターフェイスの場合、値とポインタを渡すことができる" />
+    <meta property="og:description" content="Goの関数の引数の型がインターフェイスの場合、その引数には値とポインタの両方を渡すことができます。package mainimport &quot;fmt&quot;type IAdd interface {    Add(a, b int) int}type AddValue struct {}func (t AddValue) Add(a, b int) int {    return a + b}type AddPointer struct {}func (t *AddPointer) Add(a, b int) int {    return a + b}func f(a IAdd) " />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記のコードではGoのerrgroup.WithContext()を使って、goroutine内でerrorが発生した場合やTimeoutが発生した場合にgoroutineを終了するようにしています。package mainimport (    &quot;context&quot;    &quot;fmt&quot;    &quot;log&quot;    &quot;time&quot;    &quot;golang.org/x/sync/errgroup&quot;)func createWorker(ctx context.Context, i int) func() err" />
+    <meta name="description" content="Goの関数の引数の型がインターフェイスの場合、その引数には値とポインタの両方を渡すことができます。package mainimport &quot;fmt&quot;type IAdd interface {    Add(a, b int) int}type AddValue struct {}func (t AddValue) Add(a, b int) int {    return a + b}type AddPointer struct {}func (t *AddPointer) Add(a, b int) int {    return a + b}func f(a IAdd) " />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>errgroup.WithContext()を使ってTimeoutでgoroutineを終了する</title>
+    <title>Goの引数がインターフェイスの場合、値とポインタを渡すことができる</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -114,59 +114,44 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="errgroup.WithContext()を使ってTimeoutでgoroutineを終了する"><a class="anchor" href="#errgroup.WithContext()を使ってTimeoutでgoroutineを終了する">#</a>errgroup.WithContext()を使ってTimeoutでgoroutineを終了する</h1>
-<p>下記のコードではGoの<a class="Link" href="https://pkg.go.dev/golang.org/x/sync/errgroup#WithContext">errgroup.WithContext()</a>を使って、
-goroutine内でerrorが発生した場合やTimeoutが発生した場合にgoroutineを終了するようにしています。</p>
+      <h1 id="Goの引数がインターフェイスの場合、値とポインタを渡すことができる"><a class="anchor" href="#Goの引数がインターフェイスの場合、値とポインタを渡すことができる">#</a>Goの引数がインターフェイスの場合、値とポインタを渡すことができる</h1>
+<p>Goの関数の引数の型がインターフェイスの場合、その引数には値とポインタの両方を渡すことができます。</p>
 <pre><code class="language-go">package main
 
-import (
-    "context"
-    "fmt"
-    "log"
-    "time"
+import "fmt"
 
-    "golang.org/x/sync/errgroup"
-)
+type IAdd interface {
+    Add(a, b int) int
+}
 
-func createWorker(ctx context.Context, i int) func() error {
-    worker := func() error {
-        fmt.Printf("before: i = %d\n", i)
-        if i == 3 {
-            // goroutine内でerrorにするには以下のコードのコメントをはずします。
-            // return fmt.Errorf("i is %d", i)
-            return nil
-        }
-        time.Sleep(time.Duration(i) * 100 * time.Millisecond)
-        select {
-        case &lt;-ctx.Done():
-            return ctx.Err()
-        default:
-            fmt.Printf("after: i = %d\n", i)
-        }
-        return nil
-    }
-    return worker
+type AddValue struct {}
+
+func (t AddValue) Add(a, b int) int {
+    return a + b
+}
+
+type AddPointer struct {}
+
+func (t *AddPointer) Add(a, b int) int {
+    return a + b
+}
+
+func f(a IAdd) {
+    fmt.Printf("%d\n", a.Add(1, 2))
 }
 
 func main() {
-    // Timeoutにするには以下のコードのコメントをはずします。
-    // ms := 200 * time.Millisecond
-    ms := 2000 * time.Millisecond
-    _ctx, cancel := context.WithTimeout(context.Background(), ms)
-    defer cancel()
-    eg, ctx := errgroup.WithContext(_ctx)
-    for i := 0; i &lt; 5; i++ {
-        eg.Go(createWorker(ctx, i))
-    }
-    if err := eg.Wait(); err != nil {
-        log.Fatal(err)
-    }
-    fmt.Println("end")
+    v := AddValue{}
+    f(v)
+    // 3
+    p := &amp;AddPointer{}
+    f(p)
+    // 3
 }
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#errgroup.WithContext()を使ってTimeoutでgoroutineを終了する">errgroup.WithContext()を使ってTimeoutでgoroutineを終了する</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Goの引数がインターフェイスの場合、値とポインタを渡すことができる">Goの引数がインターフェイスの場合、値とポインタを渡すことができる</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>

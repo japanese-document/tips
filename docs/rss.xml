@@ -4,10 +4,16 @@
     <description>Tips</description>
     <link>https://japanese-document.github.io/tips</link>
     <atom:link href="https://japanese-document.github.io/tips/rss.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Mar 2024 13:49:46 GMT</pubDate>
-    <lastBuildDate>Mon, 18 Mar 2024 13:49:46 GMT</lastBuildDate>
+    <pubDate>Thu, 28 Mar 2024 15:25:26 GMT</pubDate>
+    <lastBuildDate>Thu, 28 Mar 2024 15:25:26 GMT</lastBuildDate>
   </channel>
   
+  <item>
+    <title>Goの引数がインターフェイスの場合、値とポインタを渡すことができる</title>
+    <pubDate>Thu, 28 Mar 2024 15:05:00 GMT</pubDate>
+    <link>https://japanese-document.github.io/tips/2024/golang-function-interface-value-pointer.html</link>
+    <guid isPermaLink="true">https://japanese-document.github.io/tips/2024/golang-function-interface-value-pointer.html</guid>
+  </item>
   <item>
     <title>ReactやNext.jsを使っているオープンソースのWebアプリケーション</title>
     <pubDate>Mon, 18 Mar 2024 13:00:00 GMT</pubDate>
@@ -121,11 +127,5 @@
     <pubDate>Mon, 27 Nov 2023 12:30:00 GMT</pubDate>
     <link>https://japanese-document.github.io/tips/2023/nextjs-path-parameter-optional.html</link>
     <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/nextjs-path-parameter-optional.html</guid>
-  </item>
-  <item>
-    <title>Next.jsのApp RouterでURLのpathnameを取得する</title>
-    <pubDate>Sun, 26 Nov 2023 15:15:00 GMT</pubDate>
-    <link>https://japanese-document.github.io/tips/2023/nextjs-pathname-using-app-router.html</link>
-    <guid isPermaLink="true">https://japanese-document.github.io/tips/2023/nextjs-pathname-using-app-router.html</guid>
   </item>
 </rss>
