@@ -1,6 +1,9 @@
-{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2024-03-18 22:00" }
+{ "header": {"name": "JavaScript", "order": 2}, "order": 5, "date": "2024-04-23 23:45" }
 ---
 # ReactやNext.jsを使っているオープンソースのWebアプリケーション
+
+* [AFFiNE](https://github.com/toeverything/AFFiNE)  
+NotionとMiroのようなサービス。React Router、Jotai、Nest、Prisma、通信はGraphQL。
 
 * [react.dev](https://github.com/reactjs/react.dev)  
 Reactのウェブサイト
