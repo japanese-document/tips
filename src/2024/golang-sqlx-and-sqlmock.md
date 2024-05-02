@@ -3,7 +3,12 @@
 # sqlmockでsqlxを取り扱う
 
 下記は[sqlmock](https://github.com/DATA-DOG/go-sqlmock)で[sqlx](https://japanese-document.github.io/sqlx/)を取り扱う例です。
-`NamedExec`で名前付きパラメータ(named parameters)をMockする場合、プレースホルダに置き換える必要があります。
+`NamedExec`で名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。
+
+```go
+insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`
+_, err = db.NamedExec(insertCarData, car)
+```
 
 ```go
 mock.
