@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="twitter:card" content="summary" />
-    <meta property="og:url" content="https://japanese-document.github.io/tips/2022/javascript-marked.html" />
-    <meta property="og:title" content="Marked" />
-    <meta property="og:description" content="#NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))#置き換えるHTML要素を変更するrendererを設定します。impo" />
+    <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-sqlx-and-sqlmock.html" />
+    <meta property="og:title" content="sqlmockでsqlxを取り扱う" />
+    <meta property="og:description" content="下記はsqlmockでsqlxを取り扱う例です。NamedExecで名前付きパラメータ(named parameters)をMockする場合、プレースホルダに置き換える必要があります。mock.    ExpectExec(regexp.QuoteMeta(&quot;INSERT INTO car (user_id, maker, model, year) VALUES (?, ?, ?, ?)&quot;)).    WithArgs(lastInsertId, &quot;bar&quot;, &quot;baz&quot;, 2022).    WillReturnResult(sql" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="#NodeJSでsanitizeする方法DOMPurifyを使います。import { marked } from 'marked'import { JSDOM } from 'jsdom'import createDOMPurify from 'dompurify'const window = new JSDOM('').windowconst DOMPurify = createDOMPurify(window)const html = DOMPurify.sanitize(marked.parse('# Foo'))#置き換えるHTML要素を変更するrendererを設定します。impo" />
+    <meta name="description" content="下記はsqlmockでsqlxを取り扱う例です。NamedExecで名前付きパラメータ(named parameters)をMockする場合、プレースホルダに置き換える必要があります。mock.    ExpectExec(regexp.QuoteMeta(&quot;INSERT INTO car (user_id, maker, model, year) VALUES (?, ?, ?, ?)&quot;)).    WithArgs(lastInsertId, &quot;bar&quot;, &quot;baz&quot;, 2022).    WillReturnResult(sql" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
-    <title>Marked</title>
+    <title>sqlmockでsqlxを取り扱う</title>
     <link rel="stylesheet" href="/tips/app.css?v=001" type="text/css"  media="all" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9VVC74WWF"></script>
     <script>
@@ -115,33 +115,183 @@
       </details>
     </nav></div>
     <main class="main markdown-body">
-      <h1 id="Marked"><a class="anchor" href="#Marked">#</a>Marked</h1>
-<h2 id="NodeJSでsanitizeする方法"><a class="anchor" href="#NodeJSでsanitizeする方法">#</a>NodeJSでsanitizeする方法</h2>
-<p><a class="Link" href="https://github.com/cure53/DOMPurify">DOMPurify</a>を使います。</p>
-<pre><code>import { marked } from 'marked'
-import { JSDOM } from 'jsdom'
-import createDOMPurify from 'dompurify'
-
-const window = new JSDOM('').window
-const DOMPurify = createDOMPurify(window)
-const html = DOMPurify.sanitize(marked.parse('# Foo'))
+      <h1 id="sqlmockでsqlxを取り扱う"><a class="anchor" href="#sqlmockでsqlxを取り扱う">#</a>sqlmockでsqlxを取り扱う</h1>
+<p>下記は<a class="Link" href="https://github.com/DATA-DOG/go-sqlmock">sqlmock</a>で<a class="Link" href="https://japanese-document.github.io/sqlx/">sqlx</a>を取り扱う例です。
+<code>NamedExec</code>で名前付きパラメータ(named parameters)をMockする場合、プレースホルダに置き換える必要があります。</p>
+<pre><code class="language-go">mock.
+    ExpectExec(regexp.QuoteMeta("INSERT INTO car (user_id, maker, model, year) VALUES (?, ?, ?, ?)")).
+    WithArgs(lastInsertId, "bar", "baz", 2022).
+    WillReturnResult(sqlmock.NewResult(1, 1))
 </code></pre>
-<h2 id="置き換えるHTML要素を変更する"><a class="anchor" href="#置き換えるHTML要素を変更する">#</a>置き換えるHTML要素を変更する</h2>
-<p>rendererを設定します。</p>
-<pre><code>import { marked } from 'marked'
+<pre><code class="language-go">package main
 
-const renderer = {
-  link(href, _title, text) {
-    return `&lt;a href="${href}" class="Link"&gt;${text}&lt;/a&gt;`
-  }
+import (
+    "database/sql"
+    "regexp"
+    "testing"
+
+    "github.com/DATA-DOG/go-sqlmock"
+    "github.com/jmoiron/sqlx"
+    _ "github.com/mattn/go-sqlite3"
+)
+
+func createMockDB(t *testing.T) (*sql.DB, *sqlx.DB, sqlmock.Sqlmock) {
+    sqlDB, mock, err := sqlmock.New()
+    if err != nil {
+        t.Fatalf("error at database connection: %s", err)
+    }
+    sqlxDB := sqlx.NewDb(sqlDB, "sqlite3")
+    return sqlDB, sqlxDB, mock
 }
-marked.use({ renderer })
+
+func TestInsertUserAndCar(t *testing.T) {
+    type args struct {
+        user User
+        car  Car
+    }
+    tests := []struct {
+        name    string
+        args    args
+        mock    func(sqlmock.Sqlmock)
+        wantErr bool
+    }{
+        {
+            name: "Success",
+            args: args{
+                user: User{
+                    Name:  "foo",
+                    Email: "foo@example.com",
+                    Age:   23,
+                },
+                car: Car{
+                    Maker: "bar",
+                    Model: "baz",
+                    Year:  2022,
+                },
+            },
+            mock: func(mock sqlmock.Sqlmock) {
+                lastInsertId := 123
+                mock.
+                    ExpectExec(regexp.QuoteMeta("INSERT INTO user (name, email, age) VALUES (?, ?, ?)")).
+                    WithArgs("foo", "foo@example.com", 23).WillReturnResult(sqlmock.NewResult(int64(lastInsertId), 1))
+                mock.
+                    ExpectExec(regexp.QuoteMeta("INSERT INTO car (user_id, maker, model, year) VALUES (?, ?, ?, ?)")).
+                    WithArgs(lastInsertId, "bar", "baz", 2022).
+                    WillReturnResult(sqlmock.NewResult(1, 1))
+            },
+            wantErr: false,
+        },
+    }
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            sqlDB, sqlxDB, mock := createMockDB(t)
+            defer sqlDB.Close()
+            defer sqlxDB.Close()
+            tt.mock(mock)
+            if err := InsertUserAndCar(sqlxDB, tt.args.user, tt.args.car); (err != nil) != tt.wantErr {
+                t.Errorf("InsertUserAndCar() error = %v, wantErr %v", err, tt.wantErr)
+            }
+            if err := mock.ExpectationsWereMet(); err != nil {
+                t.Errorf("unfulfilled expectations: %s", err)
+            }
+        })
+    }
+}
+</code></pre>
+<pre><code class="language-go">package main
+
+import (
+    "fmt"
+    "log"
+
+    "github.com/jmoiron/sqlx"
+    _ "github.com/mattn/go-sqlite3"
+)
+
+type User struct {
+    ID    int    `db:"id"`
+    Name  string `db:"name"`
+    Email string `db:"email"`
+    Age   int    `db:"age"`
+}
+
+type Car struct {
+    ID     int    `db:"id"`
+    UserID int    `db:"user_id"`
+    Maker  string `db:"maker"`
+    Model  string `db:"model"`
+    Year   int    `db:"year"`
+}
+
+type CarUser struct {
+    User User `db:"u"`
+    Car  Car  `db:"c"`
+}
+
+func InsertUserAndCar(db *sqlx.DB, user User, car Car) error {
+    insertUserData := `INSERT INTO user (name, email, age) VALUES (?, ?, ?)`
+    result, err := db.Exec(insertUserData, user.Name, user.Email, user.Age)
+    if err != nil {
+        return err
+    }
+
+    userID, _ := result.LastInsertId()
+    car.UserID = int(userID)
+    insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`
+    _, err = db.NamedExec(insertCarData, car)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+
+func main() {
+    db := sqlx.MustOpen("sqlite3", ":memory:")
+    defer db.Close()
+
+    createUserTableSQL := `CREATE TABLE IF NOT EXISTS user (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        age INTEGER
+    );`
+    db.MustExec(createUserTableSQL)
+
+    createCarTableSQL := `CREATE TABLE IF NOT EXISTS car (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        maker TEXT NOT NULL,
+        model TEXT NOT NULL,
+        year INTEGER,
+        FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE
+    );`
+    db.MustExec(createCarTableSQL)
+
+    user := User{Name: "Foo", Email: "foo@example.com", Age: 30}
+    car := Car{Maker: "Toyota", Model: "Corolla", Year: 2020}
+    err := InsertUserAndCar(db, user, car)
+    if err != nil {
+        log.Fatal("Failed to execute query: ", err)
+    }
+
+    query := `
+    SELECT u.id as "u.id", u.name as "u.name", u.email as "u.email", u.age as "u.age", 
+           c.id as "c.id", c.user_id as "c.user_id", c.maker as "c.maker", c.model as "c.model", c.year as "c.year"
+    FROM car c
+    JOIN user u ON u.id = c.user_id`
+
+    var carUsers []CarUser
+    err = db.Select(&amp;carUsers, query)
+    if err != nil {
+        log.Fatal("Failed to execute query: ", err)
+    }
+
+    fmt.Printf("%+v", carUsers)
+}
 </code></pre>
 
     </main>
-    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#Marked">Marked</a></p>
-<p class="h2"><a href="#NodeJSでsanitizeする方法">NodeJSでsanitizeする方法</a></p>
-<p class="h2"><a href="#置き換えるHTML要素を変更する">置き換えるHTML要素を変更する</a></p></nav></div>
+    <div class="right-side"><nav class="header-list"><p class="h1"><a href="#sqlmockでsqlxを取り扱う">sqlmockでsqlxを取り扱う</a></p></nav></div>
     <footer class="footer markdown-body">
       <a href="/tips">Top</a>
     </footer>
