@@ -6,10 +6,10 @@
     <meta name="twitter:card" content="summary" />
     <meta property="og:url" content="https://japanese-document.github.io/tips/2024/golang-sqlx-and-sqlmock.html" />
     <meta property="og:title" content="sqlmockでsqlxを取り扱う" />
-    <meta property="og:description" content="下記はsqlmockでsqlxを取り扱う例です。NamedExecで名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`_, err = db.NamedExec(insertCarData, car)mock.    ExpectExec(regexp.QuoteMeta(&quot;INSERT INTO car (user_id, m" />
+    <meta property="og:description" content="下記はsqlmockでsqlxを取り扱う例です。下記のようにNamedExecで名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`_, err = db.NamedExec(insertCarData, car)mock.    ExpectExec(regexp.QuoteMeta(&quot;INSERT INTO car (user" />
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/42838312?s=400" />
     <meta name="theme-color" content="#f1f7fe" />
-    <meta name="description" content="下記はsqlmockでsqlxを取り扱う例です。NamedExecで名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`_, err = db.NamedExec(insertCarData, car)mock.    ExpectExec(regexp.QuoteMeta(&quot;INSERT INTO car (user_id, m" />
+    <meta name="description" content="下記はsqlmockでsqlxを取り扱う例です。下記のようにNamedExecで名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`_, err = db.NamedExec(insertCarData, car)mock.    ExpectExec(regexp.QuoteMeta(&quot;INSERT INTO car (user" />
     <meta name="Hatena::Bookmark" content="nocomment" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="https://japanese-document.github.io/tips/rss.xml" />
     <link rel="icon" type="image/png" href="/lit/images/favicon.png" />
@@ -117,7 +117,7 @@
     <main class="main markdown-body">
       <h1 id="sqlmockでsqlxを取り扱う"><a class="anchor" href="#sqlmockでsqlxを取り扱う">#</a>sqlmockでsqlxを取り扱う</h1>
 <p>下記は<a class="Link" href="https://github.com/DATA-DOG/go-sqlmock">sqlmock</a>で<a class="Link" href="https://japanese-document.github.io/sqlx/">sqlx</a>を取り扱う例です。
-<code>NamedExec</code>で名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。</p>
+下記のように<code>NamedExec</code>で名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。</p>
 <pre><code class="language-go">insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`
 _, err = db.NamedExec(insertCarData, car)
 </code></pre>
