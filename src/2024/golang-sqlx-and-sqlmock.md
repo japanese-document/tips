@@ -1,9 +1,9 @@
-{ "header": {"name": "Go", "order": 6},  "order": 12, "date": "2024-05-02 19:00" }
+{ "header": {"name": "Go", "order": 6},  "order": 12, "date": "2024-05-07 22:00" }
 ---
 # sqlmockでsqlxを取り扱う
 
 下記は[sqlmock](https://github.com/DATA-DOG/go-sqlmock)で[sqlx](https://japanese-document.github.io/sqlx/)を取り扱う例です。
-`NamedExec`で名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。
+下記のように`NamedExec`で名前付きパラメータ(named parameters)をMockする場合、プレースホルダを使います。
 
 ```go
 insertCarData := `INSERT INTO car (user_id, maker, model, year) VALUES (:user_id, :maker, :model, :year)`
